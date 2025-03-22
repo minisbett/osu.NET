@@ -69,6 +69,11 @@
     /// <summary>
     /// Indicates that the forum in the request could not be found.
     /// </summary>
-    ForumNotFound
+    ForumNotFound,
+
+    /// <summary>
+    /// Indicates that the match in the request could not be found.
+    /// </summary>
+    MatchNotFound
   }
 }

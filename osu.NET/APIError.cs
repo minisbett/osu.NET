@@ -53,6 +53,7 @@ public class APIError
     ["Specified BeatmapPack couldn't be found."] = APIErrorType.BeatmapPackNotFound,
     ["Specified Build couldn't be found."] = APIErrorType.BuildNotFound,
     ["Specified Comment couldn't be found."] = APIErrorType.CommentNotFound,
-    ["Specified Forum\\Forum couldn't be found."] = APIErrorType.ForumNotFound
+    ["Specified Forum\\Forum couldn't be found."] = APIErrorType.ForumNotFound,
+    ["Specified LegacyMatch\\LegacyMatch couldn't be found."] = APIErrorType.MatchNotFound
   };
 }
