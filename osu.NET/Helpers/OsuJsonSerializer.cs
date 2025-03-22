@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using osu.NET.Helpers.Converters;
 using osu.NET.Enums;
+using osu.NET.Helpers.Converters;
 using osu.NET.Models.Beatmaps.Discussions;
 using osu.NET.Models.Users.Events;
 

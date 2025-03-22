@@ -9,7 +9,7 @@ public partial class OsuApiClient
 
   // TODOENDPOINT: https://osu.ppy.sh/docs/index.html#get-topic-listing (pagination)
   // TODOENDPOINT: https://osu.ppy.sh/docs/index.html#get-topic-and-posts (pagination)
-  
+
   /// <summary>
   /// Returns a listing of all top-level forums on the website, including sub-forums up to two levels deep.
   /// <br/><br/>

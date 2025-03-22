@@ -5,7 +5,6 @@ using Microsoft.CodeAnalysis.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Diagnostics;
 using System.Linq;
 
 namespace osu.NET.Analyzers
@@ -92,7 +91,7 @@ namespace osu.NET.Analyzers
         return false;
       if (method.Name != "Match" || method.ReceiverType.Name != "APIResult")
         return false;
-      if(method.ContainingNamespace.Name != "NET" || method.ContainingNamespace.ContainingNamespace?.Name != "osu")
+      if (method.ContainingNamespace.Name != "NET" || method.ContainingNamespace.ContainingNamespace?.Name != "osu")
         return false;
 
       // Get the variable name of the variable .Match is called on.
