@@ -26,13 +26,13 @@ public class DailyChallengeUserStats
   /// The datetime at which these statistics were last updated. This may be null.
   /// </summary>
   [JsonProperty("last_update")]
-  public DateTime? LastUpdate { get; private set; }
+  public DateTimeOffset? LastUpdate { get; private set; }
 
   /// <summary>
   /// DOCS: what is this?
   /// </summary>
   [JsonProperty("last_weekly_streak")]
-  public DateTime? LastWeeklyStreak { get; private set; }
+  public DateTimeOffset? LastWeeklyStreak { get; private set; }
 
   /// <summary>
   /// The amount of daily challenges the user has played.

@@ -38,7 +38,7 @@ public class NewsPost
   /// The datetime at which this news post was published.
   /// </summary>
   [JsonProperty("published_at")]
-  public DateTime PublishedAt { get; private set; }
+  public DateTimeOffset PublishedAt { get; private set; }
 
   /// <summary>
   /// The slug of this news post. (eg. <c>2021-04-27-results-a-labour-of-love</c>)
@@ -56,7 +56,7 @@ public class NewsPost
   /// The datetime at which this post was last updated.
   /// </summary>
   [JsonProperty("updated_at")]
-  public DateTime UpdatedAt { get; private set; }
+  public DateTimeOffset UpdatedAt { get; private set; }
 
   /// <summary>
   /// The HTML content of this news post. This will be null if this news post object was requested alongside multiple others.

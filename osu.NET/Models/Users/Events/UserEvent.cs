@@ -15,7 +15,7 @@ public class UserEvent
   /// The datetime at which this event happened.
   /// </summary>
   [JsonProperty("created_at")]
-  public DateTime CreatedAt { get; private set; }
+  public DateTimeOffset CreatedAt { get; private set; }
 
   /// <summary>
   /// The ID of this event.
