@@ -101,13 +101,6 @@ public class User
   public AccountHistoryEntry[]? AccountHistory { get; private set; }
 
   /// <summary>
-  /// DOCS: what is this? i thought it might be the "main" one or if its just one
-  /// but flary for example got the USA one and this is still null (banners array is not)
-  /// </summary>
-  [JsonProperty("active_tournament_banner")]
-  public ProfileBanner? Banner { get; private set; }
-
-  /// <summary>
   /// The tournament banners of this user. This is an optional property and may be null.
   /// </summary>
   [JsonProperty("active_tournament_banners")]
