@@ -1,4 +1,8 @@
-﻿namespace osu.NET;
+﻿using osu.NET.Enums;
+using osu.NET.Helpers;
+using osu.NET.Models.Events;
+
+namespace osu.NET;
 
 public partial class OsuApiClient
 {
@@ -14,7 +18,7 @@ public partial class OsuApiClient
   /// <param name="sort">Optional. The sorting option for the events.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The bundle with the 50 most recent events across osu!.</returns>
-  [CanReturnAPIError()]
+  [CanReturnApiError()]
   public async Task<ApiResult<EventsBundle>> GetEventsAsync(EventSortType? sort = null, string ? cursor = null,
     CancellationToken? cancellationToken = null)
     => await GetAsync<EventsBundle>("events", cancellationToken,

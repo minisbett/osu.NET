@@ -16,7 +16,8 @@ public static class ServiceCollectionExtensions
   /// <param name="services">The service collection.</param>
   /// <param name="accessTokenProvider">An access token provider for the API client.</param>
   /// <param name="configurator">A configuration delegate for setting the options for the API client.</param>
-  public static IServiceCollection AddOsuApiClient(this IServiceCollection services, IOsuAccessTokenProvider accessTokenProvider, Action<OsuApiClientOptions, IServiceProvider>? configurator = null)
+  public static IServiceCollection AddOsuApiClient(this IServiceCollection services, IOsuAccessTokenProvider accessTokenProvider,
+    Action<OsuApiClientOptions, IServiceProvider>? configurator = null)
     => services.AddOsuApiClient(_ => accessTokenProvider, configurator);
 
   /// <summary>
@@ -31,7 +32,8 @@ public static class ServiceCollectionExtensions
   /// <param name="services">The service collection.</param>
   /// <param name="accessTokenProviderFactory">A factory for creating an access token provider for the API client.</param>
   /// <param name="configurator">A configuration delegate for setting the options for the API client.</param>
-  public static IServiceCollection AddOsuApiClient(this IServiceCollection services, Func<IServiceProvider, IOsuAccessTokenProvider> accessTokenProviderFactory, Action<OsuApiClientOptions, IServiceProvider>? configurator = null)
+  public static IServiceCollection AddOsuApiClient(this IServiceCollection services,
+    Func<IServiceProvider, IOsuAccessTokenProvider> accessTokenProviderFactory, Action<OsuApiClientOptions, IServiceProvider>? configurator = null)
   {
     IOsuAccessTokenProvider accessTokenProvider = accessTokenProviderFactory(services.BuildServiceProvider());
     return services.AddScoped(services =>
