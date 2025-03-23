@@ -80,10 +80,10 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
           watch.ElapsedMilliseconds, response is null ? "Error" : $"{(int)response.StatusCode} ({response.StatusCode})");
     }
 
-    // If the API does not respond with an OK (request successful) or NotFound/UnprocessableEntity (something not found),
+    // If the API does not respond with OK (request successful), NotFound/UnprocessableEntity (something not found) or Forbidden (missing permissions),
     // the request is likely malformed or the osu! API encountered an internal server error. This ensures that any APIResult<T>
     // retrieved by the end user possibly contains an error caused via their own input, and not some API wrapper or osu!-sided issue.
-    if (response.StatusCode is not (HttpStatusCode.OK or HttpStatusCode.NotFound or HttpStatusCode.UnprocessableEntity))
+    if (response.StatusCode is not (HttpStatusCode.OK or HttpStatusCode.NotFound or HttpStatusCode.UnprocessableEntity or HttpStatusCode.Forbidden))
       throw new OsuApiException($"API responded with an unexpected status code: {response.StatusCode}.");
 
     try
