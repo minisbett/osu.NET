@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
 
-namespace osu.NET.Models.Users.Events;
+namespace osu.NET.Models.Events;
 
 /// <summary>
-/// Represents the event when a user supports osu! for the first time.
+/// Represents the event when a user is gifted a supporter tag by another user.
 /// <br/><br/>
 /// API docs: <a href="https://osu.ppy.sh/docs/index.html#event-type"/><br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/resources/js/interfaces/event-json.ts"/>
 /// </summary>
-public class UserSupportFirstEvent : UserEvent
+public class UserSupportGiftEvent : Event
 {
   /// <summary>
-  /// The user who supported osu! for the first time.
+  /// The user who was gifted the supporter tag.
   /// </summary>
   [JsonProperty("user")]
   public EventUser User { get; private set; } = default!;

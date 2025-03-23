@@ -1,23 +1,17 @@
 ﻿using Newtonsoft.Json;
 
-namespace osu.NET.Models.Users.Events;
+namespace osu.NET.Models.Events;
 
 /// <summary>
-/// Represents the event when a user obtained an achievement.
+/// Represents the event when a user supports osu! for the first time.
 /// <br/><br/>
 /// API docs: <a href="https://osu.ppy.sh/docs/index.html#event-type"/><br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/resources/js/interfaces/event-json.ts"/>
 /// </summary>
-public class AchievementEvent : UserEvent
+public class UserSupportFirstEvent : Event
 {
   /// <summary>
-  /// The achievement that was obtained.
-  /// </summary>
-  [JsonProperty("achievement")]
-  public Achievement Achievement { get; private set; } = default!;
-
-  /// <summary>
-  /// The user who obtained the achievement.
+  /// The user who supported osu! for the first time.
   /// </summary>
   [JsonProperty("user")]
   public EventUser User { get; private set; } = default!;

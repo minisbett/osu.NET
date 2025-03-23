@@ -1,22 +1,15 @@
 ﻿using Newtonsoft.Json;
-using osu.NET.Enums;
 
-namespace osu.NET.Models.Users.Events;
+namespace osu.NET.Models.Events;
 
 /// <summary>
-/// Represents the event when a user loses first place to another user.
+/// Represents the event when a user played a beatmap a certain number of times.
 /// <br/><br/>
 /// API docs: <a href="https://osu.ppy.sh/docs/index.html#event-type"/><br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/resources/js/interfaces/event-json.ts"/>
 /// </summary>
-public class RankLostEvent : UserEvent
+public class BeatmapPlaycountEvent : Event
 {
-  /// <summary>
-  /// The ruleset this event takes place in.
-  /// </summary>
-  [JsonProperty("mode")]
-  public Ruleset Ruleset { get; private set; } = default!;
-
   /// <summary>
   /// The beatmap associated with the event.
   /// </summary>
@@ -24,8 +17,8 @@ public class RankLostEvent : UserEvent
   public EventBeatmap Beatmap { get; private set; } = default!;
 
   /// <summary>
-  /// The user who lost the first place.
+  /// The amount of times the beatmap has been played.
   /// </summary>
-  [JsonProperty("user")]
-  public EventUser User { get; private set; } = default!;
+  [JsonProperty("count")]
+  public int Count { get; private set; }
 }

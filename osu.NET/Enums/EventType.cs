@@ -3,13 +3,12 @@
 namespace osu.NET.Enums;
 
 /// <summary>
-/// Represents the type of a user event (the "Recent" section on osu! profiles).
+/// Represents the type of an event (the "Recent" section on osu! profiles).
 /// <br/><br/>
 /// API docs: <a href="https://osu.ppy.sh/docs/index.html#event-type"/><br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/resources/js/interfaces/event-json.ts"/>
-/// <br/><br/>
 /// </summary>
-public enum UserEventType
+public enum EventType
 {
   /// <summary>
   /// Represents the event when a user obtained an achievement.

@@ -2,7 +2,7 @@
 using osu.NET.Enums;
 using osu.NET.Helpers.Converters;
 using osu.NET.Models.Beatmaps.Discussions;
-using osu.NET.Models.Users.Events;
+using osu.NET.Models.Events;
 
 namespace osu.NET.Helpers;
 
@@ -20,24 +20,24 @@ internal static class OsuJsonSerializer
         //
         // Deserializes UserEvent objects into their correct type based on the UserEventType
         //
-        new TypeMappingConverter<UserEvent>(obj =>
+        new TypeMappingConverter<Event>(obj =>
         {
           return obj.Type switch
           {
-            UserEventType.Achievement => typeof(AchievementEvent),
-            UserEventType.BeatmapPlaycount => typeof(BeatmapPlaycountEvent),
-            UserEventType.BeatmapsetApprove => typeof(BeatmapsetApproveEvent),
-            UserEventType.BeatmapsetDelete => typeof(BeatmapsetDeleteEvent),
-            UserEventType.BeatmapsetRevive => typeof(BeatmapsetReviveEvent),
-            UserEventType.BeatmapsetUpdate => typeof(BeatmapsetUpdateEvent),
-            UserEventType.BeatmapsetUpload => typeof(BeatmapsetUploadEvent),
-            UserEventType.Rank => typeof(RankEvent),
-            UserEventType.RankLost => typeof(RankLostEvent),
-            UserEventType.UserSupportAgain => typeof(UserSupportAgainEvent),
-            UserEventType.UserSupportFirst => typeof(UserSupportFirstEvent),
-            UserEventType.UserSupportGift => typeof(UserSupportGiftEvent),
-            UserEventType.UsernameChange => typeof(UsernameChangeEvent),
-            _ => throw new NotImplementedException($"{nameof(UserEventType)} '{obj.Type}' is not implemented.")
+            EventType.Achievement => typeof(AchievementEvent),
+            EventType.BeatmapPlaycount => typeof(BeatmapPlaycountEvent),
+            EventType.BeatmapsetApprove => typeof(BeatmapsetApproveEvent),
+            EventType.BeatmapsetDelete => typeof(BeatmapsetDeleteEvent),
+            EventType.BeatmapsetRevive => typeof(BeatmapsetReviveEvent),
+            EventType.BeatmapsetUpdate => typeof(BeatmapsetUpdateEvent),
+            EventType.BeatmapsetUpload => typeof(BeatmapsetUploadEvent),
+            EventType.Rank => typeof(RankEvent),
+            EventType.RankLost => typeof(RankLostEvent),
+            EventType.UserSupportAgain => typeof(UserSupportAgainEvent),
+            EventType.UserSupportFirst => typeof(UserSupportFirstEvent),
+            EventType.UserSupportGift => typeof(UserSupportGiftEvent),
+            EventType.UsernameChange => typeof(UsernameChangeEvent),
+            _ => throw new NotImplementedException($"{nameof(EventType)} '{obj.Type}' is not implemented.")
           };
         }),
 

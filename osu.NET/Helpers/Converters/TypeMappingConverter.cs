@@ -23,10 +23,14 @@ internal class TypeMappingConverter<TBase>(Func<TBase, Type> mapping) : JsonConv
   public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
   {
     JObject obj = JObject.Load(reader);
-    if (obj.ToObject<TBase>(serializer) is not TBase @base)
+
+    // Deserialize with a temporary json serializer excluding this converter itself to prevent infinite recursion.)
+    JsonSerializer tempSerializer = JsonSerializer.Create(new() { Converters = [..serializer.Converters.Except([this])] });
+
+    if (obj.ToObject<TBase>(tempSerializer) is not TBase @base)
       return null;
 
-    return obj.ToObject(mapping(@base), serializer);
+    return obj.ToObject(mapping(@base), tempSerializer);
   }
 
   /// <inheritdoc/>

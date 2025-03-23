@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using osu.NET.Enums;
 
-namespace osu.NET.Models.Users.Events;
+namespace osu.NET.Models.Events;
 
 /// <summary>
 /// Represents the event when a user achieves a certain rank on a beatmap.
@@ -9,7 +9,7 @@ namespace osu.NET.Models.Users.Events;
 /// API docs: <a href="https://osu.ppy.sh/docs/index.html#event-type"/><br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/resources/js/interfaces/event-json.ts"/>
 /// </summary>
-public class RankEvent : UserEvent
+public class RankEvent : Event
 {
   /// <summary>
   /// The rank achieved by the user.

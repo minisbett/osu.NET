@@ -1,9 +1,9 @@
 ﻿using osu.NET.Enums;
 using osu.NET.Helpers;
 using osu.NET.Models.Beatmaps;
+using osu.NET.Models.Events;
 using osu.NET.Models.Scores;
 using osu.NET.Models.Users;
-using osu.NET.Models.Users.Events;
 
 namespace osu.NET;
 
@@ -145,8 +145,8 @@ public partial class OsuApiClient
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The recent events of the user with the specified ID.</returns>
   [CanReturnAPIError(APIErrorType.UserNotFound)]
-  public async Task<APIResult<UserEvent[]>> GetRecentActivityAsync(int userId, int? limit = null, int? offset = null, CancellationToken? cancellationToken = null)
-    => (await GetAsync<UserEvent[]>($"users/{userId}/recent_activity", cancellationToken,
+  public async Task<APIResult<Event[]>> GetRecentActivityAsync(int userId, int? limit = null, int? offset = null, CancellationToken? cancellationToken = null)
+    => (await GetAsync<Event[]>($"users/{userId}/recent_activity", cancellationToken,
     [
       ("limit", limit),
       ("offset", offset)
