@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-GPLv3-seagreen?style=flat-square)](https://www.gnu.org/licenses/gpl-3.0)
 [![NuGet](https://img.shields.io/nuget/v/osu.NET?color=blue&style=flat-square)](https://www.nuget.org/packages/osu.NET)
 [![NuGet](https://img.shields.io/nuget/dt/osu.NET?color=peru&style=flat-square)](https://www.nuget.org/packages/osu.NET)
-[![API Coverage](https://img.shields.io/badge/API%20Coverage-73%25-yellowgreen?style=flat-square)](#api-coverage)
+[![API Coverage](https://img.shields.io/badge/API%20Coverage-75%25-yellowgreen?style=flat-square)](#api-coverage)
 
 A modern and well documented API wrapper for the osu! API v2.<br/>
 This wrapper <ins>currently only supports public scope endpoints</ins>.<br/>
@@ -23,6 +23,7 @@ This wrapper <ins>currently only supports public scope endpoints</ins>.<br/>
 ✔️ **Easy Error Handling** – Result pattern for API responses with error-handling assistance  
 ✔️ **Flexible Authentication Flow** – Easy-to-use authorization infrastructure  
 ✔️ **Actively Maintained** – Contributions welcome!  
+
 ### 📦 Installation  
 osu.NET is available via NuGet:
 ```sh
@@ -58,10 +59,6 @@ The API wrapper provides extension methods for registering the `OsuApiClient` as
 Example:
 ```cs
 IHost host = Host.CreateDefaultBuilder(args)
-    .ConfigureLogging(logging =>
-    {
-        logging.AddSimpleConsole();
-    })
     .ConfigureServices((context, services) =>
     {
         services.AddHostedService<TestService>();
@@ -80,7 +77,7 @@ public class TestService(OsuApiClient client) : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken cancellationToken)
     {
-        APIResult<UserExtended> result = await client.GetUserAsync("mrekk", cancellationToken);
+        ApiResult<UserExtended> result = await client.GetUserAsync("mrekk", cancellationToken);
     }
 }
 ```
@@ -105,17 +102,17 @@ OsuApiClient client = new(provider, options, null! /* ILogger, set to null for s
 
 ## ⚠️ Error Handling
 
-The API endpoint methods return an `APIResult<T>`, wrapping the data returned from the osu! API (`.Value`) and alternatively providing the API error if one was returned (`.Error`).
+The API endpoint methods return an `ApiResult<T>`, wrapping the data returned from the osu! API (`.Value`) and alternatively providing the API error if one was returned (`.Error`).
 
-The error message provided by the API is interpreted into an `APIErrorType` for common errors, allowing to handle different errors in individual ways. Furthermore, the `APIResult<T>` type provides a `Match` method, allowing to match the result for the returned value if the request succeeded, or for the `APIError` if the requested failed.
+The error message provided by the API is interpreted into an `ApiErrorType` for common errors, allowing to handle different errors in individual ways. Furthermore, the `ApiResult<T>` type provides a `Match` method, allowing to match the result for the returned value if the request succeeded, or for the `ApiError` if the requested failed.
 
 > [!NOTE]
-> The xmldocs for the API endpoint methods always provide the `APIErrorType` the endpoints are expected to return, as well as when they do it, so you always know which errors to expect.
+> The xmldocs for the API endpoint methods always provide the `ApiErrorType` the endpoints are expected to return, as well as when they do it, so you always know which errors to expect.
 
 
 Here is an example on how to handle the response of a `GetUserBeatmapScoreAsync` API request:
 ```cs
-APIResult<UserBeatmapScore> result = await client.GetUserBeatmapScoreAsync(4697929, 7562902);
+ApiResult<UserBeatmapScore> result = await client.GetUserBeatmapScoreAsync(4697929, 7562902);
 
 // You can also return a value inside the result matching lambdas, eg.:
 // double? pp = result.Match<double>(value => value?.Score.PP, error => null);
@@ -123,14 +120,14 @@ result.Match(
     value => logger.LogInformation("PP: {PP}", value?.Score.PP,
     error => error.Type switch
     {
-        APIErrorType.BeatmapNotFound => logger.LogError("Beatmap not found."),
-        APIErrorType.UserOrScoreNotFound => logger.LogError("User not found or has no score."),
+        ApiErrorType.BeatmapNotFound => logger.LogError("Beatmap not found."),
+        ApiErrorType.UserOrScoreNotFound => logger.LogError("User not found or has no score."),
         _ => logger.LogError("{Message}", error.Message)
     })
 );
 ```
 > [!TIP]
-> osu.NET provides a roslyn code analyzer for assisting with result-matching. If you match a result with the exact syntax above, matching the error directly with a `error.Type switch {...}`, the code analyzer will warn you if you have an unhandled `APIErrorType` possibly returned by the API endpoint called.
+> osu.NET provides a roslyn code analyzer for assisting with result-matching. If you match a result with the exact syntax above, matching the error directly with a `error.Type switch {...}`, the code analyzer will warn you if you have an unhandled `ApiErrorType` possibly returned by the API endpoint called.
 >
 > This feature is experimental and the warning can be disabled via `#pragma warning disable OSU001`, or as suggested by your IDE.
 
@@ -185,7 +182,7 @@ Below is a list of all planned and implemented osu! API endpoints. If you'd like
 - ✅ `/comments/{comment}`
 
 #### Events 📅
-- ❌ `/events`
+- ✅ `/events`
 
 #### Forums 📝
 - ❌ `/forums/topics`
