@@ -189,7 +189,7 @@ public class BeatmapSet
   /// The events of this beatmapset. This is an optional property and may be null.
   /// </summary>
   [JsonProperty("events")]
-  public BeatmapsetEvent[]? Events { get; private set; }
+  public BeatmapSetEvent[]? Events { get; private set; }
 
   /// <summary>
   /// The genre of the song of this beatmapset. This will be null if the genre was not set by the creator.

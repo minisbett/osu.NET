@@ -9,7 +9,7 @@ namespace osu.NET.Models.Beatmaps.Events;
 /// API docs: Not documented, refer to source<br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/resources/js/interfaces/beatmapset-event-json.ts"/>
 /// </summary>
-public class BeatmapsetEvent
+public class BeatmapSetEvent
 {
   [JsonProperty("beatmapset")]
   public BeatmapSet Set { get; private set; } = default!;
