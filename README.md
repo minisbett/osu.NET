@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-GPLv3-seagreen?style=flat-square)](https://www.gnu.org/licenses/gpl-3.0)
 [![NuGet](https://img.shields.io/nuget/v/osu.NET?color=blue&style=flat-square)](https://www.nuget.org/packages/osu.NET)
 [![NuGet](https://img.shields.io/nuget/dt/osu.NET?color=peru&style=flat-square)](https://www.nuget.org/packages/osu.NET)
-[![API Coverage](https://img.shields.io/badge/API%20Coverage-65%25-yellowgreen?style=flat-square)](#api-coverage)
+[![API Coverage](https://img.shields.io/badge/API%20Coverage-73%25-yellowgreen?style=flat-square)](#api-coverage)
 
 A modern and well documented API wrapper for the osu! API v2.<br/>
 This wrapper <ins>currently only supports public scope endpoints</ins>.<br/>
@@ -190,15 +190,15 @@ Below is a list of all planned and implemented osu! API endpoints. If you'd like
 #### Forums 📝
 - ❌ `/forums/topics`
 - ❌ `/forums/topics/{topic}`
-- ❌ `/forums`
-- ❌ `/forums/{forum}`
+- ✅ `/forums`
+- ✅ `/forums/{forum}`
 
 #### Home 🏠
 - ❌ `/search`
 
 #### Matches 🎮
 - ❌ `/matches`
-- ❌ `/matches/{match}`
+- ✅ `/matches/{match}`
 
 #### Multiplayer 🌍
 - ❌ `/rooms/{room}/playlist/{playlist}/scores`
