@@ -36,6 +36,12 @@ public class BeatmapPack
   public bool NoDifficultyReduction { get; private set; } = default;
 
   /// <summary>
+  /// The ruleset this beatmap pack is made for. This will be null if the beatmap pack is made for all rulesets.
+  /// </summary>
+  [JsonProperty("ruleset_id")]
+  public Ruleset? Ruleset { get; private set; }
+
+  /// <summary>
   /// The tag of the beatmap pack. Starts with the character representing the <see cref="BeatmapPackType"/>, followed by the ID.
   /// </summary>
   [JsonProperty("tag")]
@@ -48,11 +54,7 @@ public class BeatmapPack
   public string Url { get; private set; } = default!;
 
   /// <summary>
-  /// The beatmap sets included in the beatmap pack.<br/><br/>
-  /// API notes:
-  /// <list type="bullet">
-  /// <item>This property is only available via <see cref="OsuApiClient.GetBeatmapPackAsync(string, CancellationToken?)"/></item>
-  /// </list>
+  /// The beatmap sets included in the beatmap pack. This property will be null if multiple beatmap packs are requested.
   /// </summary>
   [JsonProperty("beatmapsets")]
   public BeatmapSetExtended[]? BeatmapSets { get; private set; }

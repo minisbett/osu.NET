@@ -1,5 +1,8 @@
-﻿using osu.NET.Helpers;
+﻿using osu.NET.Enums;
+using osu.NET.Helpers;
 using osu.NET.Models.Beatmaps;
+using osu.NET.Models.Events;
+using System;
 
 namespace osu.NET;
 
@@ -7,7 +10,24 @@ public partial class OsuApiClient
 {
   // API docs: https://osu.ppy.sh/docs/index.html#beatmap-packs
 
-  // TODOENDPOINT: https://osu.ppy.sh/docs/index.html#get-beatmap-packs (pagination)
+  /// <summary>
+  /// Returns a bundle of beatmap packs and the cursor string for fetching further packs. One request returns 100 beatmap packs.
+  /// <br/><br/>
+  /// API docs:<br/>
+  /// <a href="https://osu.ppy.sh/docs/index.html#get-beatmap-packs"/>
+  /// </summary>
+  /// <param name="type">Optional. The type of beatmap pack to filter for.</param>
+  /// <param name="cursor">Optional. The cursor string for fetching further beatmap packs.</param>
+  /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
+  /// <returns>The bundle with beatmap packs.</returns>
+  [CanReturnApiError()]
+  public async Task<ApiResult<BeatmapPacksBundle>> GetBeatmapPacksAsync(BeatmapPackType? type = null, string? cursor = null, 
+    CancellationToken? cancellationToken = null)
+    => await GetAsync<BeatmapPacksBundle>("beatmaps/packs", cancellationToken,
+    [
+      ("type", type),
+      ("cursor_string", cursor)
+    ]);
 
   /// <summary>
   /// Returns the beatmap pack with the specified tag.
