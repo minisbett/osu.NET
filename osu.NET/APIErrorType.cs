@@ -3,7 +3,7 @@
   /// <summary>
   /// Represents the type of error returned by the osu! API (eg. beatmap not found, user not found, ...).
   /// </summary>
-  public enum APIErrorType
+  public enum ApiErrorType
   {
     /// <summary>
     /// There is no error message.

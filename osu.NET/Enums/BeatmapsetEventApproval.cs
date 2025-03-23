@@ -13,24 +13,24 @@ public enum BeatmapsetEventApproval
   /// <summary>
   /// The beatmapset was ranked.
   /// </summary>
-  [JsonAPIName("ranked")]
+  [JsonApiName("ranked")]
   Ranked,
 
   /// <summary>
   /// The beatmapset was approved.
   /// </summary>
-  [JsonAPIName("approved")]
+  [JsonApiName("approved")]
   Approved,
 
   /// <summary>
   /// The beatmapset was qualified.
   /// </summary>
-  [JsonAPIName("qualified")]
+  [JsonApiName("qualified")]
   Qualified,
 
   /// <summary>
   /// The beatmapset was loved.
   /// </summary>
-  [JsonAPIName("loved")]
+  [JsonApiName("loved")]
   Loved
 }

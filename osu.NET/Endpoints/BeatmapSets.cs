@@ -17,7 +17,7 @@ public partial class OsuApiClient
   /// <br/><br/>
   /// Errors:<br/>
   /// <item>
-  ///   <term><see cref="APIErrorType.BeatmapNotFound"/></term>
+  ///   <term><see cref="ApiErrorType.BeatmapNotFound"/></term>
   ///   <description>The beatmap could not be found</description>
   /// </item>
   /// <br/><br/>
@@ -27,8 +27,8 @@ public partial class OsuApiClient
   /// <param name="beatmapId">The ID of the beatmap.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The beatmapset containing the beatmap with the specified ID.</returns>
-  [CanReturnAPIError(APIErrorType.BeatmapNotFound)]
-  public async Task<APIResult<BeatmapSetExtended>> LookupBeatmapSetAsync(int beatmapId, CancellationToken? cancellationToken = null)
+  [CanReturnApiError(ApiErrorType.BeatmapNotFound)]
+  public async Task<ApiResult<BeatmapSetExtended>> LookupBeatmapSetAsync(int beatmapId, CancellationToken? cancellationToken = null)
     => await GetAsync<BeatmapSetExtended>($"beatmapsets/lookup", cancellationToken, [("beatmap_id", beatmapId)]);
 
   /// <summary>
@@ -36,7 +36,7 @@ public partial class OsuApiClient
   /// <br/><br/>
   /// Errors:<br/>
   /// <item>
-  ///   <term><see cref="APIErrorType.BeatmapSetNotFound"/></term>
+  ///   <term><see cref="ApiErrorType.BeatmapSetNotFound"/></term>
   ///   <description>The beatmapset could not be found</description>
   /// </item>
   /// <br/><br/>
@@ -46,7 +46,7 @@ public partial class OsuApiClient
   /// <param name="beatmapSetId">The ID of the beatmapset.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The beatmapset with the specified ID.</returns>
-  [CanReturnAPIError(APIErrorType.BeatmapSetNotFound)]
-  public async Task<APIResult<BeatmapSetExtended>> GetBeatmapSetAsync(int beatmapSetId, CancellationToken? cancellationToken = null)
+  [CanReturnApiError(ApiErrorType.BeatmapSetNotFound)]
+  public async Task<ApiResult<BeatmapSetExtended>> GetBeatmapSetAsync(int beatmapSetId, CancellationToken? cancellationToken = null)
     => await GetAsync<BeatmapSetExtended>($"beatmapsets/{beatmapSetId}", cancellationToken);
 }

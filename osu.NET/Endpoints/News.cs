@@ -15,7 +15,7 @@ public partial class OsuApiClient
   /// <br/><br/>
   /// Errors:<br/>
   /// <item>
-  ///   <term><see cref="APIErrorType.NewsPostNotFound"/></term>
+  ///   <term><see cref="ApiErrorType.NewsPostNotFound"/></term>
   ///   <description>The news post could not be found</description>
   /// </item>
   /// <br/><br/>
@@ -25,16 +25,16 @@ public partial class OsuApiClient
   /// <param name="slug">The slug of the news post (eg. <c>2021-04-27-results-a-labour-of-love</c>).</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The news post with the specified slug.</returns>
-  [CanReturnAPIError(APIErrorType.NewsPostNotFound)]
-  public async Task<APIResult<NewsPost>> GetNewsPostAsync(string slug, CancellationToken? cancellationToken = null)
-    => (await GetAsync<NewsPost>($"news/{slug}", cancellationToken)).WithErrorFallback(APIErrorType.NewsPostNotFound);
+  [CanReturnApiError(ApiErrorType.NewsPostNotFound)]
+  public async Task<ApiResult<NewsPost>> GetNewsPostAsync(string slug, CancellationToken? cancellationToken = null)
+    => (await GetAsync<NewsPost>($"news/{slug}", cancellationToken)).WithErrorFallback(ApiErrorType.NewsPostNotFound);
 
   /// <summary>
   /// Returns the news post with the specified ID.
   /// <br/><br/>
   /// Errors:<br/>
   /// <item>
-  ///   <term><see cref="APIErrorType.NewsPostNotFound"/></term>
+  ///   <term><see cref="ApiErrorType.NewsPostNotFound"/></term>
   ///   <description>The news post could not be found</description>
   /// </item>
   /// <br/><br/>
@@ -44,7 +44,7 @@ public partial class OsuApiClient
   /// <param name="id">The ID of the news post.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The news post with the specified ID.</returns>
-  [CanReturnAPIError(APIErrorType.NewsPostNotFound)]
-  public async Task<APIResult<NewsPost>> GetNewsPostAsync(int id, CancellationToken? cancellationToken = null)
-    => (await GetAsync<NewsPost>($"news/{id}", cancellationToken, [("key", id)])).WithErrorFallback(APIErrorType.NewsPostNotFound);
+  [CanReturnApiError(ApiErrorType.NewsPostNotFound)]
+  public async Task<ApiResult<NewsPost>> GetNewsPostAsync(int id, CancellationToken? cancellationToken = null)
+    => (await GetAsync<NewsPost>($"news/{id}", cancellationToken, [("key", id)])).WithErrorFallback(ApiErrorType.NewsPostNotFound);
 }

@@ -13,56 +13,56 @@ public enum Grade
   /// <summary>
   /// 100% accuracy, Hidden and/or Flashlight mod.
   /// </summary>
-  [JsonAPIName("xh")]
-  [JsonAPIName("ssh")]
+  [JsonApiName("xh")]
+  [JsonApiName("ssh")]
   XH,
 
   /// <summary>
   /// 100% accuracy, any mod.
   /// </summary>
-  [JsonAPIName("x")]
-  [JsonAPIName("ss")]
+  [JsonApiName("x")]
+  [JsonApiName("ss")]
   X,
 
   /// <summary>
   /// S-rank accuracy, Hidden and/or Flashlight mod.
   /// </summary>
-  [JsonAPIName("sh")]
+  [JsonApiName("sh")]
   SH,
 
   /// <summary>
   /// S-rank accuracy, any mod.
   /// </summary>
-  [JsonAPIName("s")]
+  [JsonApiName("s")]
   S,
 
   /// <summary>
   /// A-rank accuracy, any mod.
   /// </summary>
-  [JsonAPIName("a")]
+  [JsonApiName("a")]
   A,
 
   /// <summary>
   /// B-rank accuracy, any mod.
   /// </summary>
-  [JsonAPIName("b")]
+  [JsonApiName("b")]
   B,
 
   /// <summary>
   /// C-rank accuracy, any mod.
   /// </summary>
-  [JsonAPIName("c")]
+  [JsonApiName("c")]
   C,
 
   /// <summary>
   /// D-rank accuracy, any mod.
   /// </summary>
-  [JsonAPIName("d")]
+  [JsonApiName("d")]
   D,
 
   /// <summary>
   /// Failed score.
   /// </summary>
-  [JsonAPIName("F")]
+  [JsonApiName("F")]
   F
 }

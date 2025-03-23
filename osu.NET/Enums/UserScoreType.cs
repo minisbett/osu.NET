@@ -13,18 +13,18 @@ public enum UserScoreType
   /// <summary>
   /// The recent scores of the user.
   /// </summary>
-  [QueryAPIName("recent")]
+  [QueryApiName("recent")]
   Recent,
 
   /// <summary>
   /// The best scores of the user.
   /// </summary>
-  [QueryAPIName("best")]
+  [QueryApiName("best")]
   Best,
 
   /// <summary>
   /// The first place scores of the user.
   /// </summary>
-  [QueryAPIName("firsts")]
+  [QueryApiName("firsts")]
   First
 }

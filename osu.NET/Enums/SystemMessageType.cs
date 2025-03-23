@@ -13,6 +13,6 @@ public enum SystemMessageType
   /// <summary>
   /// The system message indicates the resolval/un-resolval of a discussion post.
   /// </summary>
-  [JsonAPIName("resolved")]
+  [JsonApiName("resolved")]
   Resolved
 }

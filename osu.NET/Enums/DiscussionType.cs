@@ -13,36 +13,36 @@ public enum DiscussionType
   /// <summary>
   /// Represents a hype on the beatmapset.
   /// </summary>
-  [JsonAPIName("hype")]
+  [JsonApiName("hype")]
   Hype,
 
   /// <summary>
   /// Represents a note by the creator or a beatmap nominator.
   /// </summary>
-  [JsonAPIName("note")]
+  [JsonApiName("note")]
   MapperNote,
 
   /// <summary>
   /// Represents a praise for the beatmap(set).
   /// </summary>
-  [JsonAPIName("praise")]
+  [JsonApiName("praise")]
   Praise,
 
   /// <summary>
   /// Represents a problem that was found on the beatmap(set).
   /// </summary>
-  [JsonAPIName("problem")]
+  [JsonApiName("problem")]
   Problem,
 
   /// <summary>
   /// Represents a review for the beatmap(set).
   /// </summary>
-  [JsonAPIName("review")]
+  [JsonApiName("review")]
   Review,
 
   /// <summary>
   /// Represents a suggestion for the beatmap(set).
   /// </summary>
-  [JsonAPIName("suggestion")]
+  [JsonApiName("suggestion")]
   Suggestion
 }

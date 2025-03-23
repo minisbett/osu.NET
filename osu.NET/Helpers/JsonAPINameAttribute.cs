@@ -6,7 +6,7 @@
 /// </summary>
 /// <param name="name">The string representation.</param>
 [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = true)]
-internal sealed class JsonAPINameAttribute(string name) : Attribute
+internal sealed class JsonApiNameAttribute(string name) : Attribute
 {
   /// <summary>
   /// The string representation.

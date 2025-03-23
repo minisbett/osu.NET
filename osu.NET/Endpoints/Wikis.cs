@@ -12,7 +12,7 @@ public partial class OsuApiClient
   /// <br/><br/>
   /// Errors:<br/>
   /// <item>
-  ///   <term><see cref="APIErrorType.WikiPageNotFound"/></term>
+  ///   <term><see cref="ApiErrorType.WikiPageNotFound"/></term>
   ///   <description>The wiki page could not be found</description>
   /// </item>
   /// <br/><br/>
@@ -22,7 +22,7 @@ public partial class OsuApiClient
   /// <param name="path">The path of the wiki page.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The wiki page at the specified path in the specified locale.</returns>
-  [CanReturnAPIError(APIErrorType.WikiPageNotFound)]
-  public async Task<APIResult<WikiPage>> GetWikiPageAsync(string locale, string path, CancellationToken cancellationToken)
-    => (await GetAsync<WikiPage>($"wiki/{locale}/{path}", cancellationToken)).WithErrorFallback(APIErrorType.WikiPageNotFound);
+  [CanReturnApiError(ApiErrorType.WikiPageNotFound)]
+  public async Task<ApiResult<WikiPage>> GetWikiPageAsync(string locale, string path, CancellationToken cancellationToken)
+    => (await GetAsync<WikiPage>($"wiki/{locale}/{path}", cancellationToken)).WithErrorFallback(ApiErrorType.WikiPageNotFound);
 }

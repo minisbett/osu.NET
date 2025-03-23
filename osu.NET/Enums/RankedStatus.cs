@@ -13,42 +13,42 @@ public enum RankedStatus
   /// <summary>
   /// The beatmap is in the graveyard.
   /// </summary>
-  [JsonAPIName("graveyard")]
+  [JsonApiName("graveyard")]
   Graveyard = -2,
 
   /// <summary>
   /// The beatmap is a work in progress.
   /// </summary>
-  [JsonAPIName("wip")]
+  [JsonApiName("wip")]
   WIP = -1,
 
   /// <summary>
   /// The beatmap is pending a rank status evaluation.
   /// </summary>
-  [JsonAPIName("pending")]
+  [JsonApiName("pending")]
   Pending = 0,
 
   /// <summary>
   /// The beatmap is ranked.
   /// </summary>
-  [JsonAPIName("ranked")]
+  [JsonApiName("ranked")]
   Ranked = 1,
 
   /// <summary>
   /// The beatmap is approved.
   /// </summary>
-  [JsonAPIName("approved")]
+  [JsonApiName("approved")]
   Approved = 2,
 
   /// <summary>
   /// The beatmap is qualified.
   /// </summary>
-  [JsonAPIName("qualified")]
+  [JsonApiName("qualified")]
   Qualified = 3,
 
   /// <summary>
   /// The beatmap is loved.
   /// </summary>
-  [JsonAPIName("loved")]
+  [JsonApiName("loved")]
   Loved = 4
 }

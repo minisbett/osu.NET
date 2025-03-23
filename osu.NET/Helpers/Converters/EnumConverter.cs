@@ -4,7 +4,7 @@ using System.Collections;
 namespace osu.NET.Helpers.Converters;
 
 /// <summary>
-/// A <see cref="JsonConverter"/> that handles the deserialization into enums based on the <see cref="JsonAPINameAttribute"/>.
+/// A <see cref="JsonConverter"/> that handles the deserialization into enums based on the <see cref="JsonApiNameAttribute"/>.
 /// Additionally, it handles arrays of enums, dictionaries with an enum as the key type and integer conversion.
 /// </summary>
 internal class EnumConverter : JsonConverter
@@ -37,7 +37,7 @@ internal class EnumConverter : JsonConverter
 
     else if (reader.TokenType is JsonToken.String or JsonToken.PropertyName /* To re-use this conversion for dictionary key-parsing */)
     {
-      if (!APIUtils.TryGetJsonNameMapping(objectType, reader.Value!.ToString()!, out Enum? value))
+      if (!ApiUtils.TryGetJsonNameMapping(objectType, reader.Value!.ToString()!, out Enum? value))
         throw new JsonSerializationException($"Unknown {objectType} '{reader.Value}'.");
 
       return value;

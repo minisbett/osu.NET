@@ -13,78 +13,78 @@ public enum EventType
   /// <summary>
   /// Represents the event when a user obtained an achievement.
   /// </summary>
-  [JsonAPIName("achievement")]
+  [JsonApiName("achievement")]
   Achievement,
 
   /// <summary>
   /// Represents the event when a user played a beatmap a certain number of times.
   /// </summary>
-  [JsonAPIName("beatmapPlaycount")]
+  [JsonApiName("beatmapPlaycount")]
   BeatmapPlaycount,
 
   /// <summary>
   /// Represents the event when a beatmap of a user changes the state to ranked, approved, qualified or loved.
   /// </summary>
-  [JsonAPIName("beatmapsetApprove")]
+  [JsonApiName("beatmapsetApprove")]
   BeatmapsetApprove,
 
   /// <summary>
   /// Represents the event when a user deletes a beatmapset.
   /// </summary>
-  [JsonAPIName("beatmapsetDelete")]
+  [JsonApiName("beatmapsetDelete")]
   BeatmapsetDelete,
 
   /// <summary>
   /// Represents the event when a user updates a beatmapset in the graveyard.
   /// </summary>
-  [JsonAPIName("beatmapsetRevive")]
+  [JsonApiName("beatmapsetRevive")]
   BeatmapsetRevive,
 
   /// <summary>
   /// Represents the event when a user updates a beatmapset.
   /// </summary>
-  [JsonAPIName("beatmapsetUpdate")]
+  [JsonApiName("beatmapsetUpdate")]
   BeatmapsetUpdate,
 
   /// <summary>
   /// Represents the event when a user uploads a new beatmapset.
   /// </summary>
-  [JsonAPIName("beatmapsetUpload")]
+  [JsonApiName("beatmapsetUpload")]
   BeatmapsetUpload,
 
   /// <summary>
   /// Represents the event when a user achieves a certain rank on a beatmap.
   /// </summary>
-  [JsonAPIName("rank")]
+  [JsonApiName("rank")]
   Rank,
 
   /// <summary>
   /// Represents the event when a user loses first place to another user.
   /// </summary>
-  [JsonAPIName("rankLost")]
+  [JsonApiName("rankLost")]
   RankLost,
 
   /// <summary>
   /// Represents the event when a user changes their username.
   /// </summary>
-  [JsonAPIName("usernameChange")]
+  [JsonApiName("usernameChange")]
   UsernameChange,
 
   /// <summary>
   /// Represents the event when a user supports osu! for the second time and onwards.
   /// </summary>
-  [JsonAPIName("userSupportAgain")]
+  [JsonApiName("userSupportAgain")]
   UserSupportAgain,
 
   /// <summary>
   /// Represents the event when a user supports osu! for the first time.
   /// </summary>
-  [JsonAPIName("userSupportFirst")]
+  [JsonApiName("userSupportFirst")]
   UserSupportFirst,
 
   /// <summary>
   /// Represents the event when a user is gifted a supporter tag by another user.
   /// </summary>
-  [JsonAPIName("userSupportGift")]
+  [JsonApiName("userSupportGift")]
   UserSupportGift
 }

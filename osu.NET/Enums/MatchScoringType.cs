@@ -14,24 +14,24 @@ public enum MatchScoringType
   /// <summary>
   /// The accuray is used to determine the value of a score.
   /// </summary>
-  [JsonAPIName("accuracy")]
+  [JsonApiName("accuracy")]
   Accuracy,
 
   /// <summary>
   /// The combo is used to determine the value of a score.
   /// </summary>
-  [JsonAPIName("combo")]
+  [JsonApiName("combo")]
   Combo,
 
   /// <summary>
   /// The total score is used to determine the value of a score.
   /// </summary>
-  [JsonAPIName("score")]
+  [JsonApiName("score")]
   Score,
 
   /// <summary>
   /// The total score V2 is used to determine the value of a score.
   /// </summary>
-  [JsonAPIName("scorev2")]
+  [JsonApiName("scorev2")]
   ScoreV2
 }

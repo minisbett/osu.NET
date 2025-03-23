@@ -13,12 +13,12 @@ public enum EventSortType
   /// <summary>
   /// Sorts the events by ID in ascending order.
   /// </summary>
-  [QueryAPIName("id_asc")]
+  [QueryApiName("id_asc")]
   IdAscending,
 
   /// <summary>
   /// Sorts the events by ID in descending order.
   /// </summary>
-  [QueryAPIName("id_desc")]
+  [QueryApiName("id_desc")]
   IdDescending,
 }

@@ -13,18 +13,18 @@ public enum CommentableType
   /// <summary>
   /// Indicates that the comment is attached to a beatmapset.
   /// </summary>
-  [JsonAPIName("beatmapset")]
+  [JsonApiName("beatmapset")]
   BeatmapSet,
 
   /// <summary>
   /// Indicates that the comment is attached to a news post.
   /// </summary>
-  [JsonAPIName("news_post")]
+  [JsonApiName("news_post")]
   NewsPost,
 
   /// <summary>
   /// Indicates that the comment is attached to a build from the changelog.
   /// </summary>
-  [JsonAPIName("build")]
+  [JsonApiName("build")]
   Build
 }

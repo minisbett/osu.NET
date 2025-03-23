@@ -13,18 +13,18 @@ public enum ForumTopicType
   /// <summary>
   /// The forum topic is a normal topic.
   /// </summary>
-  [JsonAPIName("normal")]
+  [JsonApiName("normal")]
   Normal,
 
   /// <summary>
   /// The forum topic is stickied to the top of the forum.
   /// </summary>
-  [JsonAPIName("sticky")]
+  [JsonApiName("sticky")]
   Sticky,
 
   /// <summary>
   /// The forum topic is an announcement.
   /// </summary>
-  [JsonAPIName("announcement")]
+  [JsonApiName("announcement")]
   Announcement,
 }

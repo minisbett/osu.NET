@@ -16,42 +16,42 @@ public enum BeatmapType
   /// <summary>
   /// The beatmap is in the favourited beatmaps section of the user.
   /// </summary>
-  [QueryAPIName("favourite")]
+  [QueryApiName("favourite")]
   Favourite,
 
   /// <summary>
   /// The beatmap is in the graveyarded section of the user.
   /// </summary>
-  [QueryAPIName("graveyard")]
+  [QueryApiName("graveyard")]
   Graveyard,
 
   /// <summary>
   /// The beatmap is in the guest difficulty section of the user.
   /// </summary>
-  [QueryAPIName("guest")]
+  [QueryApiName("guest")]
   Guest,
 
   /// <summary>
   /// The beatmap is in the loved beatmaps section of the user.
   /// </summary>
-  [QueryAPIName("loved")]
+  [QueryApiName("loved")]
   Loved,
 
   /// <summary>
   /// The beatmap is in the nominated beatmap section of the user.
   /// </summary>
-  [QueryAPIName("nominated")]
+  [QueryApiName("nominated")]
   Nominated,
 
   /// <summary>
   /// The beatmap is in the pending beatmaps section of the user.
   /// </summary>
-  [QueryAPIName("pending")]
+  [QueryApiName("pending")]
   Pending,
 
   /// <summary>
   /// The beatmap is in the ranked beatmaps section of the user.
   /// </summary>
-  [QueryAPIName("ranked")]
+  [QueryApiName("ranked")]
   Ranked
 }

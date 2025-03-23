@@ -13,24 +13,24 @@ public enum UserAccountHistoryEntryType
   /// <summary>
   /// The user account history entry represents a note.
   /// </summary>
-  [JsonAPIName("note")]
+  [JsonApiName("note")]
   Note,
 
   /// <summary>
   /// The user account history entry represents a restriction.
   /// </summary>
-  [JsonAPIName("restriction")]
+  [JsonApiName("restriction")]
   Restriction,
 
   /// <summary>
   /// The user account history entry represents a silence.
   /// </summary>
-  [JsonAPIName("silence")]
+  [JsonApiName("silence")]
   Silence,
 
   /// <summary>
   /// The user account history entry represents a tournament ban.
   /// </summary>
-  [JsonAPIName("tournament_ban")]
+  [JsonApiName("tournament_ban")]
   TournamentBan
 }

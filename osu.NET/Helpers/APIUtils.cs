@@ -5,7 +5,7 @@ namespace osu.NET.Helpers;
 /// <summary>
 /// Provides extension and utility methods for the API wrapper.
 /// </summary>
-internal static class APIUtils
+internal static class ApiUtils
 {
   /// <summary>
   /// Returns the query string representation of the enum value.
@@ -16,7 +16,7 @@ internal static class APIUtils
   public static string GetQueryName<T>(this T value) where T : Enum
   {
     FieldInfo field = value.GetType().GetField(value.ToString())!;
-    QueryAPINameAttribute? name = field.GetCustomAttribute<QueryAPINameAttribute>();
+    QueryApiNameAttribute? name = field.GetCustomAttribute<QueryApiNameAttribute>();
 
     return name?.Name ?? throw new Exception($"The enum field '{value}' does not have a query name declared.");
   }
@@ -33,7 +33,7 @@ internal static class APIUtils
     foreach (Enum value in Enum.GetValues(enumType))
     {
       FieldInfo field = value.GetType().GetField(value.ToString())!;
-      JsonAPINameAttribute[] names = field.GetCustomAttributes<JsonAPINameAttribute>().ToArray();
+      JsonApiNameAttribute[] names = field.GetCustomAttributes<JsonApiNameAttribute>().ToArray();
 
       if (names.Any(x => x.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase)))
       {

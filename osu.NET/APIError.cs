@@ -3,9 +3,9 @@
 /// <summary>
 /// Represents an error returned by the osu! API.
 /// </summary>
-public class APIError
+public class ApiError
 {
-  private APIError(APIErrorType type, string? message)
+  private ApiError(ApiErrorType type, string? message)
   {
     Type = type;
     Message = message;
@@ -15,7 +15,7 @@ public class APIError
   /// The type of error returned, determined from a lookup table on the error message provided by the osu! API.<br/>
   /// This is useful for error-handling API requests for different erroring scenarios.
   /// </summary>
-  public APIErrorType Type { get; internal set; }
+  public ApiErrorType Type { get; internal set; }
 
   /// <summary>
   /// The error message provided by the osu! API. This can be null.
@@ -23,19 +23,19 @@ public class APIError
   public string? Message { get; }
 
   /// <summary>
-  /// Returns an <see cref="APIError"/> object based on the specified error message. The <see cref="Type"/> is determined from a lookup table on 
-  /// the error message, or will be <see cref="APIErrorType.Unknown"/> if the error message is not associated with an <see cref="APIErrorType"/>.
+  /// Returns an <see cref="ApiError"/> object based on the specified error message. The <see cref="Type"/> is determined from a lookup table on 
+  /// the error message, or will be <see cref="ApiErrorType.Unknown"/> if the error message is not associated with an <see cref="ApiErrorType"/>.
   /// </summary>
   /// <param name="message">The error message provided by the osu! API.</param>
-  /// <returns>The parsed <see cref="APIError"/>.</returns>
-  internal static APIError FromMessage(string? message)
+  /// <returns>The parsed <see cref="ApiError"/>.</returns>
+  internal static ApiError FromMessage(string? message)
   {
     if (message is null)
-      return new(APIErrorType.Null, null);
-    else if (_errorMessageMappings.TryGetValue(message, out APIErrorType type))
+      return new(ApiErrorType.Null, null);
+    else if (_errorMessageMappings.TryGetValue(message, out ApiErrorType type))
       return new(type, message);
 
-    return new(APIErrorType.Unknown, message);
+    return new(ApiErrorType.Unknown, message);
   }
 
   public override string ToString()
@@ -44,16 +44,16 @@ public class APIError
   }
 
   /// <summary>
-  /// Represents a mapping between error messages returned by the osu! API and their corresponding <see cref="APIErrorType"/>.
+  /// Represents a mapping between error messages returned by the osu! API and their corresponding <see cref="ApiErrorType"/>.
   /// </summary>
-  private static readonly Dictionary<string, APIErrorType> _errorMessageMappings = new()
+  private static readonly Dictionary<string, ApiErrorType> _errorMessageMappings = new()
   {
-    ["Specified beatmap difficulty couldn't be found."] = APIErrorType.BeatmapNotFound,
-    ["Specified beatmap couldn't be found."] = APIErrorType.BeatmapSetNotFound,
-    ["Specified BeatmapPack couldn't be found."] = APIErrorType.BeatmapPackNotFound,
-    ["Specified Build couldn't be found."] = APIErrorType.BuildNotFound,
-    ["Specified Comment couldn't be found."] = APIErrorType.CommentNotFound,
-    ["Specified Forum\\Forum couldn't be found."] = APIErrorType.ForumNotFound,
-    ["Specified LegacyMatch\\LegacyMatch couldn't be found."] = APIErrorType.MatchNotFound
+    ["Specified beatmap difficulty couldn't be found."] = ApiErrorType.BeatmapNotFound,
+    ["Specified beatmap couldn't be found."] = ApiErrorType.BeatmapSetNotFound,
+    ["Specified BeatmapPack couldn't be found."] = ApiErrorType.BeatmapPackNotFound,
+    ["Specified Build couldn't be found."] = ApiErrorType.BuildNotFound,
+    ["Specified Comment couldn't be found."] = ApiErrorType.CommentNotFound,
+    ["Specified Forum\\Forum couldn't be found."] = ApiErrorType.ForumNotFound,
+    ["Specified LegacyMatch\\LegacyMatch couldn't be found."] = ApiErrorType.MatchNotFound
   };
 }

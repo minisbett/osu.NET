@@ -13,12 +13,12 @@ public enum KudosuModel
   /// <summary>
   /// The kudosu history entry comes from a forum post. This only applies to older beatmap discussions, which were forum posts.
   /// </summary>
-  [JsonAPIName("forum_post")]
+  [JsonApiName("forum_post")]
   ForumPost,
 
   /// <summary>
   /// The kudosu history entry comes from a beatmap discussion (not a legacy forum post).
   /// </summary>
-  [JsonAPIName("beatmap_discussion")]
+  [JsonApiName("beatmap_discussion")]
   BeatmapDiscussion
 }

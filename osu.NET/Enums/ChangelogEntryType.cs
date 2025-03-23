@@ -13,18 +13,18 @@ public enum ChangelogEntryType
   /// <summary>
   /// Indicates an addition.
   /// </summary>
-  [JsonAPIName("add")]
+  [JsonApiName("add")]
   Add,
 
   /// <summary>
   /// Indicates a change that fixes a bug.
   /// </summary>
-  [JsonAPIName("fix")]
+  [JsonApiName("fix")]
   Fix,
 
   /// <summary>
   /// Indicates a miscellaneous change.
   /// </summary>
-  [JsonAPIName("misc")]
+  [JsonApiName("misc")]
   Miscellaneous,
 }

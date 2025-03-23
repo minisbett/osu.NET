@@ -15,7 +15,7 @@ public partial class OsuApiClient
   /// <br/><br/>
   /// Errors:<br/>
   /// <item>
-  ///   <term><see cref="APIErrorType.MatchNotFound"/></term>
+  ///   <term><see cref="ApiErrorType.MatchNotFound"/></term>
   ///   <description>The match could not be found</description>
   /// </item>
   /// <br/><br/>
@@ -33,8 +33,8 @@ public partial class OsuApiClient
   /// <param name="limit">Optional. The maximum amount of events to return.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The match with the specified ID.</returns>
-  [CanReturnAPIError(APIErrorType.MatchNotFound)]
-  public async Task<APIResult<MatchBundle>> GetMatchAsync(int id, int? beforeId = null, int? afterId = null, int? limit = null,
+  [CanReturnApiError(ApiErrorType.MatchNotFound)]
+  public async Task<ApiResult<MatchBundle>> GetMatchAsync(int id, int? beforeId = null, int? afterId = null, int? limit = null,
     CancellationToken? cancellationToken = null)
     => await GetAsync<MatchBundle>($"matches/{id}", cancellationToken,
     [

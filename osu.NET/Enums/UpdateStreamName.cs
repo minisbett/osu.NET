@@ -13,35 +13,35 @@ public enum UpdateStreamName
   /// <summary>
   /// Represents the stable update stream of the osu!stable client.
   /// </summary>
-  [QueryAPIName("stable40")]
-  [JsonAPIName("stable40")]
+  [QueryApiName("stable40")]
+  [JsonApiName("stable40")]
   Stable40,
 
   /// <summary>
   /// Represents the beta update stream of the osu!stable client.
   /// </summary>
-  [QueryAPIName("beta40")]
-  [JsonAPIName("beta40")]
+  [QueryApiName("beta40")]
+  [JsonApiName("beta40")]
   Beta40,
 
   /// <summary>
   /// Represents the cutting edge update stream of the osu!stable client.
   /// </summary>
-  [QueryAPIName("cuttingedge")]
-  [JsonAPIName("cuttingedge")]
+  [QueryApiName("cuttingedge")]
+  [JsonApiName("cuttingedge")]
   CuttingEdge,
 
   /// <summary>
   /// Represents the update stream of the osu!lazer client.
   /// </summary>
-  [QueryAPIName("lazer")]
-  [JsonAPIName("lazer")]
+  [QueryApiName("lazer")]
+  [JsonApiName("lazer")]
   Lazer,
 
   /// <summary>
   /// Represents the update stream of osu!web.
   /// </summary>
-  [QueryAPIName("web")]
-  [JsonAPIName("web")]
+  [QueryApiName("web")]
+  [JsonApiName("web")]
   Web
 }

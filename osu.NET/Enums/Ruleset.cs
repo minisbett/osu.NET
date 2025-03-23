@@ -13,28 +13,28 @@ public enum Ruleset : int
   /// <summary>
   /// The standard ruleset.
   /// </summary>
-  [QueryAPIName("osu")]
-  [JsonAPIName("osu")]
+  [QueryApiName("osu")]
+  [JsonApiName("osu")]
   Osu = 0,
 
   /// <summary>
   /// The taiko ruleset.
   /// </summary>
-  [QueryAPIName("taiko")]
-  [JsonAPIName("taiko")]
+  [QueryApiName("taiko")]
+  [JsonApiName("taiko")]
   Taiko = 1,
 
   /// <summary>
   /// The catch the beat ruleset.
   /// </summary>
-  [QueryAPIName("fruits")]
-  [JsonAPIName("fruits")]
+  [QueryApiName("fruits")]
+  [JsonApiName("fruits")]
   Catch = 2,
 
   /// <summary>
   /// The mania ruleset.
   /// </summary>
-  [QueryAPIName("mania")]
-  [JsonAPIName("mania")]
+  [QueryApiName("mania")]
+  [JsonApiName("mania")]
   Mania = 3
 }

@@ -13,12 +13,12 @@ public enum VariantType
   /// <summary>
   /// The 4-key variant.
   /// </summary>
-  [JsonAPIName("4k")]
+  [JsonApiName("4k")]
   Key4,
 
   /// <summary>
   /// The 7-key variant.
   /// </summary>
-  [JsonAPIName("7k")]
+  [JsonApiName("7k")]
   Key7
 }

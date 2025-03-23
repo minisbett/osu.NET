@@ -15,6 +15,6 @@ public enum CommentableOwnerTitle
   /// <summary>
   /// Indicates that the owner of the commentable object is its' mapper.
   /// </summary>
-  [JsonAPIName("MAPPER")]
+  [JsonApiName("MAPPER")]
   Mapper
 }

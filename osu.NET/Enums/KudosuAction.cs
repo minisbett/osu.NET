@@ -13,36 +13,36 @@ public enum KudosuAction
   /// <summary>
   /// DOCS: what does this mean?
   /// </summary>
-  [JsonAPIName("give")]
+  [JsonApiName("give")]
   Give,
 
   /// <summary>
   /// DOCS: what does this mean?
   /// </summary>
-  [JsonAPIName("vote.give")]
+  [JsonApiName("vote.give")]
   VoteGive,
 
   /// <summary>
   /// DOCS: what does this mean?
   /// </summary>
-  [JsonAPIName("reset")]
+  [JsonApiName("reset")]
   Reset,
 
   /// <summary>
   /// DOCS: what does this mean?
   /// </summary>
-  [JsonAPIName("vote.reset")]
+  [JsonApiName("vote.reset")]
   VoteReset,
 
   /// <summary>
   /// DOCS: what does this mean?
   /// </summary>
-  [JsonAPIName("revoke")]
+  [JsonApiName("revoke")]
   Revoke,
 
   /// <summary>
   /// DOCS: what does this mean?
   /// </summary>
-  [JsonAPIName("vote.revoke")]
+  [JsonApiName("vote.revoke")]
   VoteRevoke
 }

@@ -14,7 +14,7 @@ public partial class OsuApiClient
   /// <br/><br/>
   /// Errors:<br/>
   /// <item>
-  ///   <term><see cref="APIErrorType.BuildNotFound"/></term>
+  ///   <term><see cref="ApiErrorType.BuildNotFound"/></term>
   ///   <description>The build could not be found</description>
   /// </item>
   /// <br/><br/>
@@ -30,8 +30,8 @@ public partial class OsuApiClient
   /// <param name="build">The version of the build (e.g. "20231219.2").</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The build with the specified version in the specified update stream.</returns>
-  [CanReturnAPIError(APIErrorType.BuildNotFound)]
-  public async Task<APIResult<Build>> GetBuildAsync(UpdateStreamName stream, string build, CancellationToken? cancellationToken = null)
+  [CanReturnApiError(ApiErrorType.BuildNotFound)]
+  public async Task<ApiResult<Build>> GetBuildAsync(UpdateStreamName stream, string build, CancellationToken? cancellationToken = null)
     => await GetAsync<Build>($"changelog/{stream.GetQueryName()}/{build}", cancellationToken);
 
   /// <summary>
@@ -53,8 +53,8 @@ public partial class OsuApiClient
   /// <param name="maxBuildId">Optional. The ID of the maximum build to return.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The changelog listing.</returns>
-  [CanReturnAPIError()]
-  public async Task<APIResult<ChangelogListing>> GetChangelogListingAsync(UpdateStreamName? stream = null, string? fromBuild = null,
+  [CanReturnApiError()]
+  public async Task<ApiResult<ChangelogListing>> GetChangelogListingAsync(UpdateStreamName? stream = null, string? fromBuild = null,
     string? toBuild = null, int? maxBuildId = null, CancellationToken? cancellationToken = null)
     => await GetAsync<ChangelogListing>("changelog", cancellationToken,
     [
@@ -69,7 +69,7 @@ public partial class OsuApiClient
   /// <br/><br/>
   /// Errors:<br/>
   /// <item>
-  ///   <term><see cref="APIErrorType.BuildNotFound"/></term>
+  ///   <term><see cref="ApiErrorType.BuildNotFound"/></term>
   ///   <description>The build could not be found</description>
   /// </item>
   /// <br/><br/>
@@ -79,8 +79,8 @@ public partial class OsuApiClient
   /// <param name="buildId">The ID of the build.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The build with the specified ID.</returns>
-  [CanReturnAPIError(APIErrorType.BuildNotFound)]
-  public async Task<APIResult<Build>> LookupBuildAsync(int buildId, CancellationToken? cancellationToken = null)
+  [CanReturnApiError(ApiErrorType.BuildNotFound)]
+  public async Task<ApiResult<Build>> LookupBuildAsync(int buildId, CancellationToken? cancellationToken = null)
     => await GetAsync<Build>($"changelog/{buildId}", cancellationToken, [("key", "id")]);
 
   /// <summary>
@@ -92,7 +92,7 @@ public partial class OsuApiClient
   /// <param name="stream">The update stream.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The latest build of the specified update stream.</returns>
-  [CanReturnAPIError()]
-  public async Task<APIResult<Build>> LookupLatestBuildAsync(UpdateStreamName stream, CancellationToken? cancellationToken = null)
+  [CanReturnApiError()]
+  public async Task<ApiResult<Build>> LookupLatestBuildAsync(UpdateStreamName stream, CancellationToken? cancellationToken = null)
     => await GetAsync<Build>($"changelog/{stream.GetQueryName()}", cancellationToken);
 }

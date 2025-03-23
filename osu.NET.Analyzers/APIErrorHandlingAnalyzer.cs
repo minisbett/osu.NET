@@ -54,7 +54,7 @@ namespace osu.NET.Analyzers
       if (!(apiCallMethod.GetAttributes().FirstOrDefault(a => a.AttributeClass.Name == "CanReturnAPIErrorAttribute") is AttributeData attribute))
         return;
       string[] expectedErrors = attribute.ConstructorArguments[0].Values.Select(x => (int)x.Value)
-        .Where(x => x < Enum.GetValues(typeof(APIErrorType)).Length).Select(x => ((APIErrorType)x).ToString()).ToArray();
+        .Where(x => x < Enum.GetValues(typeof(ApiErrorType)).Length).Select(x => ((ApiErrorType)x).ToString()).ToArray();
 
       // Go through the arms of the switch expression of the .Match error handler and 
       List<string> handledErrors = new List<string>();

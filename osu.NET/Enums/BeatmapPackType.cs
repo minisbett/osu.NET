@@ -13,42 +13,42 @@ public enum BeatmapPackType
   /// <summary>
   /// Targets all beatmap packs.
   /// </summary>
-  [QueryAPIName("standard")]
+  [QueryApiName("standard")]
   Standard,
 
   /// <summary>
   /// Targets all beatmap packs consisting of featured artist songs.
   /// </summary>
-  [QueryAPIName("featured")]
+  [QueryApiName("featured")]
   Featured,
 
   /// <summary>
   /// Targets all beatmap packs from tournaments.
   /// </summary>
-  [QueryAPIName("tournament")]
+  [QueryApiName("tournament")]
   Tournament,
 
   /// <summary>
   /// Targets all beatmap packs consisting of loved beatmaps.
   /// </summary>
-  [QueryAPIName("loved")]
+  [QueryApiName("loved")]
   Loved,
 
   /// <summary>
   /// Targets all beatmap packs from the spotlights.
   /// </summary>
-  [QueryAPIName("chart")]
+  [QueryApiName("chart")]
   Chart,
 
   /// <summary>
   /// Targets all beatmap packs targetting a theme.
   /// </summary>
-  [QueryAPIName("theme")]
+  [QueryApiName("theme")]
   Theme,
 
   /// <summary>
   /// Targets all beatmap packs targetting an artist.
   /// </summary>
-  [QueryAPIName("artist")]
+  [QueryApiName("artist")]
   Artist
 }

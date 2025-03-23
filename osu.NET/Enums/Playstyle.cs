@@ -13,24 +13,24 @@ public enum Playstyle
   /// <summary>
   /// The user plays with a mouse.
   /// </summary>
-  [JsonAPIName("mouse")]
+  [JsonApiName("mouse")]
   Mouse,
 
   /// <summary>
   /// The user plays with a keyboard.
   /// </summary>
-  [JsonAPIName("keyboard")]
+  [JsonApiName("keyboard")]
   Keyboard,
 
   /// <summary>
   /// The user plays with a graphics tablet.
   /// </summary>
-  [JsonAPIName("tablet")]
+  [JsonApiName("tablet")]
   Tablet,
 
   /// <summary>
   /// The user plays with a touch screen.
   /// </summary>
-  [JsonAPIName("touch")]
+  [JsonApiName("touch")]
   Touch
 }

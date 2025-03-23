@@ -50,7 +50,7 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
   /// <param name="httpMethod">Optional. The HTTP method used for the request. Defaults to GET.</param>
   /// <param name="httpContent">The body content used for the request.</param>
   /// <returns>The parsed API result.</returns>
-  private async Task<APIResult<T>> GetAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
+  private async Task<ApiResult<T>> GetAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
     Func<JObject, JToken?>? jsonSelector = null, HttpMethod? httpMethod = null, HttpContent? httpContent = null) where T : class
   {
     url = BuildRequestUrl(url, parameters ?? []);
@@ -96,9 +96,9 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
       // An error attribute may only exist if an object (not an array) was returned.
       JToken? x = obj?["error"];
       if (obj?["error"] is JValue error)
-        return APIError.FromMessage(error.Value<string>());
+        return ApiError.FromMessage(error.Value<string>());
       else if (response.StatusCode is not HttpStatusCode.OK)
-        return APIError.FromMessage(null);
+        return ApiError.FromMessage(null);
 
       if (obj is not null && jsonSelector is not null)
         token = jsonSelector.Invoke(obj) ?? token;

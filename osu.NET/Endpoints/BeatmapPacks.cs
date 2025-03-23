@@ -14,7 +14,7 @@ public partial class OsuApiClient
   /// <br/><br/>
   /// Errors:<br/>
   /// <item>
-  ///   <term><see cref="APIErrorType.BeatmapPackNotFound"/></term>
+  ///   <term><see cref="ApiErrorType.BeatmapPackNotFound"/></term>
   ///   <description>The beatmap pack could not be found</description>
   /// </item>
   /// <br/><br/>
@@ -24,7 +24,7 @@ public partial class OsuApiClient
   /// <param name="tag">The tag of the beatmap pack.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The beatmap pack with the specified tag.</returns>
-  [CanReturnAPIError(APIErrorType.BeatmapPackNotFound)]
-  public async Task<APIResult<BeatmapPack>> GetBeatmapPackAsync(string tag, CancellationToken? cancellationToken = null)
+  [CanReturnApiError(ApiErrorType.BeatmapPackNotFound)]
+  public async Task<ApiResult<BeatmapPack>> GetBeatmapPackAsync(string tag, CancellationToken? cancellationToken = null)
     => await GetAsync<BeatmapPack>($"beatmaps/packs/{tag}", cancellationToken);
 }

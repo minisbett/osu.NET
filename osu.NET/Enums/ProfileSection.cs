@@ -13,48 +13,48 @@ public enum ProfileSection
   /// <summary>
   /// The section listing the users' beatmaps.
   /// </summary>
-  [JsonAPIName("beatmaps")]
+  [JsonApiName("beatmaps")]
   Beatmaps,
 
   /// <summary>
   /// The section listing the users' historical data.
   /// </summary>
-  [JsonAPIName("historical")]
+  [JsonApiName("historical")]
   Historical,
 
   /// <summary>
   /// The section listing the users' kudosu information.
   /// </summary>
-  [JsonAPIName("kudosu")]
+  [JsonApiName("kudosu")]
   Kudosu,
 
   /// <summary>
   /// The me! section of the users' profile.
   /// </summary>
-  [JsonAPIName("me")]
+  [JsonApiName("me")]
   Me,
 
   /// <summary>
   /// The section listing the users' medals.
   /// </summary>
-  [JsonAPIName("medals")]
+  [JsonApiName("medals")]
   Medals,
 
   /// <summary>
   /// The section listing the users' recent activity.
   /// </summary>
-  [JsonAPIName("recent_activity")]
+  [JsonApiName("recent_activity")]
   RecentActivity,
 
   /// <summary>
   /// The section listing the users' top scores.
   /// </summary>
-  [JsonAPIName("top_ranks")]
+  [JsonApiName("top_ranks")]
   TopRanks,
 
   /// <summary>
   /// The section listing the users' account standing.
   /// </summary>
-  [JsonAPIName("account_standing")]
+  [JsonApiName("account_standing")]
   AccountStanding
 }

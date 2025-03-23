@@ -5,7 +5,7 @@
 /// </summary>
 /// <param name="name">The string representation.</param>
 [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
-internal sealed class QueryAPINameAttribute(string name) : Attribute
+internal sealed class QueryApiNameAttribute(string name) : Attribute
 {
   /// <summary>
   /// The string representation.
