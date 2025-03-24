@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using osu.NET.Enums;
 
 namespace osu.NET.Models.Users;
 
@@ -279,6 +280,12 @@ public class User
   /// </summary>
   [JsonProperty("statistics")]
   public UserStatistics? Statistics { get; private set; }
+
+  /// <summary>
+  /// The statistics of this user per ruleset. This is an optional property and may be null.
+  /// </summary>
+  [JsonProperty("statistics_rulesets")]
+  public Dictionary<Ruleset, UserStatistics>? RulesetStatistics { get; private set; } = default;
 
   /// <summary>
   /// The level of osu! supporter this user has. This is an optional property and may be null.

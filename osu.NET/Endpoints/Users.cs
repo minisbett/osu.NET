@@ -203,15 +203,20 @@ public partial class OsuApiClient
   /// <item>Includes <see cref="User.Country"/></item>
   /// <item>Includes <see cref="User.Cover"/></item>
   /// <item>Includes <see cref="User.Groups"/></item>
+  /// <item>Includes <see cref="User.RulesetStatistics"/> (instead of <see cref="User.Statistics"/>)</item>
   /// </list>
   /// API docs:<br/>
   /// <a href="https://osu.ppy.sh/docs/index.html#get-users"/>
   /// </summary>
   /// <param name="ids">The user IDs.</param>
+  /// <param name="includeVariantStatistics">Optional. Bool whether osu!mania variants (<see cref="UserStatistics.Variants"/>) should be included.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The users with the specified IDs.</returns>
   [CanReturnApiError()]
-  public async Task<ApiResult<User[]>> GetUsersAsync(int[] ids, CancellationToken? cancellationToken = null)
-  // This endpoint does not have includeVariantStatistics, as the User object for some reason never contains statistics_rulesets
-    => await GetAsync<User[]>($"users", cancellationToken, [.. ids.Select(x => ("ids[]", x))], json => json["users"]);
+  public async Task<ApiResult<User[]>> GetUsersAsync(int[] ids, bool? includeVariantStatistics = null, CancellationToken? cancellationToken = null)
+    => await GetAsync<User[]>($"users", cancellationToken,
+    [
+      .. ids.Select(x => ("ids[]", x)),
+      ("include_variant_statistics", includeVariantStatistics)
+    ], json => json["users"]);
 }

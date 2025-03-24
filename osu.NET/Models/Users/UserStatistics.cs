@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using osu.NET.Enums;
-using osu.NET.Models.Scores;
 
 namespace osu.NET.Models.Users;
 
