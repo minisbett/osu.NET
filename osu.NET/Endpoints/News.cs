@@ -1,5 +1,6 @@
 ﻿using osu.NET.Helpers;
 using osu.NET.Models.News;
+using System;
 
 namespace osu.NET;
 
@@ -7,7 +8,32 @@ public partial class OsuApiClient
 {
   // API docs: https://osu.ppy.sh/docs/index.html#news
 
-  // TODOENDPOINT: https://osu.ppy.sh/docs/index.html#get-news-listing (requires pagination)
+  /// <summary>
+  /// Returns a bundle of news posts and the cursor string for fetching further posts.
+  /// <br/><br/>
+  /// API notes:
+  /// <list type="bullet">
+  /// <item>Includes <see cref="NewsPost.Preview"/></item>
+  /// <item>Does not include <see cref="NewsPost.Content"/></item>
+  /// <item>Does not include <see cref="NewsPost.Navigation"/></item>
+  /// </list>
+  /// API docs:<br/>
+  /// <a href="https://osu.ppy.sh/docs/index.html#get-news-listing"/>
+  /// </summary>
+  /// <param name="limit">Optional. The amount of news posts to return.</param>
+  /// <param name="year">Optional. The year to return news posts of.</param>
+  /// <param name="cursor">Optional. The cursor string for fetching further TYPE.</param>
+  /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
+  /// <returns>The bundle with the 50 most recent events across osu!.</returns>
+  [CanReturnApiError()]
+  public async Task<ApiResult<NewsPostsBundle>> GetNewsPostsAsync(int? limit = null, int? year = null, string? cursor = null,
+    CancellationToken? cancellationToken = null)
+    => await GetAsync<NewsPostsBundle>("news", cancellationToken,
+    [
+      ("limit", limit),
+      ("year", year),
+      ("cursor_string", cursor)
+    ]);
 
   /// <summary>
   /// Returns the news post with the specified slug.<br/>
@@ -19,6 +45,11 @@ public partial class OsuApiClient
   ///   <description>The news post could not be found</description>
   /// </item>
   /// <br/><br/>
+  /// API notes:
+  /// <list type="bullet">
+  /// <item>Includes <see cref="NewsPost.Content"/></item>
+  /// <item>Includes <see cref="NewsPost.Navigation"/></item>
+  /// </list>
   /// API docs:<br/>
   /// <a href="https://osu.ppy.sh/docs/index.html#get-news-post"/>
   /// </summary>

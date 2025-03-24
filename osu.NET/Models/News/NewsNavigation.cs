@@ -8,7 +8,7 @@ namespace osu.NET.Models.News;
 /// API docs: <a href="https://osu.ppy.sh/docs/index.html#newspost-navigation"/><br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/resources/js/interfaces/news-post-json.ts"/>
 /// </summary>
-public class Navigation
+public class NewsNavigation
 {
   /// <summary>
   /// The next (newer) news post. This will be null if there is no newer post.

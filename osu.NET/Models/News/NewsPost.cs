@@ -59,17 +59,17 @@ public class NewsPost
   public DateTimeOffset UpdatedAt { get; private set; }
 
   /// <summary>
-  /// The HTML content of this news post. This will be null if this news post object was requested alongside multiple others.
+  /// The HTML content of this news post. This will be null if this news post was requested alongside others.
   /// </summary>
   [JsonProperty("content")]
   public string? Content { get; private set; }
 
   /// <summary>
   /// The navigation metadata for this news post, which contains the chronologically previous and next news post.
-  /// This will be null if this news post was accessed from a <see cref="News.Navigation"/> object.
+  /// This will be null if this news post was accessed from a <see cref="NewsNavigation"/> object or requested alongside others.
   /// </summary>
   [JsonProperty("navigation")]
-  public Navigation? Navigation { get; private set; }
+  public NewsNavigation? Navigation { get; private set; }
 
   /// <summary>
   /// The preview of this news post, which is the first paragraph of content with HTML markup stripped.
