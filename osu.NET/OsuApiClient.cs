@@ -3,12 +3,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using osu.NET.Authorization;
 using osu.NET.Helpers;
-using System;
 using System.Diagnostics;
 using System.Net;
-using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading;
 using System.Web;
 
 namespace osu.NET;
@@ -41,6 +38,12 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
     _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
   }
 
+  /// <summary>
+  /// Sends the specified request and handles any exceptions that may occur.
+  /// </summary>
+  /// <param name="request">The HTTP request.</param>
+  /// <param name="cancellationToken">The cancellation token for aborting the request.</param>
+  /// <returns>The HTTP response.</returns>
   private async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
   {
     await EnsureAccessTokenAsync(cancellationToken);
@@ -75,6 +78,14 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
     return response;
   }
 
+  /// <summary>
+  /// Parses the JSON response of the specified HTTP response into the specified type.
+  /// </summary>
+  /// <typeparam name="T">The type to parse the JSON response into.</typeparam>
+  /// <param name="response">The HTTP response.</param>
+  /// <param name="jsonSelector">A JSON selector for parsing nested objects instead of the root JSON.</param>
+  /// <param name="cancellationToken">The cancellation token for aborting the request.</param>
+  /// <returns>The parsed API result.</returns>
   private async Task<ApiResult<T>> ParseAsync<T>(HttpResponseMessage response, Func<JObject, JToken?>? jsonSelector,
     CancellationToken cancellationToken) where T : class
   {
