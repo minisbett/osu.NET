@@ -16,7 +16,7 @@ public partial class OsuApiClient
   /// API docs:<br/>
   /// <a href="https://osu.ppy.sh/docs/index.html#get-beatmap-packs"/>
   /// </summary>
-  /// <param name="type">Optional. The type of beatmap pack to filter for.</param>
+  /// <param name="type">Optional. The type of beatmap pack to filter for. Ignored if <paramref name="cursor"/> is specified.</param>
   /// <param name="cursor">Optional. The cursor string for fetching further beatmap packs.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The bundle with beatmap packs.</returns>

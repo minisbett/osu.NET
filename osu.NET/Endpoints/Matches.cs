@@ -15,8 +15,8 @@ public partial class OsuApiClient
   /// API docs:<br/>
   /// <a href="https://osu.ppy.sh/docs/index.html#get-matches-listing"/>
   /// </summary>
-  /// <param name="limit">Optional. The amount of matches to return.</param>
-  /// <param name="sort">Optional. The sort for the matches.</param>
+  /// <param name="limit">Optional. The amount of matches to return. Ignored if <paramref name="cursor"/> is specified.</param>
+  /// <param name="sort">Optional. The sort for the matches. Ignored if <paramref name="cursor"/> is specified.</param>
   /// <param name="cursor">Optional. The cursor string for fetching further matches.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The bundle with matches.</returns>

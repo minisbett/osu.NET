@@ -16,7 +16,7 @@ public partial class OsuApiClient
   /// API docs:<br/>
   /// <a href="https://osu.ppy.sh/docs/index.html#get-scores97"/>
   /// </summary>
-  /// <param name="ruleset">Optional. The ruleset to return scores of.</param>
+  /// <param name="ruleset">Optional. The ruleset to return scores of. Ignored if <paramref name="cursor"/> is specified.</param>
   /// <param name="cursor">Optional. The cursor string for fetching newer scores.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The bundle with scores.</returns>

@@ -20,8 +20,8 @@ public partial class OsuApiClient
   /// API docs:<br/>
   /// <a href="https://osu.ppy.sh/docs/index.html#get-news-listing"/>
   /// </summary>
-  /// <param name="limit">Optional. The amount of news posts to return.</param>
-  /// <param name="year">Optional. The year to return news posts of.</param>
+  /// <param name="limit">Optional. The amount of news posts to return. Ignored if <paramref name="cursor"/> is specified.</param>
+  /// <param name="year">Optional. The year to return news posts of. Ignored if <paramref name="cursor"/> is specified.</param>
   /// <param name="cursor">Optional. The cursor string for fetching further news posts.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The bundle with news posts.</returns>
