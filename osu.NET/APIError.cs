@@ -5,7 +5,7 @@
 /// </summary>
 public class ApiError
 {
-  private ApiError(ApiErrorType type, string? message)
+  internal ApiError(ApiErrorType type, string? message)
   {
     Type = type;
     Message = message;

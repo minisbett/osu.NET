@@ -222,7 +222,7 @@ Below is a list of all planned and implemented osu! API endpoints. If you'd like
 - ✅ `/scores`
 - ✅ `/scores/{ruleset}/{score}`🔎
 - ✅ `/scores/{score}`🔎
-- ❌ `/scores/{score}/download`🔎
+- ✅ `/scores/{score}/download`🔎
 
 #### Users 👤
 - ✅ `/users/{user}/kudosu`
