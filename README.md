@@ -172,12 +172,12 @@ Below is a list of all planned and implemented osu! API endpoints. If you'd like
 - ❌ `/beatmapsets/discussions/posts`
 - ❌ `/beatmapsets/discussions/votes`
 - ❌ `/beatmapsets/discussions`
-- ❌ `/beatmapsets/events`🔎
 
 #### Beatmap Sets 📦
 - ❌ `/beatmapsets/search`
 - ✅ `/beatmapsets/lookup`
 - ✅ `/beatmapsets/{beatmapset}`
+- ❌ `/beatmapsets/events`🔎
 
 #### Changelogs 📜
 - ✅ `/changelog`
