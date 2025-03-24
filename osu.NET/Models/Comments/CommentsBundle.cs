@@ -4,13 +4,32 @@ using osu.NET.Models.Users;
 namespace osu.NET.Models.Comments;
 
 /// <summary>
+/// Temporary class to allow cursor pagination on comments, as a proper pagination system is not yet implemented.
+/// https://osu.ppy.sh/docs/index.html#cursor
+/// </summary>
+public class CommentsCursor
+{
+  [JsonProperty("id")]
+  public int Id { get; private set; }
+
+  [JsonProperty("created_at")]
+  public DateTime CreatedAt { get; private set; }
+}
+
+/// <summary>
 /// Represents a bundle of comments and related data.
 /// <br/><br/>
 /// API docs: <a href="https://osu.ppy.sh/docs/index.html#commentbundle"/><br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/resources/js/interfaces/comment-json.ts"/>
 /// </summary>
-public class CommentBundle
+public class CommentsBundle
 {
+  /// <summary>
+  /// Temporary property to allow cursor pagination on comments, as a proper pagination system is not yet implemented.
+  /// </summary>
+  [JsonProperty("cursor")]
+  public CommentsCursor Cursor { get; private set; } = default!;
+
   /// <summary>
   /// The metadata for the commentable objects referenced in the comment objects contained in this bundle.
   /// </summary>
