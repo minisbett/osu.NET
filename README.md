@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-GPLv3-seagreen?style=flat-square)](https://www.gnu.org/licenses/gpl-3.0)
 [![NuGet](https://img.shields.io/nuget/v/osu.NET?color=blue&style=flat-square)](https://www.nuget.org/packages/osu.NET)
 [![NuGet](https://img.shields.io/nuget/dt/osu.NET?color=peru&style=flat-square)](https://www.nuget.org/packages/osu.NET)
-[![API Coverage](https://img.shields.io/badge/API%20Coverage-80%25-olivedrab?style=flat-square)](#api-coverage)
+[![API Coverage](https://img.shields.io/badge/API%20Coverage-67%25-olivedrab?style=flat-square)](#api-coverage)
 
 A modern and well documented API wrapper for the osu! API v2.<br/>
 This wrapper <ins>currently only supports public scope endpoints</ins>.<br/>
@@ -152,7 +152,7 @@ If something isn't working as expected, open an issue with a detailed descriptio
 
 Below is a list of all planned and implemented osu! API endpoints. If you'd like to suggest a missing endpoint or add one yourself, feel free to create an issue or pull request.  
 
-> ✅ = Implemented | ❌ = Not Implemented  
+> ✅ = Implemented | ❌ = Not Implemented | 🔎 = Undocumented in official docs  
 
 #### Beatmap Packs 🎵
 - ✅ `/beatmaps/packs`
@@ -172,6 +172,7 @@ Below is a list of all planned and implemented osu! API endpoints. If you'd like
 - ❌ `/beatmapsets/discussions/posts`
 - ❌ `/beatmapsets/discussions/votes`
 - ❌ `/beatmapsets/discussions`
+- ❌ `/beatmapsets/events`🔎
 
 #### Beatmap Sets 📦
 - ❌ `/beatmapsets/search`
@@ -205,6 +206,7 @@ Below is a list of all planned and implemented osu! API endpoints. If you'd like
 
 #### Multiplayer 🌍
 - ❌ `/rooms/{room}/playlist/{playlist}/scores`
+- ❌ `/rooms/{room}`🔎
 
 #### News 📰
 - ✅ `/news`
@@ -218,6 +220,9 @@ Below is a list of all planned and implemented osu! API endpoints. If you'd like
 
 #### Scores 📊
 - ✅ `/scores`
+- ❌ `/scores/{ruleset}/{score}`🔎
+- ❌ `/scores/{score}`🔎
+- ❌ `/scores/{score}/download`🔎
 
 #### Users 👤
 - ✅ `/users/{user}/kudosu`
@@ -226,6 +231,12 @@ Below is a list of all planned and implemented osu! API endpoints. If you'd like
 - ✅ `/users/{user}/recent_activity`
 - ✅ `/users/{user}/{mode?}`
 - ✅ `/users?id[]`
+- ❌ `/users/lookup`🔎
 
 #### Wiki 📖
 - ✅ `/wiki/{locale}/{path}`
+
+#### Other ⭐
+
+- ❌ `/seasonal-backgrounds`🔎
+- ❌ `/tags`🔎
