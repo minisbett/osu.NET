@@ -17,7 +17,7 @@ public partial class OsuApiClient
   /// <param name="cursor">Optional. The cursor string for fetching further events.</param>
   /// <param name="sort">Optional. The sorting option for the events.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
-  /// <returns>The bundle with the 50 most recent events across osu!.</returns>
+  /// <returns>The bundle with events.</returns>
   [CanReturnApiError()]
   public async Task<ApiResult<EventsBundle>> GetEventsAsync(EventSortType? sort = null, string ? cursor = null,
     CancellationToken? cancellationToken = null)
