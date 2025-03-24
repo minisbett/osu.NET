@@ -22,9 +22,9 @@ public partial class OsuApiClient
   /// </summary>
   /// <param name="limit">Optional. The amount of news posts to return.</param>
   /// <param name="year">Optional. The year to return news posts of.</param>
-  /// <param name="cursor">Optional. The cursor string for fetching further TYPE.</param>
+  /// <param name="cursor">Optional. The cursor string for fetching further news posts.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
-  /// <returns>The bundle with the 50 most recent events across osu!.</returns>
+  /// <returns>The bundle with news posts.</returns>
   [CanReturnApiError()]
   public async Task<ApiResult<NewsPostsBundle>> GetNewsPostsAsync(int? limit = null, int? year = null, string? cursor = null,
     CancellationToken? cancellationToken = null)

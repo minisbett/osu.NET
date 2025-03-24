@@ -1,4 +1,5 @@
-﻿using osu.NET.Helpers;
+﻿using osu.NET.Enums;
+using osu.NET.Helpers;
 using osu.NET.Models.Matches;
 using osu.NET.Models.Users;
 
@@ -8,7 +9,26 @@ public partial class OsuApiClient
 {
   // API docs: https://osu.ppy.sh/docs/index.html#matches
 
-  // TODOENDPOINT: https://osu.ppy.sh/docs/index.html#get-matches-listing (pagination)
+  /// <summary>
+  /// Returns a bundle of legacy multiplayer matches and the cursor string for fetching further matches.
+  /// <br/><br/>
+  /// API docs:<br/>
+  /// <a href="https://osu.ppy.sh/docs/index.html#get-matches-listing"/>
+  /// </summary>
+  /// <param name="limit">Optional. The amount of matches to return.</param>
+  /// <param name="sort">Optional. The sort for the matches.</param>
+  /// <param name="cursor">Optional. The cursor string for fetching further matches.</param>
+  /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
+  /// <returns>The bundle with matches.</returns>
+  [CanReturnApiError()]
+  public async Task<ApiResult<MatchesBundle>> GetMatchesAsync(int? limit = null, MatchSortType? sort = null, string? cursor = null,
+    CancellationToken? cancellationToken = null)
+    => await GetAsync<MatchesBundle>("matches", cancellationToken,
+    [
+      ("limit", limit),
+      ("sort", sort),
+      ("cursor_string", cursor)
+    ]);
 
   /// <summary>
   /// Returns the legacy multiplayer match with the specified ID, including events in that match and related userse.
