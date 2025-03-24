@@ -14,8 +14,8 @@ public partial class OsuApiClient
   /// API notes:
   /// <list type="bullet">
   /// <item>Includes <see cref="NewsPost.Preview"/></item>
-  /// <item>Does not include <see cref="NewsPost.Content"/></item>
-  /// <item>Does not include <see cref="NewsPost.Navigation"/></item>
+  /// <item>Does *not* include <see cref="NewsPost.Content"/></item>
+  /// <item>Does *not* include <see cref="NewsPost.Navigation"/></item>
   /// </list>
   /// API docs:<br/>
   /// <a href="https://osu.ppy.sh/docs/index.html#get-news-listing"/>

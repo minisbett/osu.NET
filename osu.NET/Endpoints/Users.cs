@@ -195,8 +195,10 @@ public partial class OsuApiClient
        .WithErrorFallback(ApiErrorType.UserNotFound);
 
   /// <summary>
-  /// Returns all users with the specified IDs, up to 50.
-  /// If a user ID could not be found, it is skipped.
+  /// Returns all users with the specified IDs, up to 50. If a user ID could not be found, it is skipped.
+  /// <br/><br/>
+  /// This API endpoint has an increased ratelimit cost due to the inclusion of <see cref="User.RulesetStatistics"/>.<br/>
+  /// If you do not need this information, use <see cref="LookupUsersAsync(int[], bool?, CancellationToken?)"/> instead.
   /// <br/><br/>
   /// API notes:
   /// <list type="bullet">
@@ -218,5 +220,33 @@ public partial class OsuApiClient
     [
       .. ids.Select(x => ("ids[]", x)),
       ("include_variant_statistics", includeVariantStatistics)
+    ], json => json["users"]);
+
+  /// <summary>
+  /// Returns all users with the specified IDs, up to 50. If a user ID could not be found, it is skipped.
+  /// <br/><br/>
+  /// This endpoint does not include any statistics. If you need this information,
+  /// use <see cref="GetUsersAsync(int[], bool?, CancellationToken?)"/> with a higher ratelimit cost.
+  /// <br/><br/>
+  /// API notes:
+  /// <list type="bullet">
+  /// <item>Includes <see cref="User.Country"/></item>
+  /// <item>Includes <see cref="User.Cover"/></item>
+  /// <item>Includes <see cref="User.Groups"/></item>
+  /// <item>Does *not* include <see cref="User.Statistics"/> or <see cref="User.RulesetStatistics"/></item>
+  /// </list>
+  /// API docs:<br/>
+  /// <a href="https://osu.ppy.sh/docs/index.html#get-users"/>
+  /// </summary>
+  /// <param name="ids">The user IDs.</param>
+  /// <param name="excludeBots">Optional. Bool whether bot users should be ignored.</param>
+  /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
+  /// <returns>The users with the specified IDs.</returns>
+  [CanReturnApiError()]
+  public async Task<ApiResult<User[]>> LookupUsersAsync(int[] ids, bool? excludeBots = null, CancellationToken? cancellationToken = null)
+    => await GetAsync<User[]>($"users/lookup", cancellationToken,
+    [
+      .. ids.Select(x => ("ids[]", x)),
+      ("exclude_bots", excludeBots)
     ], json => json["users"]);
 }
