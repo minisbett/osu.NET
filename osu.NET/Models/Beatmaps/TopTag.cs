@@ -3,7 +3,7 @@
 namespace osu.NET.Models.Beatmaps;
 
 /// <summary>
-/// Represents a "top" tag on a beatmap. A "top" tag is one of the top-voted tags on a beatmap.
+/// Represents one of the top-voted tags on a beatmap.
 /// <br/><br/>
 /// API docs: Not documented, refer to source<br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/resources/js/interfaces/beatmap-json.ts"/>
