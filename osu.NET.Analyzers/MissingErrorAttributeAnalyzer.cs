@@ -13,8 +13,8 @@ namespace osu.NET.Analyzers
 #pragma warning disable IDE0079
 #pragma warning disable RS2008
     private static readonly DiagnosticDescriptor Rule = new DiagnosticDescriptor("OSU002", "Unhandled API error type",
-      "The API endpoint method is missing the [CanReturnAPIError] attribute", "Usage", DiagnosticSeverity.Error, true,
-      "Ensures all API endpoint methods have the [CanReturnAPIError] attribute.");
+      "The API endpoint method is missing the [CanReturnApiError] attribute", "Usage", DiagnosticSeverity.Error, true,
+      "Ensures all API endpoint methods have the [CanReturnApiError] attribute.");
 
     public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
@@ -27,9 +27,9 @@ namespace osu.NET.Analyzers
 
     private void Analyze(SyntaxNodeAnalysisContext context)
     {
-      // Ignore the GetAsync method that's responsible for sending all requests internally.
+      // Ignore some methods that are responsible for sending requests internally.
       MethodDeclarationSyntax methodDeclaration = context.Node as MethodDeclarationSyntax;
-      if (methodDeclaration.Identifier.ValueText == "GetAsync")
+      if (new string[] { "GetAsync", "PostAsync", "ParseAsync" }.Contains(methodDeclaration.Identifier.ValueText))
         return;
       // Check it the method is in the OsuApiClient class in the osu-sharp namespace.
       if (!(methodDeclaration.Parent is ClassDeclarationSyntax classDeclaration))
@@ -52,12 +52,12 @@ namespace osu.NET.Analyzers
         return;
       if (returnType.TypeArgumentList.Arguments.Count != 1 || !(returnType.TypeArgumentList.Arguments[0] is GenericNameSyntax argument))
         return;
-      if (argument.Identifier.ValueText != "APIResult")
+      if (argument.Identifier.ValueText != "ApiResult")
         return;
 
-      // Check if the method has a [CanReturnAPIError] attribute
+      // Check if the method has a [CanReturnApiError] attribute
       AttributeSyntax[] attributes = methodDeclaration.AttributeLists.SelectMany(x => x.Attributes).ToArray();
-      if (attributes.Any(x => ((IdentifierNameSyntax)x.Name).Identifier.ValueText == "CanReturnAPIError"))
+      if (attributes.Any(x => ((IdentifierNameSyntax)x.Name).Identifier.ValueText == "CanReturnApiError"))
         return;
 
       Diagnostic diagnostic = Diagnostic.Create(Rule, methodDeclaration.GetLocation());
