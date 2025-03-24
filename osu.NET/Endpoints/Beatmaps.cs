@@ -176,6 +176,7 @@ public partial class OsuApiClient
   /// <item>Includes <see cref="Beatmap.Set"/> (including <see cref="BeatmapSet.Ratings"/>)</item>
   /// <item>Includes <see cref="Beatmap.Failtimes"/></item>
   /// <item>Includes <see cref="Beatmap.MaxCombo"/></item>
+  /// <item>Includes <see cref="Beatmap.Owners"/></item>
   /// </list>
   /// <br/><br/>
   /// API docs:<br/>
