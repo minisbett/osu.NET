@@ -237,8 +237,8 @@ public partial class OsuApiClient
   {
     HttpContent content = new StringContent($"{{\"ruleset\": {ruleset.GetQueryName()}}}");
 
-    ApiResult<DifficultyAttributes> result = await GetAsync<DifficultyAttributes>($"beatmaps/{beatmapId}/attributes",
-      cancellationToken, [.. (mods ?? []).Select(x => ("mods[]", x))], x => x["attributes"], HttpMethod.Post, content);
+    ApiResult<DifficultyAttributes> result = await PostAsync<DifficultyAttributes>($"beatmaps/{beatmapId}/attributes",
+      cancellationToken, [.. (mods ?? []).Select(x => ("mods[]", x))], x => x["attributes"], content);
 
     // Hotfix the error type if a specified mod is invalid as the error message is not static.
     if (result.Error?.Message?.StartsWith("invalid mod for ruleset: ") ?? false)

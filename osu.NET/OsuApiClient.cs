@@ -3,9 +3,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using osu.NET.Authorization;
 using osu.NET.Helpers;
+using System;
 using System.Diagnostics;
 using System.Net;
+using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Web;
 
 namespace osu.NET;
@@ -38,32 +41,15 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
     _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
   }
 
-  /// <summary>
-  /// Sends a GET request to the specified URL and parses the JSON in the response into the specified type.<br/>
-  /// If the request fails, an <see cref="OsuApiException"/> is thrown.
-  /// </summary>
-  /// <typeparam name="T">The type to parse the JSON response into.</typeparam>
-  /// <param name="url">The request URL.</param>
-  /// <param name="cancellationToken">The cancellation token for aborting the request.</param>
-  /// <param name="parameters">Optional. The query parameters of the URL. Parameters with a null value will be ignored.</param>
-  /// <param name="jsonSelector">Optional. A JSON selector for parsing nested objects instead of the root JSON.</param>
-  /// <param name="httpMethod">Optional. The HTTP method used for the request. Defaults to GET.</param>
-  /// <param name="httpContent">The body content used for the request.</param>
-  /// <returns>The parsed API result.</returns>
-  private async Task<ApiResult<T>> GetAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
-    Func<JObject, JToken?>? jsonSelector = null, HttpMethod? httpMethod = null, HttpContent? httpContent = null) where T : class
+  private async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
   {
-    url = BuildRequestUrl(url, parameters ?? []);
-    cancellationToken ??= CancellationToken.None;
-    httpMethod ??= HttpMethod.Get;
-
-    await EnsureAccessTokenAsync(cancellationToken.Value);
+    await EnsureAccessTokenAsync(cancellationToken);
 
     Stopwatch watch = Stopwatch.StartNew();
     HttpResponseMessage? response = null;
     try
     {
-      response = await _http.SendAsync(new(httpMethod, url) { Content = httpContent }, cancellationToken.Value);
+      response = await _http.SendAsync(request, cancellationToken);
     }
     catch (Exception ex)
     {
@@ -76,7 +62,7 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
     {
       watch.Stop();
       if (options.EnableLogging)
-        logger.LogInformation("URL: {Url}\r\nDuration: {Time:N0}ms\r\nStatus: {Status}", _http.BaseAddress + url,
+        logger.LogInformation("URL: {Url}\r\nDuration: {Time:N0}ms\r\nStatus: {Status}", request.RequestUri,
           watch.ElapsedMilliseconds, response is null ? "Error" : $"{(int)response.StatusCode} ({response.StatusCode})");
     }
 
@@ -86,9 +72,15 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
     if (response.StatusCode is not (HttpStatusCode.OK or HttpStatusCode.NotFound or HttpStatusCode.UnprocessableEntity or HttpStatusCode.Forbidden))
       throw new OsuApiException($"API responded with an unexpected status code: {response.StatusCode}.");
 
+    return response;
+  }
+
+  private async Task<ApiResult<T>> ParseAsync<T>(HttpResponseMessage response, Func<JObject, JToken?>? jsonSelector,
+    CancellationToken cancellationToken) where T : class
+  {
     try
     {
-      string json = await response.Content.ReadAsStringAsync(cancellationToken.Value);
+      string json = await response.Content.ReadAsStringAsync(cancellationToken);
       JToken token = JToken.Parse(json);
       JObject? obj = token as JObject;
 
@@ -112,6 +104,45 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
 
       throw new OsuApiException($"Failed to parse the API response into a {typeof(T)} object.", ex);
     }
+  }
+
+  /// <summary>
+  /// Sends a GET request to the specified URL and parses the JSON in the response into the specified type.
+  /// </summary>
+  /// <typeparam name="T">The type to parse the JSON response into.</typeparam>
+  /// <param name="url">The request URL.</param>
+  /// <param name="cancellationToken">The cancellation token for aborting the request.</param>
+  /// <param name="parameters">Optional. The query parameters of the URL. Parameters with a null value will be ignored.</param>
+  /// <param name="jsonSelector">Optional. A JSON selector for parsing nested objects instead of the root JSON.</param>
+  /// <returns>The parsed API result.</returns>
+  private async Task<ApiResult<T>> GetAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
+    Func<JObject, JToken?>? jsonSelector = null) where T : class
+  {
+    url = BuildRequestUrl(url, parameters ?? []);
+    cancellationToken ??= CancellationToken.None;
+
+    HttpResponseMessage response = await SendAsync(new(HttpMethod.Get, url), cancellationToken.Value);
+    return await ParseAsync<T>(response, jsonSelector, cancellationToken.Value);
+  }
+
+  /// <summary>
+  /// Sends a POST request to the specified URL and parses the JSON in the response into the specified type.
+  /// </summary>
+  /// <typeparam name="T">The type to parse the JSON response into.</typeparam>
+  /// <param name="url">The request URL.</param>
+  /// <param name="cancellationToken">The cancellation token for aborting the request.</param>
+  /// <param name="parameters">Optional. The query parameters of the URL. Parameters with a null value will be ignored.</param>
+  /// <param name="jsonSelector">Optional. A JSON selector for parsing nested objects instead of the root JSON.</param>
+  /// <param name="httpContent">The body content used for the request.</param>
+  /// <returns>The parsed API result.</returns>
+  private async Task<ApiResult<T>> PostAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
+    Func<JObject, JToken?>? jsonSelector = null, HttpContent? httpContent = null) where T : class
+  {
+    url = BuildRequestUrl(url, parameters ?? []);
+    cancellationToken ??= CancellationToken.None;
+
+    HttpResponseMessage response = await SendAsync(new(HttpMethod.Post, url) { Content = httpContent }, cancellationToken.Value);
+    return await ParseAsync<T>(response, jsonSelector, cancellationToken.Value);
   }
 
   /// <summary>
