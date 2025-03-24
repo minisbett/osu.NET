@@ -54,6 +54,7 @@ public class ApiError
     ["Specified Build couldn't be found."] = ApiErrorType.BuildNotFound,
     ["Specified Comment couldn't be found."] = ApiErrorType.CommentNotFound,
     ["Specified Forum\\Forum couldn't be found."] = ApiErrorType.ForumNotFound,
-    ["Specified LegacyMatch\\LegacyMatch couldn't be found."] = ApiErrorType.MatchNotFound
+    ["Specified LegacyMatch\\LegacyMatch couldn't be found."] = ApiErrorType.MatchNotFound,
+    ["Specified Solo\\Score couldn't be found."] = ApiErrorType.ScoreNotFound
   };
 }

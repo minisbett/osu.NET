@@ -74,6 +74,11 @@
     /// <summary>
     /// Indicates that the match in the request could not be found.
     /// </summary>
-    MatchNotFound
+    MatchNotFound,
+
+    /// <summary>
+    /// Indicates that the score in the request could not be found.
+    /// </summary>
+    ScoreNotFound
   }
 }

@@ -1,4 +1,5 @@
 ﻿using osu.NET.Enums;
+using osu.NET.Helpers;
 using osu.NET.Models.Scores;
 
 namespace osu.NET;
@@ -26,4 +27,42 @@ public partial class OsuApiClient
       ("ruleset", ruleset),
       ("cursor_string", cursor)
     ]);
+
+  /// <summary>
+  /// Returns the score with the specified legacy, ruleset-specific ID in the specified ruleset.<br/>
+  /// To fetch a score by its new ID, use <see cref="GetScoreAsync(long, CancellationToken?)"/>.
+  /// <br/><br/>
+  /// Errors:<br/>
+  /// <item>
+  ///   <term><see cref="ApiErrorType.ScoreNotFound"/></term>
+  ///   <description>The score could not be found</description>
+  /// </item>
+  /// <br/><br/>
+  /// API docs:<br/>
+  /// <a href="https://osu.ppy.sh/docs/index.html#get-apiv2scoresrulesetorscorescore"/>
+  /// </summary>
+  /// <param name="id">The legacy ID of the score.</param>
+  /// <param name="ruleset">The ruleset of the score.</param>
+  /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
+  /// <returns>The score with the specified legacy ID.</returns>
+  public async Task<ApiResult<Score>> GetScoreAsync(long id, Ruleset ruleset, CancellationToken? cancellationToken = null)
+    => await GetAsync<Score>($"scores/{ruleset.GetQueryName()}/{id}", cancellationToken);
+
+  /// <summary>
+  /// Returns the score with the ID.
+  /// <br/><br/>
+  /// Errors:<br/>
+  /// <item>
+  ///   <term><see cref="ApiErrorType.ScoreNotFound"/></term>
+  ///   <description>The score could not be found</description>
+  /// </item>
+  /// <br/><br/>
+  /// API docs:<br/>
+  /// <a href="https://osu.ppy.sh/docs/index.html#get-apiv2scoresrulesetorscorescore"/>
+  /// </summary>
+  /// <param name="id">The ID of the score.</param>
+  /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
+  /// <returns>The score with the specified ID.</returns>
+  public async Task<ApiResult<Score>> GetScoreAsync(long id, CancellationToken? cancellationToken = null)
+    => await GetAsync<Score>($"scores/{id}", cancellationToken);
 }
