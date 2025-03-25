@@ -26,6 +26,7 @@ public partial class OsuApiClient
   /// <param name="cursor">Optional. The cursor for fetching further comments.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>A bundle with comments.</returns>
+  [CanReturnApiError()]
   public async Task<ApiResult<CommentsBundle>> GetCommentsAsync(int? after = null, CommentableType? type = null, int? commentableId = null,
     int? parentId = null, CommentSortType? sort = null, CommentsCursor? cursor = null, CancellationToken? cancellationToken = null)
     => await GetAsync<CommentsBundle>("comments", cancellationToken, 
