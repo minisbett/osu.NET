@@ -1716,8 +1716,8 @@
             <summary>
             Represents the sort types for legacy multiplayer matches.
             <br/><br/>
-            API docs: <a href="https://osu.ppy.sh/docs/index.html#matchgame"/><br/>
-            Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Models/LegacyMatch/Game.php"/>
+            API docs: <a href="https://osu.ppy.sh/docs/index.html#get-matches-listing"/><br/>
+            Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Http/Controllers/MatchesController.php"/>
             </summary>
         </member>
         <member name="F:osu.NET.Enums.MatchSortType.IdAscending">
@@ -1734,8 +1734,8 @@
             <summary>
             Represents the team types for legacy multiplayer matches (head-to-head, tag-coop, ...).
             <br/><br/>
-            API docs: <a href="https://osu.ppy.sh/docs/index.html#get-matches-listing"/><br/>
-            Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Http/Controllers/MatchesController.php"/>
+            API docs: <a href="https://osu.ppy.sh/docs/index.html#matchgame"/><br/>
+            Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Models/LegacyMatch/Game.php"/>
             </summary>
         </member>
         <member name="F:osu.NET.Enums.MatchTeamType.HeadToHead">
