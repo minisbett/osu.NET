@@ -200,7 +200,7 @@ public partial class OsuApiClient
   /// <br/><br/>
   /// API notes:
   /// <list type="bullet">
-  /// <item>Includes <see cref="Beatmap.Set"/> (including <see cref="Beatmapset.Ratings"/>)</item>
+  /// <item>Includes <see cref="Beatmap.Set"/> (including <see cref="BeatmapSet.Ratings"/>)</item>
   /// <item>Includes <see cref="Beatmap.Failtimes"/></item>
   /// <item>Includes <see cref="Beatmap.MaxCombo"/></item>
   /// </list>

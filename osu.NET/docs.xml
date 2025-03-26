@@ -28,6 +28,9 @@
             <param name="message">The error message provided by the osu! API.</param>
             <returns>The parsed <see cref="T:osu.NET.ApiError"/>.</returns>
         </member>
+        <member name="M:osu.NET.ApiError.ToString">
+            <inheritdoc/>
+        </member>
         <member name="F:osu.NET.ApiError._errorMessageMappings">
             <summary>
             Represents a mapping between error messages returned by the osu! API and their corresponding <see cref="T:osu.NET.ApiErrorType"/>.
@@ -186,6 +189,21 @@
             <param name="success">Executed if the API request was successful, receiving the value.</param>
             <param name="error">Executed if the API request failed, receiving the error.</param>
         </member>
+        <member name="M:osu.NET.ApiResult`1.op_Implicit(osu.NET.ApiError)~osu.NET.ApiResult{`0}">
+            <summary>
+            Implicitly converts an <see cref="T:osu.NET.ApiError"/> into a failed <see cref="T:osu.NET.ApiResult`1"/>.
+            </summary>
+            <param name="error">The error.</param>
+        </member>
+        <member name="M:osu.NET.ApiResult`1.op_Implicit(`0)~osu.NET.ApiResult{`0}">
+            <summary>
+            Implicitly converts a nullable <typeparamref name="T"/> into a successful <see cref="T:osu.NET.ApiResult`1"/>.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:osu.NET.ApiResult`1.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:osu.NET.Authorization.AccessTokenRetrievalException">
             <summary>
             Represents an exception thrown when the retrieval of an access token in an <see cref="T:osu.NET.Authorization.IOsuAccessTokenProvider"/> fails.
@@ -273,6 +291,8 @@
             An API client for the osu! API v2.
             </summary>
             <param name="accessTokenProvider">The provider for access tokens on the osu! API v2.</param>
+            <param name="options">The options for the API client.</param>
+            <param name="logger">The logger for the API client.</param>
         </member>
         <member name="M:osu.NET.OsuApiClient.GetBeatmapPacksAsync(System.Nullable{osu.NET.Enums.BeatmapPackType},System.String,System.Nullable{System.Threading.CancellationToken})">
             <summary>
@@ -466,7 +486,7 @@
             <br/><br/>
             API notes:
             <list type="bullet">
-            <item>Includes <see cref="P:osu.NET.Models.Beatmaps.Beatmap.Set"/> (including <see cref="!:Beatmapset.Ratings"/>)</item>
+            <item>Includes <see cref="P:osu.NET.Models.Beatmaps.Beatmap.Set"/> (including <see cref="P:osu.NET.Models.Beatmaps.BeatmapSet.Ratings"/>)</item>
             <item>Includes <see cref="P:osu.NET.Models.Beatmaps.Beatmap.Failtimes"/></item>
             <item>Includes <see cref="P:osu.NET.Models.Beatmaps.Beatmap.MaxCombo"/></item>
             </list>
@@ -1103,6 +1123,8 @@
             An API client for the osu! API v2.
             </summary>
             <param name="accessTokenProvider">The provider for access tokens on the osu! API v2.</param>
+            <param name="options">The options for the API client.</param>
+            <param name="logger">The logger for the API client.</param>
         </member>
         <member name="M:osu.NET.OsuApiClient.EnsureAccessTokenAsync(System.Threading.CancellationToken)">
             <summary>
@@ -1204,7 +1226,7 @@
         </member>
         <member name="T:osu.NET.Enums.BeatmapsetEventApproval">
             <summary>
-            Represents the approval state of a <see cref="!:Models.Users.Events.BeatmapsetApproveEvent"/>.
+            Represents the approval state of a <see cref="T:osu.NET.Models.Events.BeatmapsetApproveEvent"/>.
             <br/><br/>
             API docs: <a href="https://osu.ppy.sh/docs/index.html#event-type"/><br/>
             Source: <a href="https://github.com/ppy/osu-web/blob/master/resources/js/interfaces/event-json.ts"/>
@@ -1694,8 +1716,8 @@
             <summary>
             Represents the sort types for legacy multiplayer matches.
             <br/><br/>
-            API docs: <a href="https://osu.ppy.sh/docs/index.html#get-matches-listing"/><br/>
-            Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Http/Controllers/MatchesController.php"/>
+            API docs: <a href="https://osu.ppy.sh/docs/index.html#matchgame"/><br/>
+            Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Models/LegacyMatch/Game.php"/>
             </summary>
         </member>
         <member name="F:osu.NET.Enums.MatchSortType.IdAscending">
@@ -1706,6 +1728,14 @@
         <member name="F:osu.NET.Enums.MatchSortType.IdDescending">
             <summary>
             Sorts the matches by ID in descending order.
+            </summary>
+        </member>
+        <member name="T:osu.NET.Enums.MatchTeamType">
+            <summary>
+            Represents the team types for legacy multiplayer matches (head-to-head, tag-coop, ...).
+            <br/><br/>
+            API docs: <a href="https://osu.ppy.sh/docs/index.html#get-matches-listing"/><br/>
+            Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Http/Controllers/MatchesController.php"/>
             </summary>
         </member>
         <member name="F:osu.NET.Enums.MatchTeamType.HeadToHead">
@@ -2081,14 +2111,14 @@
             Specifies that the method can return the specified <see cref="T:osu.NET.ApiErrorType"/>s.
             This attribute is used for the error handling code analyzer.
             </summary>
-            <param name="errorTypes">The API error types that can be returned.</param>
+            <param name="errors">The API error types that can be returned.</param>
         </member>
         <member name="M:osu.NET.Helpers.CanReturnApiErrorAttribute.#ctor(osu.NET.ApiErrorType[])">
             <summary>
             Specifies that the method can return the specified <see cref="T:osu.NET.ApiErrorType"/>s.
             This attribute is used for the error handling code analyzer.
             </summary>
-            <param name="errorTypes">The API error types that can be returned.</param>
+            <param name="errors">The API error types that can be returned.</param>
         </member>
         <member name="T:osu.NET.Helpers.Converters.EnumConverter">
             <summary>
@@ -4260,7 +4290,7 @@
         </member>
         <member name="T:osu.NET.Models.Forums.PollText">
             <summary>
-            Represents the title of a <see cref="!:Poll>"/> or text of a <see cref="T:osu.NET.Models.Forums.PollOption"/>.
+            Represents the title of a <see cref="T:osu.NET.Models.Forums.Poll"/> or text of a <see cref="T:osu.NET.Models.Forums.PollOption"/>.
             <br/><br/>
             API docs: <a href="https://osu.ppy.sh/docs/index.html#forum-topic-polloption"/><br/>
             Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Models/Forum/PollOption.php"/>
@@ -4312,7 +4342,14 @@
             The total amount of available search results, including further pages.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:osu.NET.Models.Matches.Match" -->
+        <member name="T:osu.NET.Models.Matches.Match">
+            <summary>
+            Represents a legacy multiplayer match in osu!stable.
+            <br/><br/>
+            API docs: <a href="https://osu.ppy.sh/docs/index.html#match"/><br/>
+            Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Transformers/LegacyMatch/LegacyMatchTransformer.php"/>
+            </summary>
+        </member>
         <member name="P:osu.NET.Models.Matches.Match.Id">
             <summary>
             The ID of this match.

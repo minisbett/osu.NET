@@ -5,7 +5,7 @@ namespace osu.NET.Models.Matches;
 /// <summary>
 /// Represents a legacy multiplayer match in osu!stable.
 /// <br/><br/>
-/// API docs: <a href="https://osu.ppy.sh/docs/index.html#match"><br/>
+/// API docs: <a href="https://osu.ppy.sh/docs/index.html#match"/><br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Transformers/LegacyMatch/LegacyMatchTransformer.php"/>
 /// </summary>
 public class Match

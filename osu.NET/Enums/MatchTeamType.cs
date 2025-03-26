@@ -2,6 +2,12 @@
 
 namespace osu.NET.Enums;
 
+/// <summary>
+/// Represents the team types for legacy multiplayer matches (head-to-head, tag-coop, ...).
+/// <br/><br/>
+/// API docs: <a href="https://osu.ppy.sh/docs/index.html#matchgame"/><br/>
+/// Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Models/LegacyMatch/Game.php"/>
+/// </summary>
 public enum MatchTeamType
 {
   /// <summary>

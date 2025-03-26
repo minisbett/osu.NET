@@ -117,10 +117,19 @@ public class ApiResult<T> where T : class
     return IsSuccess ? success(Value) : error(Error)();
   }
 
+  /// <summary>
+  /// Implicitly converts an <see cref="ApiError"/> into a failed <see cref="ApiResult{T}"/>.
+  /// </summary>
+  /// <param name="error">The error.</param>
   public static implicit operator ApiResult<T>(ApiError error) => new(error);
 
+  /// <summary>
+  /// Implicitly converts a nullable <typeparamref name="T"/> into a successful <see cref="ApiResult{T}"/>.
+  /// </summary>
+  /// <param name="value">The value.</param>
   public static implicit operator ApiResult<T>(T? value) => new(value);
 
+  /// <inheritdoc/>
   public override string ToString()
   {
     return IsSuccess ? $"Success: {Value}" : $"Failure: {Error}";

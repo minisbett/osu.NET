@@ -38,6 +38,7 @@ public class ApiError
     return new(ApiErrorType.Unknown, message);
   }
 
+  /// <inheritdoc/>
   public override string ToString()
   {
     return $"({Type}) {Message}";

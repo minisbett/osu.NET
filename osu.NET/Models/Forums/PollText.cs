@@ -3,7 +3,7 @@
 namespace osu.NET.Models.Forums;
 
 /// <summary>
-/// Represents the title of a <see cref="Poll>"/> or text of a <see cref="PollOption"/>.
+/// Represents the title of a <see cref="Poll"/> or text of a <see cref="PollOption"/>.
 /// <br/><br/>
 /// API docs: <a href="https://osu.ppy.sh/docs/index.html#forum-topic-polloption"/><br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Models/Forum/PollOption.php"/>

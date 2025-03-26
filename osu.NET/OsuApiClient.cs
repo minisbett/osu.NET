@@ -14,6 +14,8 @@ namespace osu.NET;
 /// An API client for the osu! API v2.
 /// </summary>
 /// <param name="accessTokenProvider">The provider for access tokens on the osu! API v2.</param>
+/// <param name="options">The options for the API client.</param>
+/// <param name="logger">The logger for the API client.</param>
 public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, OsuApiClientOptions options, ILogger<OsuApiClient> logger)
 {
   private static readonly JsonSerializer _jsonSerializer = OsuJsonSerializer.Create();
