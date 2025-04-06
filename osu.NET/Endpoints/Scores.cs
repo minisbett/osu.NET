@@ -1,8 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
-using osu.NET.Enums;
+﻿using osu.NET.Enums;
 using osu.NET.Helpers;
 using osu.NET.Models.Scores;
-using System.Net;
 
 namespace osu.NET;
 

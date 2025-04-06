@@ -1,6 +1,5 @@
 ﻿using osu.NET.Helpers;
 using osu.NET.Models.News;
-using System;
 
 namespace osu.NET;
 

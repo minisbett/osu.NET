@@ -25,7 +25,7 @@ internal class TypeMappingConverter<TBase>(Func<TBase, Type> mapping) : JsonConv
     JObject obj = JObject.Load(reader);
 
     // Deserialize with a temporary json serializer excluding this converter itself to prevent infinite recursion.)
-    JsonSerializer tempSerializer = JsonSerializer.Create(new() { Converters = [..serializer.Converters.Except([this])] });
+    JsonSerializer tempSerializer = JsonSerializer.Create(new() { Converters = [.. serializer.Converters.Except([this])] });
 
     if (obj.ToObject<TBase>(tempSerializer) is not TBase @base)
       return null;

@@ -29,7 +29,7 @@ public partial class OsuApiClient
   [CanReturnApiError()]
   public async Task<ApiResult<CommentsBundle>> GetCommentsAsync(int? after = null, CommentableType? type = null, int? commentableId = null,
     int? parentId = null, CommentSortType? sort = null, CommentsCursor? cursor = null, CancellationToken? cancellationToken = null)
-    => await GetAsync<CommentsBundle>("comments", cancellationToken, 
+    => await GetAsync<CommentsBundle>("comments", cancellationToken,
     [
       ("cursor[id]", cursor?.Id),
       ("cursor[created_at]", cursor?.CreatedAt),

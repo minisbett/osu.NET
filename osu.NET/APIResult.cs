@@ -111,7 +111,7 @@ public class ApiResult<T> where T : class
   /// <param name="errorIfValueNull">Optional. Bool whether <see cref="Value"/> being <see langword="null"/> results in <see cref="ApiErrorType.Null"/>.</param>
   public TReturn Match<TReturn>(Func<T?, TReturn> success, Func<ApiError, TReturn> error, bool errorIfValueNull = false)
   {
-    if(IsFailure)
+    if (IsFailure)
       return error(Error);
     else if (Value is null && errorIfValueNull)
       return error(new ApiError(ApiErrorType.Null, null));

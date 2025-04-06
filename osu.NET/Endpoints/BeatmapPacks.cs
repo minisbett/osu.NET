@@ -1,8 +1,6 @@
 ﻿using osu.NET.Enums;
 using osu.NET.Helpers;
 using osu.NET.Models.Beatmaps;
-using osu.NET.Models.Events;
-using System;
 
 namespace osu.NET;
 
@@ -21,7 +19,7 @@ public partial class OsuApiClient
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The bundle with beatmap packs.</returns>
   [CanReturnApiError()]
-  public async Task<ApiResult<BeatmapPacksBundle>> GetBeatmapPacksAsync(BeatmapPackType? type = null, string? cursor = null, 
+  public async Task<ApiResult<BeatmapPacksBundle>> GetBeatmapPacksAsync(BeatmapPackType? type = null, string? cursor = null,
     CancellationToken? cancellationToken = null)
     => await GetAsync<BeatmapPacksBundle>("beatmaps/packs", cancellationToken,
     [

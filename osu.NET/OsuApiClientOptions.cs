@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace osu.NET;
+﻿namespace osu.NET;
 
 /// <summary>
 /// Represents options for an <see cref="OsuApiClient"/>.
