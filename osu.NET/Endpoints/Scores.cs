@@ -73,15 +73,25 @@ public partial class OsuApiClient
 
   /// <summary>
   /// Returns the replay data (.osr file) of the score with the specified ID.
+  /// <br/><br/>
+  /// Errors:<br/>
+  /// <item>
+  ///   <term><see cref="ApiErrorType.ScoreNotFound"/></term>
+  ///   <description>The score could not be found</description>
+  /// </item>
+  /// <br/><br/>
+  /// API docs:<br/>
+  /// <a href="https://osu.ppy.sh/docs/index.html#get-apiv2scoresscoredownload"/>
   /// </summary>
   /// <param name="id">The ID of the score.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The replay data of the score.</returns>
   [CanReturnApiError(ApiErrorType.ScoreNotFound)]
-  public async Task<ApiResult<byte[]>> DownloadScoreAsync(long id, CancellationToken? cancellationToken = null)
+  public async Task<ApiResult<byte[]>> GetReplayAsync(long id, CancellationToken? cancellationToken = null)
   {
     cancellationToken ??= CancellationToken.None;
 
+    // Manually handle the response to avoid deserializing the replay data as JSON. All errors are assumed to be score-not-found.
     HttpResponseMessage response = await SendAsync(new(HttpMethod.Get, $"scores/{id}/download"), cancellationToken ?? CancellationToken.None);
     if (!response.IsSuccessStatusCode)
       return new ApiError(ApiErrorType.ScoreNotFound, "Specified Solo\\Score couldn't be found.");
