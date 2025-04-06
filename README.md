@@ -90,15 +90,10 @@ In order to get started, you create an instance of the `IOsuAccessTokenProvider`
 OsuClientAccessTokenProvider provider = OsuClientAccessTokenProvider
     .FromEnvironmentVariables("OSU_ID", "OSU_SECRET");
 
-OsuApiClientOptions options = new()
-{
-    EnableLogging = false // false by default, do *not* set it to true for stand-alone usage
-};
-
-OsuApiClient client = new(provider, options, null! /* ILogger, set to null for stand-alone usage*/);
+OsuApiClient client = new(provider, options, null /* ILogger, set to null for stand-alone usage*/);
 ```
 > [!IMPORTANT]
-> Since the logging is based on the `Microsoft.Extensions.Logging.ILogger<T>`, a part of the .NET Generic Host, logging needs to be disabled and the logger set to null.
+> Since the logging is based on the `Microsoft.Extensions.Logging.ILogger<T>`, a part of the .NET Generic Host, the logger needs to be set to null.
 
 ## ⚠️ Error Handling
 

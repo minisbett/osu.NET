@@ -16,7 +16,7 @@ namespace osu.NET;
 /// <param name="accessTokenProvider">The provider for access tokens on the osu! API v2.</param>
 /// <param name="options">The options for the API client.</param>
 /// <param name="logger">The logger for the API client.</param>
-public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, OsuApiClientOptions options, ILogger<OsuApiClient> logger)
+public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, OsuApiClientOptions options, ILogger<OsuApiClient>? logger)
 {
   private static readonly JsonSerializer _jsonSerializer = OsuJsonSerializer.Create();
 
@@ -58,17 +58,13 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
     }
     catch (Exception ex)
     {
-      if (options.EnableLogging)
-        logger.LogError(ex, "Failed to send the API request.");
-
+      logger?.LogError(ex, "Failed to send the API request.");
       throw new OsuApiException("Failed to send the API request.", ex);
     }
     finally
     {
-      watch.Stop();
-      if (options.EnableLogging)
-        logger.LogInformation("URL: {Url}\r\nDuration: {Time:N0}ms\r\nStatus: {Status}", request.RequestUri,
-          watch.ElapsedMilliseconds, response is null ? "Error" : $"{(int)response.StatusCode} ({response.StatusCode})");
+      string status = response is null ? "Error" : $"{(int)response.StatusCode} ({response.StatusCode})";
+      logger?.LogInformation("URL: {Url}\r\nDuration: {Time:N0}ms\r\nStatus: {Status}", request.RequestUri, watch.ElapsedMilliseconds, status);
     }
 
     // If the API does not respond with OK (request successful), NotFound/UnprocessableEntity (something not found) or Forbidden (missing permissions),
@@ -112,9 +108,7 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
     }
     catch (Exception ex)
     {
-      if (options.EnableLogging)
-        logger.LogError(ex, "Failed to parse the API response into a {Type} object.", typeof(T));
-
+      logger?.LogError(ex, "Failed to parse the API response into a {Type} object.", typeof(T));
       throw new OsuApiException($"Failed to parse the API response into a {typeof(T)} object.", ex);
     }
   }

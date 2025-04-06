@@ -4843,6 +4843,11 @@
             The name of this tag.
             </summary>
         </member>
+        <member name="P:osu.NET.Models.Other.Tag.Ruleset">
+            <summary>
+            The ruleset in which this tag is used. This will be null if the tag is not ruleset-specific.
+            </summary>
+        </member>
         <member name="P:osu.NET.Models.Other.Tag.Description">
             <summary>
             the description of this tag.
@@ -6218,6 +6223,11 @@
             The total score the user has.
             </summary>
         </member>
+        <member name="P:osu.NET.Models.Users.UserStatistics.TotalHits">
+            <summary>
+            the total hits the user has.
+            </summary>
+        </member>
         <member name="P:osu.NET.Models.Users.UserStatistics.Variants">
             <summary>
             The variants of these statistics.
@@ -6274,16 +6284,6 @@
         <member name="T:osu.NET.OsuApiClientOptions">
             <summary>
             Represents options for an <see cref="T:osu.NET.OsuApiClient"/>.
-            </summary>
-        </member>
-        <member name="P:osu.NET.OsuApiClientOptions.EnableLogging">
-            <summary>
-            Bool whether logging via an <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> is enabled. Defaults to false.<br/>
-            The following actions are logged:
-            <list type="bullet">
-            <item>The API requests and their response and duration (<see cref="F:Microsoft.Extensions.Logging.LogLevel.Debug"/>)</item>
-            <item>Exceptions thrown by the API client (<see cref="F:Microsoft.Extensions.Logging.LogLevel.Error"/>)</item>
-            </list>
             </summary>
         </member>
         <member name="P:osu.NET.OsuApiClientOptions.RequestTimeout">
