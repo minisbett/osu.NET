@@ -62,7 +62,8 @@ IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((context, services) =>
     {
         services.AddHostedService<TestService>();
-        services.AddOsuApiClient(OsuClientAccessTokenProvider.FromEnvironmentVariables("OSU_ID", "OSU_SECRET"));
+        services.AddOsuApiClient(
+            OsuClientAccessTokenProvider.FromEnvironmentVariables("OSU_ID", "OSU_SECRET"));
     })
   .Build();
 ```
