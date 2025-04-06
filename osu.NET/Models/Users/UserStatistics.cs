@@ -62,6 +62,7 @@ public class UserStatistics
   /// <summary>
   /// DOCS: what is this? can user statistics be ranked and unranked?
   /// </summary>
+  [JsonProperty("is_ranked")]
   public bool IsRanked { get; private set; }
 
   /// <summary>
@@ -105,6 +106,12 @@ public class UserStatistics
   /// </summary>
   [JsonProperty("total_score")]
   public long TotalScore { get; private set; }
+
+  /// <summary>
+  /// the total hits the user has.
+  /// </summary>
+  [JsonProperty("total_hits")]
+  public int TotalHits { get; private set; }
 
   /// <summary>
   /// The variants of these statistics.
