@@ -76,12 +76,15 @@ public class ApiResult<T> where T : class
   /// </summary>
   /// <param name="success">Executed if the API request was successful, receiving the value.</param>
   /// <param name="error">Executed if the API request failed, receiving the error.</param>
-  public void Match(Action<T?> success, Action<ApiError> error)
+  /// <param name="errorIfValueNull">Optional. Bool whether <see cref="Value"/> being <see langword="null"/> results in <see cref="ApiErrorType.Null"/>.</param>
+  public void Match(Action<T?> success, Action<ApiError> error, bool errorIfValueNull = false)
   {
-    if (IsSuccess)
-      success(Value);
-    else
+    if (IsFailure)
       error(Error);
+    else if (Value is null && errorIfValueNull)
+      error(new ApiError(ApiErrorType.Null, null));
+
+    success(Value);
   }
 
   /// <summary>
@@ -89,12 +92,15 @@ public class ApiResult<T> where T : class
   /// </summary>
   /// <param name="success">Executed if the API request was successful, receiving the value.</param>
   /// <param name="error">Executed if the API request failed, receiving the error.</param>
-  public void Match(Action<T?> success, Func<ApiError, Action> error)
+  /// <param name="errorIfValueNull">Optional. Bool whether <see cref="Value"/> being <see langword="null"/> results in <see cref="ApiErrorType.Null"/>.</param>
+  public void Match(Action<T?> success, Func<ApiError, Action> error, bool errorIfValueNull = false)
   {
-    if (IsSuccess)
-      success(Value);
-    else
+    if (IsFailure)
       error(Error)();
+    else if (Value is null && errorIfValueNull)
+      error(new ApiError(ApiErrorType.Null, null))();
+
+    success(Value);
   }
 
   /// <summary>
@@ -102,9 +108,15 @@ public class ApiResult<T> where T : class
   /// </summary>
   /// <param name="success">Executed if the API request was successful, receiving the value.</param>
   /// <param name="error">Executed if the API request failed, receiving the error.</param>
-  public TReturn Match<TReturn>(Func<T?, TReturn> success, Func<ApiError, TReturn> error)
+  /// <param name="errorIfValueNull">Optional. Bool whether <see cref="Value"/> being <see langword="null"/> results in <see cref="ApiErrorType.Null"/>.</param>
+  public TReturn Match<TReturn>(Func<T?, TReturn> success, Func<ApiError, TReturn> error, bool errorIfValueNull = false)
   {
-    return IsSuccess ? success(Value) : error(Error);
+    if(IsFailure)
+      return error(Error);
+    else if (Value is null && errorIfValueNull)
+      return error(new ApiError(ApiErrorType.Null, null));
+
+    return success(Value);
   }
 
   /// <summary>
@@ -112,9 +124,14 @@ public class ApiResult<T> where T : class
   /// </summary>
   /// <param name="success">Executed if the API request was successful, receiving the value.</param>
   /// <param name="error">Executed if the API request failed, receiving the error.</param>
-  public TReturn Match<TReturn>(Func<T?, TReturn> success, Func<ApiError, Func<TReturn>> error)
+  /// <param name="errorIfValueNull">Optional. Bool whether <see cref="Value"/> being <see langword="null"/> results in <see cref="ApiErrorType.Null"/>.</param>
+  public TReturn Match<TReturn>(Func<T?, TReturn> success, Func<ApiError, Func<TReturn>> error, bool errorIfValueNull = false)
   {
-    return IsSuccess ? success(Value) : error(Error)();
+    if (IsFailure)
+      return error(Error)();
+    else if (Value is null && errorIfValueNull)
+      return error(new ApiError(ApiErrorType.Null, null))();
+    return success(Value);
   }
 
   /// <summary>
