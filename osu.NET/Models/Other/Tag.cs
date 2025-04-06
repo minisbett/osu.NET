@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using osu.NET.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,12 @@ public class Tag
   /// </summary>
   [JsonProperty("name")]
   public string Name { get; private set; } = default!;
+
+  /// <summary>
+  /// The ruleset in which this tag is used. This will be null if the tag is not ruleset-specific.
+  /// </summary>
+  [JsonProperty("ruleset_id")]
+  public Ruleset? Ruleset { get; private set; } = default!;
 
   /// <summary>
   /// the description of this tag.
