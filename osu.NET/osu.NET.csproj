@@ -26,7 +26,6 @@
     <RepositoryUrl>https://github.com/minisbett/osu.NET</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <DocumentationFile>docs.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
