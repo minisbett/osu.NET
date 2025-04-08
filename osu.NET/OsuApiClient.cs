@@ -93,13 +93,12 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
       JToken token = JToken.Parse(json);
       JObject? obj = token as JObject;
 
-      // Check for an error attribute, indicating the API returned an error.
-      // An error attribute may only exist if an object (not an array) was returned.
-      JToken? x = obj?["error"];
-      if (obj?["error"] is JValue error)
-        return ApiError.FromMessage(error.Value<string>());
-      else if (response.StatusCode is not HttpStatusCode.OK)
-        return ApiError.FromMessage(null);
+      // If the status code is not OK, check for an error in the JSON.
+      if (!response.IsSuccessStatusCode)
+      {
+        string? error = obj?["error"]?.Value<string>();
+        return ApiError.FromMessage(error);
+      }
 
       if (obj is not null && jsonSelector is not null)
         token = jsonSelector.Invoke(obj) ?? token;

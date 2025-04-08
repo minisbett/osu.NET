@@ -14,6 +14,11 @@ internal static class OsuJsonSerializer
   public static JsonSerializer Create()
     => JsonSerializer.Create(new()
     {
+      //
+      // Unifies the parsing of timezones, causing those with a "+00:00" returned from the API to not be converted into the local timezones by NSJ
+      //
+      DateTimeZoneHandling = DateTimeZoneHandling.Utc,
+
       Converters = [
         new EnumConverter(),
 
