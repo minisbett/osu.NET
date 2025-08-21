@@ -165,7 +165,7 @@ Below is a list of all planned and implemented osu! API endpoints. If you'd like
 - ❌ `/beatmapsets/discussions`
 
 #### Beatmap Sets 📦
-- ❌ `/beatmapsets/search`
+- ❌ `/beatmapsets/search`🔎
 - ✅ `/beatmapsets/lookup`
 - ✅ `/beatmapsets/{beatmapset}`
 - ❌ `/beatmapsets/events`🔎
