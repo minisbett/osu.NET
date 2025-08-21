@@ -13,11 +13,12 @@ public class TopTag
   /// <summary>
   /// The ID of the tag.
   /// </summary>
-  [JsonProperty("id")]
+  [JsonProperty("tag_id")]
   public int TagId { get; private set; }
 
   /// <summary>
   /// The amount of times the tag was voted.
   /// </summary>
+  [JsonProperty("count")]
   public int Count { get; private set; }
 }
