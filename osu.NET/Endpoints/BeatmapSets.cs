@@ -9,9 +9,6 @@ public partial class OsuApiClient
   // Not implemented:
   // - https://osu.ppy.sh/docs/index.html#get-apiv2beatmapsetsbeatmapsetdownload (Lazer scope only, omitted in API wrapper)
 
-  // TODOENDPOINT: https://osu.ppy.sh/docs/index.html#todo-documentation (undocumented) (pagination)
-
-
   /// <summary>
   /// Looksup the beatmapset that contains the beatmap with the specified ID.
   /// <br/><br/>
@@ -49,4 +46,24 @@ public partial class OsuApiClient
   [CanReturnApiError(ApiErrorType.BeatmapSetNotFound)]
   public async Task<ApiResult<BeatmapSetExtended>> GetBeatmapSetAsync(int beatmapSetId, CancellationToken? cancellationToken = null)
     => await GetAsync<BeatmapSetExtended>($"beatmapsets/{beatmapSetId}", cancellationToken);
+
+  /// <summary>
+  /// Searches for beatmapsets with the specified search query and returns a bundle of beatmapsets and the cursor string for fetching further sets.
+  /// One request returns 50 beatmapsets.
+  /// <br/><br/>
+  /// API docs:<br/>
+  /// <a href="https://osu.ppy.sh/docs/index.html#search-beatmapset"/>
+  /// </summary>
+  /// <param name="query">The sarch query for the search operation.</param>
+  /// <param name="cursor">Optional. The cursor string for fetching further beatmapsets.</param>
+  /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
+  /// <returns>The bundle with beatmapsets.</returns>
+  [CanReturnApiError()]
+  public async Task<ApiResult<BeatmapSetsBundle>> SearchBeatmapSetsAsync(string query, string? cursor = null,
+    CancellationToken? cancellationToken = null)
+    => await GetAsync<BeatmapSetsBundle>("beatmapsets/search", cancellationToken,
+    [
+      ("q", query),
+      ("cursor_string", cursor)
+    ]);
 }

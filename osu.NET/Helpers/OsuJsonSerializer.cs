@@ -23,7 +23,7 @@ internal static class OsuJsonSerializer
         new EnumConverter(),
 
         //
-        // Deserializes UserEvent objects into their correct type based on the UserEventType
+        // Deserializes Event objects into their correct type based on the UserEventType
         //
         new TypeMappingConverter<Event>(obj =>
         {
