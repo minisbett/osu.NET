@@ -271,10 +271,10 @@ public partial class OsuApiClient
 /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
 /// <returns>The users with the specified names.</returns>
   [CanReturnApiError()]
-  public async Task<ApiResult<User[]>> LookupUsersAsync(string[] ids, bool? excludeBots = null, CancellationToken? cancellationToken = null)
+  public async Task<ApiResult<User[]>> LookupUsersAsync(string[] usernames, bool? excludeBots = null, CancellationToken? cancellationToken = null)
     => await GetAsync<User[]>($"users/lookup", cancellationToken,
     [
-      .. ids.Select(x => ("ids[]", $"@{x}")),
+      .. usernames.Select(x => ("ids[]", $"@{x}")),
       ("exclude_bots", excludeBots)
     ], json => json["users"]);
 }
