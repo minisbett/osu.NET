@@ -6,7 +6,6 @@ using osu.NET.Helpers;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http.Headers;
-using System.Web;
 
 namespace osu.NET;
 
@@ -172,7 +171,7 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, I
         _ => value!.ToString()!
       };
 
-      url += $"{HttpUtility.UrlEncode(key)}={HttpUtility.UrlEncode(valueStr)}&";
+      url += $"{Uri.EscapeDataString(key)}={Uri.EscapeDataString(valueStr)}&";
     }
 
     return url.TrimEnd('?').TrimEnd('&');
