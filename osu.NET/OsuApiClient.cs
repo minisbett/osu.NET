@@ -46,7 +46,7 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
   /// <param name="request">The HTTP request.</param>
   /// <param name="cancellationToken">The cancellation token for aborting the request.</param>
   /// <returns>The HTTP response.</returns>
-  private async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+  protected async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
   {
     await EnsureAccessTokenAsync(cancellationToken);
 
@@ -84,7 +84,7 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
   /// <param name="jsonSelector">A JSON selector for parsing nested objects instead of the root JSON.</param>
   /// <param name="cancellationToken">The cancellation token for aborting the request.</param>
   /// <returns>The parsed API result.</returns>
-  private async Task<ApiResult<T>> ParseAsync<T>(HttpResponseMessage response, Func<JObject, JToken?>? jsonSelector,
+  protected async Task<ApiResult<T>> ParseAsync<T>(HttpResponseMessage response, Func<JObject, JToken?>? jsonSelector,
     CancellationToken cancellationToken) where T : class
   {
     try
@@ -121,7 +121,7 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
   /// <param name="parameters">Optional. The query parameters of the URL. Parameters with a null value will be ignored.</param>
   /// <param name="jsonSelector">Optional. A JSON selector for parsing nested objects instead of the root JSON.</param>
   /// <returns>The parsed API result.</returns>
-  private async Task<ApiResult<T>> GetAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
+  protected async Task<ApiResult<T>> GetAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
     Func<JObject, JToken?>? jsonSelector = null) where T : class
   {
     url = BuildRequestUrl(url, parameters ?? []);
@@ -141,7 +141,7 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
   /// <param name="jsonSelector">Optional. A JSON selector for parsing nested objects instead of the root JSON.</param>
   /// <param name="httpContent">The body content used for the request.</param>
   /// <returns>The parsed API result.</returns>
-  private async Task<ApiResult<T>> PostAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
+  protected async Task<ApiResult<T>> PostAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
     Func<JObject, JToken?>? jsonSelector = null, HttpContent? httpContent = null) where T : class
   {
     url = BuildRequestUrl(url, parameters ?? []);
@@ -157,7 +157,7 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
   /// <param name="url">The base request URL.</param>
   /// <param name="queryParameters">The query parameters.</param>
   /// <returns>The request URL.</returns>
-  private static string BuildRequestUrl(string url, (string Key, object? Value)[] queryParameters)
+  protected static string BuildRequestUrl(string url, (string Key, object? Value)[] queryParameters)
   {
     url = $"{url.TrimEnd('/')}?";
 
