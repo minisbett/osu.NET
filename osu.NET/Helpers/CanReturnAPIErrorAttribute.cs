@@ -8,4 +8,4 @@
 /// </summary>
 /// <param name="errors">The API error types that can be returned.</param>
 [AttributeUsage(AttributeTargets.Method)]
-public class CanReturnApiErrorAttribute(params ApiErrorType[] errors) : Attribute;
+internal class CanReturnApiErrorAttribute(params ApiErrorType[] errors) : Attribute;
