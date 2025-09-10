@@ -10,29 +10,35 @@ namespace osu.NET;
 public static class ServiceCollectionExtensions
 {
   /// <summary>
-  /// Registers a scoped <see cref="OsuApiClient"/> with the specified access token provider in the service collection.
+  /// Registers a scoped <see cref="OsuApiClient"/> with the specified access token provider instance in the service collection.
   /// </summary>
   /// <param name="services">The service collection.</param>
-  /// <param name="accessTokenProvider">An access token provider for the API client.</param>
+  /// <param name="accessTokenProvider">The access token provider.</param>
   public static IServiceCollection AddOsuApiClient(this IServiceCollection services, IOsuAccessTokenProvider accessTokenProvider)
-    => services.AddOsuApiClient(_ => accessTokenProvider);
+    => services.AddScoped(services => new OsuApiClient(accessTokenProvider, services.GetRequiredService<ILogger<OsuApiClient>>()));
 
   /// <summary>
-  /// Registers a scoped <see cref="OsuApiClient"/> in the service collection.
-  /// <br/><br/>
-  /// Notes:
-  /// <list type="bullet">
-  /// <item>The <paramref name="accessTokenProviderFactory"/> is ran on service registration as the access token provider must be a singleton instance in order to persist authorization data.</item>
-  /// </list>
+  /// Registers a scoped <see cref="OsuApiClient"/>. The provided factory creates an instance of the access token provider on client instantiation.
   /// </summary>
   /// <param name="services">The service collection.</param>
-  /// <param name="accessTokenProviderFactory">A factory for creating an access token provider for the API client.</param>
-  public static IServiceCollection AddOsuApiClient(this IServiceCollection services,
-    Func<IServiceProvider, IOsuAccessTokenProvider> accessTokenProviderFactory)
+  /// <param name="providerFactory">The factory for creating an access token provider for the API client.</param>
+  public static IServiceCollection AddOsuApiClient(this IServiceCollection services, Func<IServiceProvider, IOsuAccessTokenProvider> providerFactory)
   {
-    IOsuAccessTokenProvider accessTokenProvider = accessTokenProviderFactory(services.BuildServiceProvider());
     return services.AddScoped(services =>
     {
+      IOsuAccessTokenProvider accessTokenProvider = providerFactory(services);
+      return new OsuApiClient(accessTokenProvider, services.GetRequiredService<ILogger<OsuApiClient>>());
+    });
+  }
+
+  /// <summary>
+  /// Registers a scoped <see cref="OsuApiClient"/>. An access token provider with the specified type is expected to be registered 
+  /// </summary>
+  public static IServiceCollection AddOsuApiClient<T>(this IServiceCollection services) where T : IOsuAccessTokenProvider
+  {
+    return services.AddScoped(services =>
+    {
+      T accessTokenProvider = services.GetRequiredService<T>();
       return new OsuApiClient(accessTokenProvider, services.GetRequiredService<ILogger<OsuApiClient>>());
     });
   }

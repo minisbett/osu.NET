@@ -54,7 +54,7 @@ For the authorization flow, there are multiple methods to choose from:
 > You can also write your own access token provider by inheriting `IOsuAccessTokenProvider`.
 
 ### ⚙️ Using osu.NET with the .NET Generic Host
-The API wrapper provides extension methods for registering the `OsuApiClient` as a scoped service. The access tokens are provided via an `IOsuAccessTokenProvider` instance provided on service registration, optionally the API client can be configured too.
+The API wrapper provides extension methods for registering the `OsuApiClient` as a scoped service. The access tokens are provided via an `IOsuAccessTokenProvider` instance provided on service registration. There are more overloads available for different use-cases of authorization, eg. user-specific authorization in web applications.
 
 Example:
 ```cs
@@ -86,7 +86,7 @@ In order to get started, you create an instance of the `IOsuAccessTokenProvider`
 OsuClientAccessTokenProvider provider = OsuClientAccessTokenProvider
     .FromEnvironmentVariables("OSU_ID", "OSU_SECRET");
 
-OsuApiClient client = new(provider, options, null /* ILogger, set to null for stand-alone usage*/);
+OsuApiClient client = new(provider, null /* ILogger, set to null for stand-alone usage*/);
 ```
 > [!IMPORTANT]
 > Since the logging is based on the `Microsoft.Extensions.Logging.ILogger<T>`, a part of the .NET Generic Host, the logger needs to be set to null.
