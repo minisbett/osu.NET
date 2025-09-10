@@ -11,18 +11,28 @@ namespace osu.NET.Models.Beatmaps.Events;
 /// </summary>
 public class BeatmapSetEvent
 {
+  /// <summary>
+  /// </summary>
   [JsonProperty("beatmapset")]
   public BeatmapSet Set { get; private set; } = default!;
 
+  /// <summary>
+  /// </summary>
   [JsonProperty("created_at")]
   public DateTimeOffset CreatedAt { get; private set; }
 
+  /// <summary>
+  /// </summary>
   [JsonProperty("discussion")]
   public Discussion Discussion { get; private set; } = null!;
 
+  /// <summary>
+  /// </summary>
   [JsonProperty("id")]
   public int Id { get; private set; }
 
+  /// <summary>
+  /// </summary>
   [JsonProperty("user_id")]
   public int UserId { get; private set; }
 }

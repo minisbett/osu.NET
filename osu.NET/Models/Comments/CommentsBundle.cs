@@ -9,9 +9,13 @@ namespace osu.NET.Models.Comments;
 /// </summary>
 public class CommentsCursor
 {
+  /// <summary>
+  /// </summary>
   [JsonProperty("id")]
   public int Id { get; private set; }
 
+  /// <summary>
+  /// </summary>
   [JsonProperty("created_at")]
   public DateTime CreatedAt { get; private set; }
 }

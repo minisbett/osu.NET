@@ -14,20 +14,21 @@ namespace osu.NET;
 /// An API client for the osu! API v2.
 /// </summary>
 /// <param name="accessTokenProvider">The provider for access tokens on the osu! API v2.</param>
-/// <param name="options">The options for the API client.</param>
 /// <param name="logger">The logger for the API client.</param>
-public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, OsuApiClientOptions options, ILogger<OsuApiClient>? logger)
+public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, ILogger<OsuApiClient>? logger)
 {
   private static readonly JsonSerializer _jsonSerializer = OsuJsonSerializer.Create();
 
-  private readonly HttpClient _http = new()
+  /// <summary>
+  /// The HTTP client used by the API client.
+  /// </summary>
+  protected HttpClient Http { get; } = new()
   {
     BaseAddress = new("https://osu.ppy.sh/api/v2/"),
     DefaultRequestHeaders =
     {
       { "x-api-version", "20220705" }
-    },
-    Timeout = options.RequestTimeout
+    }
   };
 
   /// <summary>
@@ -37,7 +38,7 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
   private async Task EnsureAccessTokenAsync(CancellationToken cancellationToken)
   {
     string token = await accessTokenProvider.GetAccessTokenAsync(cancellationToken);
-    _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+    Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
   }
 
   /// <summary>
@@ -54,7 +55,7 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, O
     HttpResponseMessage? response = null;
     try
     {
-      response = await _http.SendAsync(request, cancellationToken);
+      response = await Http.SendAsync(request, cancellationToken);
     }
     catch (Exception ex)
     {
