@@ -1,4 +1,5 @@
-﻿using osu.NET.Enums;
+﻿using System.Threading;
+using osu.NET.Enums;
 using osu.NET.Helpers;
 using osu.NET.Models.Rankings;
 using osu.NET.Models.Users;
@@ -54,4 +55,23 @@ public partial class OsuApiClient
   public async Task<ApiResult<SpotlightRanking>> GetSpotlightRankingsAsync(Ruleset ruleset, int? spotlightId = null,
     CancellationToken? cancellationToken = null)
     => await GetAsync<SpotlightRanking>($"rankings/{ruleset.GetQueryName()}/charts?spotlight={spotlightId}", cancellationToken);
+
+  /// <summary>
+  /// Returns the global ranked score rankings at the specified page. One page contains 50 users.
+  /// <br/><br/>
+  /// API docs:<br/>
+  /// <a href="https://osu.ppy.sh/docs/index.html#get-ranking"/>
+  /// </summary>
+  /// <param name="ruleset">The ruleset in which the rankings are returned.</param>
+  /// <param name="country">Optional. The country to return the rankings of. Defaults to global rankings.</param>
+  /// <param name="page">Optional. The page to return.</param>
+  /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
+  /// <returns>The ranked score rankings.</returns>
+  [CanReturnApiError(ApiErrorType.SpotlightNotFound, ApiErrorType.InvalidRulesetForSpotlight)]
+  public async Task<ApiResult<UserStatistics[]>> GetScoreRankingsAsync(Ruleset ruleset, string? country = null, int? page = null, 
+    CancellationToken? cancellationToken = null)
+    => await GetAsync<UserStatistics[]>($"rankings/{ruleset.GetQueryName()}/score", cancellationToken, [
+      ("country",  country),
+      ("page", page)
+      ], json => json["ranking"]);
 }
