@@ -27,5 +27,11 @@ public enum SpotlightType
   /// Represents a special spotlight.
   /// </summary>
   [JsonApiName("special")]
-  Special
+  Special,
+
+  /// <summary>
+  /// Represents a spotlight compiling a 'best-of'.
+  /// </summary>
+  [JsonApiName("bestof")]
+  BestOf
 }

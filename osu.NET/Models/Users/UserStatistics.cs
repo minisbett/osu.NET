@@ -84,16 +84,16 @@ public class UserStatistics
   public int PlayCount { get; private set; }
 
   /// <summary>
-  /// The total playtime of the user, in seconds.
+  /// The total playtime of the user, in seconds. This will be null in a context where this statistic is not used (eg. spotlight rankings).
   /// </summary>
   [JsonProperty("play_time")]
-  public int PlayTime { get; private set; }
+  public int? PlayTime { get; private set; }
 
   /// <summary>
-  /// The total performance points the user has.
+  /// The total performance points the user has. This will be null in a context where this statistic is not used (eg. spotlight rankings).
   /// </summary>
   [JsonProperty("pp")]
-  public float PP { get; private set; }
+  public float? PP { get; private set; }
 
   /// <summary>
   /// The total ranked score the user has.
@@ -118,4 +118,10 @@ public class UserStatistics
   /// </summary>
   [JsonProperty("variants")]
   public StatisticsVariant[]? Variants { get; private set; }
+
+  /// <summary>
+  /// The user these statistics belong to. This will be null if the statistics are accessed through a user object.
+  /// </summary>
+  [JsonProperty("user")]
+  public User? User { get; private set; } = default!;
 }

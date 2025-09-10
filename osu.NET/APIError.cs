@@ -56,6 +56,11 @@ public class ApiError
     ["Specified Comment couldn't be found."] = ApiErrorType.CommentNotFound,
     ["Specified Forum\\Forum couldn't be found."] = ApiErrorType.ForumNotFound,
     ["Specified LegacyMatch\\LegacyMatch couldn't be found."] = ApiErrorType.MatchNotFound,
-    ["Specified Solo\\Score couldn't be found."] = ApiErrorType.ScoreNotFound
+    ["Specified Solo\\Score couldn't be found."] = ApiErrorType.ScoreNotFound,
+    ["Specified Spotlight couldn't be found."] = ApiErrorType.SpotlightNotFound,
+    ["ruleset osu isn't available for the specified spotlight"] = ApiErrorType.InvalidRulesetForSpotlight,
+    ["ruleset taiko isn't available for the specified spotlight"] = ApiErrorType.InvalidRulesetForSpotlight,
+    ["ruleset fruits isn't available for the specified spotlight"] = ApiErrorType.InvalidRulesetForSpotlight,
+    ["ruleset mania isn't available for the specified spotlight"] = ApiErrorType.InvalidRulesetForSpotlight
   };
 }

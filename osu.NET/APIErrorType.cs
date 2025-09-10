@@ -79,6 +79,16 @@
     /// <summary>
     /// Indicates that the score in the request could not be found.
     /// </summary>
-    ScoreNotFound
+    ScoreNotFound,
+
+    /// <summary>
+    /// Indicates that the spotlight in the request could not be found.
+    /// </summary>
+    SpotlightNotFound,
+
+    /// <summary>
+    /// Indicates that the ruleset is invalid for the spotlight in the request.
+    /// </summary>
+    InvalidRulesetForSpotlight
   }
 }

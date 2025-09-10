@@ -26,7 +26,7 @@ public class Spotlight
   /// <summary>
   /// The amount of participants in the spotlight. This will be null if not requesting a single spotlight.
   /// </summary>
-  [JsonProperty("participant_amount")]
+  [JsonProperty("participant_count")]
   public int? ParticipantAmount { get; private set; }
 
   /// <summary>
