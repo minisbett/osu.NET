@@ -274,7 +274,7 @@ public partial class OsuApiClient
   public async Task<ApiResult<User[]>> LookupUsersAsync(string[] ids, bool? excludeBots = null, CancellationToken? cancellationToken = null)
     => await GetAsync<User[]>($"users/lookup", cancellationToken,
     [
-      .. ids.Select(x => ("ids[]", x)),
+      .. ids.Select(x => ("ids[]", Uri.EscapeDataString(x))),
       ("exclude_bots", excludeBots)
     ], json => json["users"]);
 }
