@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using osu.NET.Enums;
+﻿using osu.NET.Enums;
 using osu.NET.Helpers;
 using osu.NET.Models.Rankings;
 using osu.NET.Models.Users;
@@ -129,7 +128,7 @@ public partial class OsuApiClient
   /// <returns>The global performance rankings.</returns>
   [CanReturnApiError(ApiErrorType.CountryNotFound)]
   public async Task<ApiResult<UserStatistics[]>> GetPerformanceRankingsAsync(Ruleset ruleset, string? country = null, VariantType? variant = null,
-    int? page = null, CancellationToken ? cancellationToken = null)
+    int? page = null, CancellationToken? cancellationToken = null)
     => await GetAsync<UserStatistics[]>($"rankings/{ruleset.GetQueryName()}/performance"
       + (variant.HasValue ? $"?variant={variant.Value.GetQueryName()}" : ""), cancellationToken, [
       ("country", country),

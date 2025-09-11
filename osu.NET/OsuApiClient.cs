@@ -1,11 +1,11 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Diagnostics;
+using System.Net;
+using System.Net.Http.Headers;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using osu.NET.Authorization;
 using osu.NET.Helpers;
-using System.Diagnostics;
-using System.Net;
-using System.Net.Http.Headers;
 
 namespace osu.NET;
 

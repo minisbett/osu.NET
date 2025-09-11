@@ -250,26 +250,26 @@ public partial class OsuApiClient
       ("exclude_bots", excludeBots)
     ], json => json["users"]);
 
-/// <summary>
-/// Returns all users with the specified usernames, up to 50. If a username could not be found, it is skipped.
-/// <br/><br/>
-/// This endpoint does not include any statistics. If you need this information,
-/// use <see cref="GetUsersAsync(int[], bool?, CancellationToken?)"/> with a higher ratelimit cost.
-/// <br/><br/>
-/// API notes:
-/// <list type="bullet">
-/// <item>Includes <see cref="User.Country"/></item>
-/// <item>Includes <see cref="User.Cover"/></item>
-/// <item>Includes <see cref="User.Groups"/></item>
-/// <item>Does *not* include <see cref="User.Statistics"/> or <see cref="User.RulesetStatistics"/></item>
-/// </list>
-/// API docs:<br/>
-/// <a href="https://osu.ppy.sh/docs/index.html#get-users"/>
-/// </summary>
-/// <param name="usernames">The usernames.</param>
-/// <param name="excludeBots">Optional. Bool whether bot users should be ignored.</param>
-/// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
-/// <returns>The users with the specified names.</returns>
+  /// <summary>
+  /// Returns all users with the specified usernames, up to 50. If a username could not be found, it is skipped.
+  /// <br/><br/>
+  /// This endpoint does not include any statistics. If you need this information,
+  /// use <see cref="GetUsersAsync(int[], bool?, CancellationToken?)"/> with a higher ratelimit cost.
+  /// <br/><br/>
+  /// API notes:
+  /// <list type="bullet">
+  /// <item>Includes <see cref="User.Country"/></item>
+  /// <item>Includes <see cref="User.Cover"/></item>
+  /// <item>Includes <see cref="User.Groups"/></item>
+  /// <item>Does *not* include <see cref="User.Statistics"/> or <see cref="User.RulesetStatistics"/></item>
+  /// </list>
+  /// API docs:<br/>
+  /// <a href="https://osu.ppy.sh/docs/index.html#get-users"/>
+  /// </summary>
+  /// <param name="usernames">The usernames.</param>
+  /// <param name="excludeBots">Optional. Bool whether bot users should be ignored.</param>
+  /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
+  /// <returns>The users with the specified names.</returns>
   [CanReturnApiError()]
   public async Task<ApiResult<User[]>> LookupUsersAsync(string[] usernames, bool? excludeBots = null, CancellationToken? cancellationToken = null)
     => await GetAsync<User[]>($"users/lookup", cancellationToken,
