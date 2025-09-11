@@ -3,15 +3,21 @@
 namespace osu.NET.Models.Responses;
 
 /// <summary>
-/// Represents the response from an access token request via an <see cref="Authorization.OsuClientAccessTokenProvider"/>.
+/// Represents the response from a code exchange request via an <see cref="Authorization.OsuOAuthClient"/>.
 /// </summary>
-internal class OsuAccessTokenResponse
+public class OsuCodeExchangeResponse
 {
   /// <summary>
   /// The access token. If null, an error likely occured.
   /// </summary>
   [JsonProperty("access_token")]
-  public string? AccessToken { get; private set; }
+  public string AccessToken { get; private set; } = null!;
+
+  /// <summary>
+  /// The refresh token. If null, an error likely occured.
+  /// </summary>
+  [JsonProperty("refresh_token")]
+  public string RefreshToken { get; private set; } = null!;
 
   /// <summary>
   /// The amount of seconds in which the access token will expire. If null, an error likely occured.

@@ -9,6 +9,8 @@ namespace osu.NET;
 /// </summary>
 public static class ServiceCollectionExtensions
 {
+  #region OsuApiClient
+
   /// <summary>
   /// Registers a scoped <see cref="OsuApiClient"/>. The provided factory creates an instance of the access token provider on client instantiation.
   /// </summary>
@@ -107,4 +109,42 @@ public static class ServiceCollectionExtensions
   public static IServiceCollection AddKeyedOsuApiClient<TKey, TProvider>(this IServiceCollection services, IOsuAccessTokenProvider accessTokenProvider)
     where TProvider : IOsuAccessTokenProvider
     => services.AddKeyedOsuApiClient(nameof(TKey), services => services.GetRequiredService<TProvider>());
+
+  #endregion
+
+  #region OsuOAuthClient
+
+  /// <summary>
+  /// Registers a scoped <see cref="OsuOAuthClient"/> with the specified client credentials and redirect url.
+  /// </summary>
+  /// <param name="services">The service collection.</param>
+  /// <param name="clientId">The client ID.</param>
+  /// <param name="clientSecret">The client secret.</param>
+  /// <param name="redirectUrl">The redirect URL.</param>
+  public static IServiceCollection AddOsuOAuthClient(this IServiceCollection services, string clientId, string clientSecret, string redirectUrl)
+    => services.AddScoped(_ => new OsuOAuthClient(clientId, clientSecret, redirectUrl));
+
+  /// <summary>
+  /// Registers a scoped, keyed <see cref="OsuOAuthClient"/> with the specified client credentials and redirect url.
+  /// </summary>
+  /// <param name="services">The service collection.</param>
+  /// <param name="serviceKey">The key of the <see cref="OsuOAuthClient"/> service.</param>
+  /// <param name="clientId">The client ID.</param>
+  /// <param name="clientSecret">The client secret.</param>
+  /// <param name="redirectUrl">The redirect URL.</param>
+  public static IServiceCollection AddKeyedOsuOAuthClient(this IServiceCollection services, object? serviceKey, string clientId, string clientSecret, string redirectUrl)
+    => services.AddKeyedScoped(serviceKey, (_, _) => new OsuOAuthClient(clientId, clientSecret, redirectUrl));
+
+  /// <summary>
+  /// Registers a scoped, keyed <see cref="OsuOAuthClient"/> with the specified client credentials and redirect url.
+  /// </summary>
+  /// <typeparam name="TKey">The type whichs name is used as the key.</typeparam>
+  /// <param name="services">The service collection.</param>
+  /// <param name="clientId">The client ID.</param>
+  /// <param name="clientSecret">The client secret.</param>
+  /// <param name="redirectUrl">The redirect URL.</param>
+  public static IServiceCollection AddKeyedOsuOAuthClient<TKey>(this IServiceCollection services, string clientId, string clientSecret, string redirectUrl)
+    => services.AddKeyedOsuOAuthClient(nameof(TKey), clientId, clientSecret, redirectUrl);
+
+  #endregion
 }

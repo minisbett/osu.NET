@@ -51,10 +51,10 @@ public class OsuClientAccessTokenProvider(string clientId, string clientSecret) 
     // Also handle the case where the access token or expiration date is null but the response was successful, which should not happen.
     if (!response.IsSuccessStatusCode)
       throw new AccessTokenRetrievalException($"{response.StatusCode}: {accessToken.ErrorDescription}");
-    else if (accessToken.Token is null || accessToken.ExpiresIn is null)
+    else if (accessToken.AccessToken is null || accessToken.ExpiresIn is null)
       throw new AccessTokenRetrievalException("The access token or expiration date is null, but no error was reported.");
 
-    _accessToken = accessToken.Token;
+    _accessToken = accessToken.AccessToken;
     _expirationDate = DateTimeOffset.UtcNow.AddSeconds(accessToken.ExpiresIn.Value);
     return _accessToken;
   }
