@@ -120,6 +120,11 @@ public class UserStatistics
   public StatisticsVariant[]? Variants { get; private set; }
 
   /// <summary>
+  /// The rank change of the user in the past 30 days. This is an optional property and may be null.
+  /// </summary>
+  public int? RankChangeSince30Days { get; private set; }
+
+  /// <summary>
   /// The user these statistics belong to. This will be null if the statistics are accessed through a user object.
   /// </summary>
   [JsonProperty("user")]

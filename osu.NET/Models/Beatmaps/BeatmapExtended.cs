@@ -60,7 +60,7 @@ public class BeatmapExtended : Beatmap
   public float CircleSize { get; private set; }
 
   /// <summary>
-  /// The datetiem at which this beatmap was deleted. This will be null if the beatmap has not been deleted.
+  /// The datetime at which this beatmap was deleted. This will be null if the beatmap has not been deleted.
   /// </summary>
   public DateTimeOffset? DeletedAt { get; private set; }
 

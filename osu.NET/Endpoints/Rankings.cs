@@ -10,8 +10,6 @@ public partial class OsuApiClient
 {
   // API docs: https://osu.ppy.sh/docs/index.html#ranking
 
-  // TODOENDPOINT: https://osu.ppy.sh/docs/index.html#get-ranking (pagination)
-
   /// <summary>
   /// Returns the users on the specified page of the kudosu ranking, sorted by kudosu. One page contains 50 users.
   /// <br/><br/>
@@ -71,7 +69,7 @@ public partial class OsuApiClient
   public async Task<ApiResult<UserStatistics[]>> GetScoreRankingsAsync(Ruleset ruleset, string? country = null, int? page = null,
     CancellationToken? cancellationToken = null)
     => await GetAsync<UserStatistics[]>($"rankings/{ruleset.GetQueryName()}/score", cancellationToken, [
-      ("country",  country),
+      ("country", country),
       ("page", page)
       ], json => json["ranking"]);
 
@@ -88,4 +86,32 @@ public partial class OsuApiClient
   [CanReturnApiError()]
   public async Task<ApiResult<CountryStatistics[]>> GetCountryRankingsAsync(Ruleset ruleset, int? page = null, CancellationToken? cancellationToken = null)
     => await GetAsync<CountryStatistics[]>($"rankings/{ruleset.GetQueryName()}/country", cancellationToken, [("page", page)], json => json["ranking"]);
+
+  /// <summary>
+  /// Returns the global performance rankings at the specified page. One page contains 50 users.
+  /// <br/><br/>
+  /// API notes:
+  /// <list type="bullet">
+  /// <item>Includes <see cref="UserStatistics.User"/> (including <see cref="User.Country"/> and <see cref="User.Cover"/>)</item>
+  /// <item>Includes <see cref="UserStatistics.RankChangeSince30Days"/></item>
+  /// <item>Includes <see cref="UserStatistics.RankChangeSince30Days"/> (if no filter is applied)</item>
+  /// </list>
+  /// <br/><br/>
+  /// API docs:<br/>
+  /// <a href="https://osu.ppy.sh/docs/index.html#get-ranking"/>
+  /// </summary>
+  /// <param name="ruleset">The ruleset in which the rankings are returned.</param>
+  /// <param name="country">Optional. The country to return the rankings of. Defaults to global rankings.</param>
+  /// <param name="page">Optional. The page to return.</param>
+  /// <param name="variant">Optional. The variant of the ruleset. Only applies to osu!mania.</param>
+  /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
+  /// <returns>The global performance rankings.</returns>
+  [CanReturnApiError(ApiErrorType.CountryNotFound)]
+  public async Task<ApiResult<UserStatistics[]>> GetPerformanceRankingsAsync(Ruleset ruleset, string? country = null, VariantType? variant = null,
+    int? page = null, CancellationToken ? cancellationToken = null)
+    => await GetAsync<UserStatistics[]>($"rankings/{ruleset.GetQueryName()}/performance"
+      + (variant.HasValue ? $"?variant={variant.Value.GetQueryName()}" : ""), cancellationToken, [
+      ("country", country),
+      ("page", page),
+      ], json => json["ranking"]);
 }
