@@ -1,4 +1,4 @@
-﻿using osu.NET.Helpers;
+﻿using osu.NET.Internal;
 using osu.NET.Models.Events;
 
 namespace osu.NET.Enums;

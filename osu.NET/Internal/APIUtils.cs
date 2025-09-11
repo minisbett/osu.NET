@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace osu.NET.Helpers;
+namespace osu.NET.Internal;
 
 /// <summary>
 /// Provides extension and utility methods for the API wrapper.

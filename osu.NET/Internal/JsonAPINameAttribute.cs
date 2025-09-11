@@ -1,4 +1,4 @@
-﻿namespace osu.NET.Helpers;
+﻿namespace osu.NET.Internal;
 
 /// <summary>
 /// Attaches a string representation in the JSON response of an API request to an enum field.<br/>

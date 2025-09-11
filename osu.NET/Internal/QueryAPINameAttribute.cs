@@ -1,4 +1,4 @@
-﻿namespace osu.NET.Helpers;
+﻿namespace osu.NET.Internal;
 
 /// <summary>
 /// Attaches a string representation in a REST-URL or query parameter to an enum field.

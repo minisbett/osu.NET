@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using Newtonsoft.Json;
 
-namespace osu.NET.Helpers.Converters;
+namespace osu.NET.Internal.Converters;
 
 /// <summary>
 /// A <see cref="JsonConverter"/> that handles the deserialization into enums based on the <see cref="JsonApiNameAttribute"/>.

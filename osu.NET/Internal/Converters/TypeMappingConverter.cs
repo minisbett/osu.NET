@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace osu.NET.Helpers.Converters;
+namespace osu.NET.Internal.Converters;
 
 /// <summary>
 /// A <see cref="JsonConverter"/> that deserializes the JSON object into a type provided via the base type with a mapping function.

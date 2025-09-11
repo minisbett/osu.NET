@@ -1,5 +1,5 @@
 ﻿using osu.NET.Enums;
-using osu.NET.Helpers;
+using osu.NET.Internal;
 using osu.NET.Models.Beatmaps;
 
 namespace osu.NET;

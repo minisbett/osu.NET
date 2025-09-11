@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using osu.NET.Authorization;
-using osu.NET.Helpers;
+using osu.NET.Internal;
 
 namespace osu.NET;
 

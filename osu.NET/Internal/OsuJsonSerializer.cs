@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 using osu.NET.Enums;
-using osu.NET.Helpers.Converters;
+using osu.NET.Internal.Converters;
 using osu.NET.Models.Beatmaps.Discussions;
 using osu.NET.Models.Events;
 
-namespace osu.NET.Helpers;
+namespace osu.NET.Internal;
 
 /// <summary>
 /// Provides the <see cref="JsonSerializerSettings"/> for the <see cref="OsuApiClient"/>.

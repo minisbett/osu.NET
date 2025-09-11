@@ -1,4 +1,4 @@
-﻿using osu.NET.Helpers;
+﻿using osu.NET.Internal;
 
 namespace osu.NET.Enums;
 

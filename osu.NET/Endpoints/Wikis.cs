@@ -1,4 +1,4 @@
-﻿using osu.NET.Helpers;
+﻿using osu.NET.Internal;
 using osu.NET.Models.Wikis;
 
 namespace osu.NET;

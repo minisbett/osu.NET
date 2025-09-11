@@ -1,5 +1,5 @@
 ﻿using osu.NET.Enums;
-using osu.NET.Helpers;
+using osu.NET.Internal;
 using osu.NET.Models.Rankings;
 using osu.NET.Models.Users;
 

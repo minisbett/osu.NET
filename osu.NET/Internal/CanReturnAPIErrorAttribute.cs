@@ -1,4 +1,4 @@
-﻿namespace osu.NET.Helpers;
+﻿namespace osu.NET.Internal;
 
 #pragma warning disable CS9113 
 
