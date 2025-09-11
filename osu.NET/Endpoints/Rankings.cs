@@ -42,6 +42,16 @@ public partial class OsuApiClient
   /// <summary>
   /// Returns the top 40 ranking of a beatmap spotlight.
   /// <br/><br/>
+  /// Errors:<br/>
+  /// <item>
+  ///   <term><see cref="ApiErrorType.SpotlightNotFound"/></term>
+  ///   <description>The spotlight could not be found</description>
+  /// </item><br/>
+  /// <item>
+  ///   <term><see cref="ApiErrorType.InvalidRulesetForSpotlight"/></term>
+  ///   <description>The spotlight does not support the specified ruleset</description>
+  /// </item>
+  /// <br/><br/>
   /// API docs:<br/>
   /// <a href="https://osu.ppy.sh/docs/index.html#get-ranking"/>
   /// </summary>
@@ -56,6 +66,12 @@ public partial class OsuApiClient
 
   /// <summary>
   /// Returns the global ranked score rankings at the specified page. One page contains 50 users.
+  /// <br/><br/>
+  /// Errors:<br/>
+  /// <item>
+  ///   <term><see cref="ApiErrorType.CountryNotFound"/></term>
+  ///   <description>The country could not be found</description>
+  /// </item>
   /// <br/><br/>
   /// API docs:<br/>
   /// <a href="https://osu.ppy.sh/docs/index.html#get-ranking"/>
@@ -90,10 +106,15 @@ public partial class OsuApiClient
   /// <summary>
   /// Returns the global performance rankings at the specified page. One page contains 50 users.
   /// <br/><br/>
+  /// Errors:<br/>
+  /// <item>
+  ///   <term><see cref="ApiErrorType.CountryNotFound"/></term>
+  ///   <description>The country could not be found</description>
+  /// </item>
+  /// <br/><br/>
   /// API notes:
   /// <list type="bullet">
   /// <item>Includes <see cref="UserStatistics.User"/> (including <see cref="User.Country"/> and <see cref="User.Cover"/>)</item>
-  /// <item>Includes <see cref="UserStatistics.RankChangeSince30Days"/></item>
   /// <item>Includes <see cref="UserStatistics.RankChangeSince30Days"/> (if no filter is applied)</item>
   /// </list>
   /// <br/><br/>
