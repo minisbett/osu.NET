@@ -61,6 +61,7 @@ public class ApiError
     ["ruleset osu isn't available for the specified spotlight"] = ApiErrorType.InvalidRulesetForSpotlight,
     ["ruleset taiko isn't available for the specified spotlight"] = ApiErrorType.InvalidRulesetForSpotlight,
     ["ruleset fruits isn't available for the specified spotlight"] = ApiErrorType.InvalidRulesetForSpotlight,
-    ["ruleset mania isn't available for the specified spotlight"] = ApiErrorType.InvalidRulesetForSpotlight
+    ["ruleset mania isn't available for the specified spotlight"] = ApiErrorType.InvalidRulesetForSpotlight,
+    ["Specified CountryStatistics couldn't be found."] = ApiErrorType.CountryNotFound
   };
 }

@@ -52,9 +52,9 @@ public partial class OsuApiClient
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The spotlight ranking.</returns>
   [CanReturnApiError(ApiErrorType.SpotlightNotFound, ApiErrorType.InvalidRulesetForSpotlight)]
-  public async Task<ApiResult<SpotlightRanking>> GetSpotlightRankingsAsync(Ruleset ruleset, int? spotlightId = null,
+  public async Task<ApiResult<SpotlightRankings>> GetSpotlightRankingsAsync(Ruleset ruleset, int? spotlightId = null,
     CancellationToken? cancellationToken = null)
-    => await GetAsync<SpotlightRanking>($"rankings/{ruleset.GetQueryName()}/charts?spotlight={spotlightId}", cancellationToken);
+    => await GetAsync<SpotlightRankings>($"rankings/{ruleset.GetQueryName()}/charts?spotlight={spotlightId}", cancellationToken);
 
   /// <summary>
   /// Returns the global ranked score rankings at the specified page. One page contains 50 users.
@@ -67,11 +67,25 @@ public partial class OsuApiClient
   /// <param name="page">Optional. The page to return.</param>
   /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
   /// <returns>The ranked score rankings.</returns>
-  [CanReturnApiError(ApiErrorType.SpotlightNotFound, ApiErrorType.InvalidRulesetForSpotlight)]
-  public async Task<ApiResult<UserStatistics[]>> GetScoreRankingsAsync(Ruleset ruleset, string? country = null, int? page = null, 
+  [CanReturnApiError(ApiErrorType.CountryNotFound)]
+  public async Task<ApiResult<UserStatistics[]>> GetScoreRankingsAsync(Ruleset ruleset, string? country = null, int? page = null,
     CancellationToken? cancellationToken = null)
     => await GetAsync<UserStatistics[]>($"rankings/{ruleset.GetQueryName()}/score", cancellationToken, [
       ("country",  country),
       ("page", page)
       ], json => json["ranking"]);
+
+  /// <summary>
+  /// Returns the global country rankings at the specified page. One page contains 50 countries.
+  /// <br/><br/>
+  /// API docs:<br/>
+  /// <a href="https://osu.ppy.sh/docs/index.html#get-ranking"/>
+  /// </summary>
+  /// <param name="ruleset">The ruleset in which the rankings are returned.</param>
+  /// <param name="page">Optional. The page to return.</param>
+  /// <param name="cancellationToken">Optional. The cancellation token for aborting the request.</param>
+  /// <returns>The global country rankings.</returns>
+  [CanReturnApiError()]
+  public async Task<ApiResult<CountryStatistics[]>> GetCountryRankingsAsync(Ruleset ruleset, int? page = null, CancellationToken? cancellationToken = null)
+    => await GetAsync<CountryStatistics[]>($"rankings/{ruleset.GetQueryName()}/country", cancellationToken, [("page", page)], json => json["ranking"]);
 }

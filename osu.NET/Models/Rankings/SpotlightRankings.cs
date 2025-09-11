@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using osu.NET.Models.Beatmaps;
-using osu.NET.Models.Scores;
 using osu.NET.Models.Users;
 
 namespace osu.NET.Models.Rankings;
@@ -8,10 +7,10 @@ namespace osu.NET.Models.Rankings;
 /// <summary>
 /// Represents the top 40 ranking of a beatmap spotlight.
 /// <br/><br/>
-/// API docs: <a href="https://osu.ppy.sh/docs/index.html#get-ranking"/><br/>
+/// API docs: Not documented, refer to source<br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/app/Http/Controllers/RankingController.php"/>
 /// </summary>
-public class SpotlightRanking
+public class SpotlightRankings
 {
   /// <summary>
   /// The beatmapsets included in the spotlight.

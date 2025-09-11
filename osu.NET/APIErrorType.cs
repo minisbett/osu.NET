@@ -89,6 +89,11 @@
     /// <summary>
     /// Indicates that the ruleset is invalid for the spotlight in the request.
     /// </summary>
-    InvalidRulesetForSpotlight
+    InvalidRulesetForSpotlight,
+
+    /// <summary>
+    /// Indicates that the country in the request could not be found.
+    /// </summary>
+    CountryNotFound
   }
 }
