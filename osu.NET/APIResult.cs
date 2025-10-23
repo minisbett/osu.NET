@@ -51,12 +51,14 @@ public class ApiResult<T> where T : class
   /// Bool whether the request was successful.
   /// </summary>
   [MemberNotNullWhen(false, nameof(Error))]
+  [MemberNotNullWhen(true, nameof(Value))]
   public bool IsSuccess => Error is null;
 
   /// <summary>
   /// Bool whether the request failed.
   /// </summary>
   [MemberNotNullWhen(true, nameof(Error))]
+  [MemberNotNullWhen(false, nameof(Value))]
   public bool IsFailure => !IsSuccess;
 
   /// <summary>
