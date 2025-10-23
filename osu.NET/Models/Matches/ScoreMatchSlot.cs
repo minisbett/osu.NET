@@ -11,7 +11,7 @@ namespace osu.NET.Models.Matches;
 public class ScoreMatchSlot
 {
   /// <summary>
-  /// DOCS: what is this? whether the whole team passed the beatmap? whether at least one user did?
+  /// Bool whether the user passed the beatmap.
   /// </summary>
   [JsonProperty("pass")]
   public bool IsPassed { get; private set; }

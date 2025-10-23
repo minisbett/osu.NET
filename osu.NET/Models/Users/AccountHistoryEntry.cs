@@ -42,7 +42,7 @@ public class AccountHistoryEntry
   public bool IsPermanent { get; private set; }
 
   /// <summary>
-  /// DOCS: what is this?
+  /// A URL to supporting information about this history entry. This may be null.
   /// </summary>
   [JsonProperty("supporting_url")]
   public string? SupportingUrl { get; private set; }

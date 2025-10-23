@@ -11,7 +11,7 @@ namespace osu.NET.Models.Users;
 public class UserCover
 {
   /// <summary>
-  /// DOCS: what is the difference to normal url?
+  /// The URL to the most recent custom cover image set by the user. This may not match <see cref="Url"/>, if the user switched to a preset cover. This may be null.
   /// </summary>
   [JsonProperty("custom_url")]
   public string? CustomUrl { get; private set; }
