@@ -62,6 +62,7 @@ public class BeatmapExtended : Beatmap
   /// <summary>
   /// The datetime at which this beatmap was deleted. This will be null if the beatmap has not been deleted.
   /// </summary>
+  [JsonProperty("deleted_at")]
   public DateTimeOffset? DeletedAt { get; private set; }
 
   /// <summary>
@@ -74,7 +75,7 @@ public class BeatmapExtended : Beatmap
   /// The hit length of this beatmap, in seconds.
   /// </summary>
   [JsonProperty("hit_length")]
-  public int _hitLengthSeconds;
+  private int _hitLengthSeconds;
 
   /// <summary>
   /// The hit length of this beatmap.

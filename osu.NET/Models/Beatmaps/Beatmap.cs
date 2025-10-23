@@ -48,8 +48,6 @@ public class Beatmap
   /// The total length of this beatmap, in seconds.
   /// </summary>
   [JsonProperty("total_length")]
-#pragma warning disable IDE0044
-#pragma warning disable CS0649
   private int _totalLengthSeconds;
 
   /// <summary>
