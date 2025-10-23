@@ -12,16 +12,16 @@ namespace osu.NET.Models.Users;
 public class UserStatistics
 {
   /// <summary>
-  /// The amount of total 100 hit judgements the user has.
-  /// </summary>
-  [JsonProperty("count_100")]
-  public int Count100 { get; private set; }
-
-  /// <summary>
   /// The amount of total 300 hit judgements the user has.
   /// </summary>
   [JsonProperty("count_300")]
   public int Count300 { get; private set; }
+
+  /// <summary>
+  /// The amount of total 100 hit judgements the user has.
+  /// </summary>
+  [JsonProperty("count_100")]
+  public int Count100 { get; private set; }
 
   /// <summary>
   /// The amount of total 50 hit judgements the user has.

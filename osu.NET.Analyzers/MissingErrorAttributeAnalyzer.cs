@@ -38,6 +38,7 @@ namespace osu.NET.Analyzers
         return;
       if (!(classDeclaration.Parent is BaseNamespaceDeclarationSyntax namespaceDeclaration))
         return;
+
       QualifiedNameSyntax qualifiedName = namespaceDeclaration.Name as QualifiedNameSyntax;
       IdentifierNameSyntax left = qualifiedName.Left as IdentifierNameSyntax;
       IdentifierNameSyntax right = qualifiedName.Right as IdentifierNameSyntax;
