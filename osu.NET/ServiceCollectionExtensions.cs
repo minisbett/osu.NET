@@ -33,8 +33,8 @@ public static class ServiceCollectionExtensions
 
   /// <summary>
   /// Registers a scoped <see cref="OsuApiClient"/>. An access token provider with the specified type is expected to be registered.
-  /// <typeparam name="TProvider">The type of the access token provider.</typeparam>
   /// </summary>
+  /// <typeparam name="TProvider">The type of the access token provider.</typeparam>
   public static IServiceCollection AddOsuApiClient<TProvider>(this IServiceCollection services) where TProvider : IOsuAccessTokenProvider
     => services.AddOsuApiClient(services => services.GetRequiredService<TProvider>());
 
