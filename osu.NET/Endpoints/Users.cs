@@ -46,6 +46,12 @@ public partial class OsuApiClient
   ///   <description>The user could not be found</description>
   /// </item>
   /// <br/><br/>
+  /// API notes:
+  /// <list type="bullet">
+  /// <item>Includes <see cref="Score.Beatmap"/></item>
+  /// <item>Includes <see cref="Score.BeatmapSet"/></item>
+  /// <item>Includes <see cref="Score.Weight"/> (if <paramref name="type"/> is <see cref="UserScoreType.Best"/>)</item>
+  /// </list>
   /// API docs:<br/>
   /// <a href="https://osu.ppy.sh/docs/index.html#get-user-scores"/>
   /// </summary>
@@ -80,6 +86,11 @@ public partial class OsuApiClient
   ///   <description>The user could not be found</description>
   /// </item>
   /// <br/><br/>
+  /// API notes:
+  /// <list type="bullet">
+  /// <item>Includes <see cref="Score.Beatmap"/></item>
+  /// <item>Includes <see cref="Score.BeatmapSet"/></item>
+  /// </list>
   /// API docs:<br/>
   /// <a href="https://osu.ppy.sh/docs/index.html#get-user-beatmaps"/>
   /// </summary>

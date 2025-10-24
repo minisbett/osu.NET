@@ -1,5 +1,8 @@
 ﻿using Newtonsoft.Json;
 using osu.NET.Enums;
+using osu.NET.Models.Beatmaps;
+using osu.NET.Models.Matches;
+using osu.NET.Models.Users;
 
 namespace osu.NET.Models.Scores;
 
@@ -11,6 +14,8 @@ namespace osu.NET.Models.Scores;
 /// </summary>
 public class Score
 {
+  #region Default Attributes
+
   /// <summary>
   /// The accuracy of this score.
   /// </summary>
@@ -173,4 +178,60 @@ public class Score
   /// </summary>
   [JsonProperty("ranked")]
   public bool IsRanked { get; private set; }
+
+  #endregion
+
+  #region Available Attributes
+
+  /// <summary>
+  /// The beatmap this score was set on. This is an optional property and may be null.
+  /// </summary>
+  [JsonProperty("beatmap")]
+  public BeatmapExtended? Beatmap { get; private set; }
+
+  /// <summary>
+  /// The beatmapset this score's beatmap belongs to. This is an optional property and may be null.
+  /// </summary>
+  [JsonProperty("beatmapset")]
+  public BeatmapSet? BeatmapSet { get; private set; }
+
+  /// <summary>
+  /// The legacy match this score was set in. This is an optional property and will be null if this is not a legacy multiplayer score.
+  /// </summary>
+  [JsonProperty("match")]
+  public Match? Match { get; private set; }
+
+  /// <summary>
+  /// The position of this score on the leaderboard of the playlist. This is an optional property and will be null if the score is not set in the scope of a playlist.
+  /// </summary>
+  [JsonProperty("position")]
+  public int? Position { get; private set; }
+
+  /// <summary>
+  /// The position of this score on the country leaderboard of the beatmap. This is an optional property and will be null if the beatmap does not have leaderboards.
+  /// </summary>
+  [JsonProperty("rank_country")]
+  public int? CountryRank { get; private set; }
+
+  /// <summary>
+  /// The position of this score on the global leaderboard of the beatmap. This is an optional property and will be null if the beatmap does not have leaderboards.
+  /// </summary>
+  [JsonProperty("rank_global")]
+  public int? GlobalRank { get; private set; }
+
+  // TODO: Add "scores_around" (probably will be implemented here along with multiplayer endpoints)
+
+  /// <summary>
+  /// The user that set this score. This is an optional property and may be null.
+  /// </summary>
+  [JsonProperty("user")]
+  public User? User { get; private set; }
+
+  /// <summary>
+  /// The weight of this score in the player's overall performance. This is an optional property and may be null.
+  /// </summary>
+  [JsonProperty("weight")]
+  public double Weight { get; private set; }
+
+  #endregion
 }

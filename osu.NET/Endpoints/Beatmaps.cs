@@ -149,6 +149,7 @@ public partial class OsuApiClient
   /// <list type="bullet">
   /// <item>The mods parameter is not implemented yet</item>
   /// <item>The type parameter is not implemented yet</item>
+  /// <item>Includes <see cref="Score.User"/></item>
   /// </list>
   /// <br/><br/>
   /// API docs:<br/>

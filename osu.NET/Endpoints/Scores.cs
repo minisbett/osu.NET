@@ -59,6 +59,13 @@ public partial class OsuApiClient
   ///   <description>The score could not be found</description>
   /// </item>
   /// <br/><br/>
+  /// API notes:
+  /// <list type="bullet">
+  /// <item>Includes <see cref="Score.Beatmap"/></item>
+  /// <item>Includes <see cref="Score.BeatmapSet"/></item>
+  /// <item>Includes <see cref="Score.GlobalRank"/></item>
+  /// <item>Includes <see cref="Score.User"/></item>
+  /// </list>
   /// API docs:<br/>
   /// <a href="https://osu.ppy.sh/docs/index.html#get-apiv2scoresrulesetorscorescore"/>
   /// </summary>
