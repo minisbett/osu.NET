@@ -111,4 +111,20 @@ public class BeatmapExtended : Beatmap
   /// </summary>
   [JsonProperty("url")]
   public string Url { get; private set; } = default!;
+
+  private BeatmapSetExtended? _beatmapSet;
+
+  /// <summary>
+  /// The beatmapset this beatmap belongs to. This is an optional property and may be null.
+  /// </summary>
+  [JsonProperty("beatmapset")]
+  public new BeatmapSetExtended? Set
+  {
+    get => _beatmapSet;
+    private set
+    {
+      _beatmapSet = value;
+      base.Set = value;
+    }
+  }
 }
