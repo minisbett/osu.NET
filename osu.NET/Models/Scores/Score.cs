@@ -231,7 +231,7 @@ public class Score
   /// The weight of this score in the player's overall performance. This is an optional property and may be null.
   /// </summary>
   [JsonProperty("weight")]
-  public double Weight { get; private set; }
+  public PPWeight? Weight { get; private set; }
 
   #endregion
 }
