@@ -23,14 +23,17 @@
 		<Authors>minisbett</Authors>
 		<Description>A modern, well-documented osu! API v2 wrapper written in .NET/C#.</Description>
 		<PackageTags>api, api-client, osu, wrapper-api, osugame</PackageTags>
-		<RepositoryUrl>https://github.com/minisbett/osu.NET</RepositoryUrl>
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<RepositoryUrl>https://github.com/minisbett/osu.NET</RepositoryUrl>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
-		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 		<DebugType>embedded</DebugType>
   </PropertyGroup>
+
+	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
 
   <ItemGroup>
     <None Include="../LICENSE" Pack="true" PackagePath="" />
