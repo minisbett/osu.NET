@@ -26,5 +26,11 @@ public enum UserScoreType
   /// The first place scores of the user.
   /// </summary>
   [QueryApiName("firsts")]
-  First
+  First,
+
+  /// <summary>
+  /// The pinned scores of the user.
+  /// </summary>
+  [QueryApiName("pinned")]
+  Pinned
 }
