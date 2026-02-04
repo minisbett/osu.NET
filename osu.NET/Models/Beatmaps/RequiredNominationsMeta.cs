@@ -15,12 +15,12 @@ public class RequiredNominationsMeta
   /// The amount of nominations requrired for the main ruleset of a beatmapset.
   /// </summary>
   [JsonProperty("main_ruleset")]
-  public int MainRuleset { get; private set; }
+  public int MainRuleset { get; init; }
 
 
   /// <summary>
   /// The amount of nominations requrired for a non-main ruleset of a beatmapset.
   /// </summary>
   [JsonProperty("non_main_ruleset")]
-  public int NonMainRuleset { get; private set; }
+  public int NonMainRuleset { get; init; }
 }

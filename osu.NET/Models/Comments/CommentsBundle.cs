@@ -12,12 +12,12 @@ public class CommentsCursor
   /// <summary>
   /// </summary>
   [JsonProperty("id")]
-  public int Id { get; private set; }
+  public int Id { get; init; }
 
   /// <summary>
   /// </summary>
   [JsonProperty("created_at")]
-  public DateTime CreatedAt { get; private set; }
+  public DateTime CreatedAt { get; init; }
 }
 
 /// <summary>
@@ -32,71 +32,71 @@ public class CommentsBundle
   /// Temporary property to allow cursor pagination on comments, as a proper pagination system is not yet implemented.
   /// </summary>
   [JsonProperty("cursor")]
-  public CommentsCursor Cursor { get; private set; } = default!;
+  public CommentsCursor Cursor { get; init; } = default!;
 
   /// <summary>
   /// The metadata for the commentable objects referenced in the comment objects contained in this bundle.
   /// </summary>
   [JsonProperty("commentable_meta")]
-  public CommentableMeta[] CommentableMeta { get; private set; } = default!;
+  public CommentableMeta[] CommentableMeta { get; init; } = default!;
 
   /// <summary>
   /// The primary comments contained in this bundle.
   /// </summary>
   [JsonProperty("comments")]
-  public Comment[] Comments { get; private set; } = default!;
+  public Comment[] Comments { get; init; } = default!;
 
   /// <summary>
   /// DOCS: what is this? whether the api has more to return?
   /// </summary>
   [JsonProperty("has_more")]
-  public bool HasMore { get; private set; }
+  public bool HasMore { get; init; }
 
   /// <summary>
   /// DOCS: what is this?
   /// </summary>
   [JsonProperty("has_more_id")]
-  public int? HasMoreId { get; private set; }
+  public int? HasMoreId { get; init; }
 
   /// <summary>
   /// Comments related to the comments in <see cref="Comments"/>, including both replies and parents of them.
   /// </summary>
   [JsonProperty("included_comments")]
-  public Comment[] IncludedComments { get; private set; } = default!;
+  public Comment[] IncludedComments { get; init; } = default!;
 
   /// <summary>
   /// The pinned comments in this bundle, which are also contained in <see cref="Comments"/> or <see cref="IncludedComments"/>.
   /// </summary>
   [JsonProperty("pinned_comments")]
-  public Comment[] PinnedComments { get; private set; } = default!;
+  public Comment[] PinnedComments { get; init; } = default!;
 
   /// <summary>
   /// The amount of top-level comments in this bundle.
   /// </summary>
   [JsonProperty("top_level_count")]
-  public int TopLevelCount { get; private set; }
+  public int TopLevelCount { get; init; }
 
   /// <summary>
   /// DOCS: what is this? The total amount of comments on the commentable? including replies?
   /// </summary>
   [JsonProperty("total")]
-  public int TotalCount { get; private set; }
+  public int TotalCount { get; init; }
 
   /// <summary>
   /// DOCS: what is this? is it current user related? if so, why is it returned on client credentials auth?
   /// </summary>
   [JsonProperty("user_follow")]
-  public bool UserFollow { get; private set; }
+  public bool UserFollow { get; init; }
 
   /// <summary>
   /// DOCS: what is this? Seems to be empty
   /// </summary>
   [JsonProperty("user_votes")]
-  public int[] UserVotes { get; private set; } = default!;
+  public int[] UserVotes { get; init; } = default!;
 
   /// <summary>
   /// The users involved in this bundle.
   /// </summary>
   [JsonProperty("users")]
-  public User[] Users { get; private set; } = default!;
+  public User[] Users { get; init; } = default!;
 }

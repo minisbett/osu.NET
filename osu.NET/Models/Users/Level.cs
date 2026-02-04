@@ -14,11 +14,11 @@ public class Level
   /// The current level of the user.
   /// </summary>
   [JsonProperty("current")]
-  public int Current { get; private set; }
+  public int Current { get; init; }
 
   /// <summary>
   /// The current percentage of the user's progress to the next level.
   /// </summary>
   [JsonProperty("progress")]
-  public int Progress { get; private set; }
+  public int Progress { get; init; }
 }

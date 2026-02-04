@@ -15,23 +15,23 @@ public class Tag
   /// The ID of this tag.
   /// </summary>
   [JsonProperty("id")]
-  public int Id { get; private set; }
+  public int Id { get; init; }
 
   /// <summary>
   /// The name of this tag.
   /// </summary>
   [JsonProperty("name")]
-  public string Name { get; private set; } = default!;
+  public string Name { get; init; } = default!;
 
   /// <summary>
   /// The ruleset in which this tag is used. This will be null if the tag is not ruleset-specific.
   /// </summary>
   [JsonProperty("ruleset_id")]
-  public Ruleset? Ruleset { get; private set; } = default!;
+  public Ruleset? Ruleset { get; init; } = default!;
 
   /// <summary>
   /// the description of this tag.
   /// </summary>
   [JsonProperty("description")]
-  public string Description { get; private set; } = default!;
+  public string Description { get; init; } = default!;
 }

@@ -14,12 +14,12 @@ namespace osu.NET.Models.Changelogs
     /// The next build version. This will be null if no newer build exists.
     /// </summary>
     [JsonProperty("next")]
-    public Build? Next { get; private set; }
+    public Build? Next { get; init; }
 
     /// <summary>
     /// The previous build version. This will be null if no older build exists.
     /// </summary>
     [JsonProperty("previous")]
-    public Build? Previous { get; private set; }
+    public Build? Previous { get; init; }
   }
 }

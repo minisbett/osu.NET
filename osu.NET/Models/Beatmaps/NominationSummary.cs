@@ -15,18 +15,18 @@ public class NominationSummary
   /// The amount of nominations this beatmapset currently has.
   /// </summary>
   [JsonProperty("current")]
-  public int Current { get; private set; }
+  public int Current { get; init; }
 
   /// <summary>
   /// The eligible main rulesets of the beatmapset (all rulesets with the highest amount of difficulties).
   /// </summary>
   [JsonProperty("eligible_main_rulesets")]
-  public Ruleset[]? Rulesets { get; private set; }
+  public Ruleset[]? Rulesets { get; init; }
 
   /// <summary>
   /// The amount of nominations required for the main ruleset and non-main rulesets.<br/>
   /// These values are statically defined in the configuration of the osu! servers and are the same for every beatmapset.
   /// </summary>
   [JsonProperty("required_meta")]
-  public RequiredNominationsMeta RequiredNominations { get; private set; } = default!;
+  public RequiredNominationsMeta RequiredNominations { get; init; } = default!;
 }

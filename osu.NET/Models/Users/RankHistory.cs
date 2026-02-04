@@ -15,11 +15,11 @@ public class RankHistory
   /// The rank of the past 90 days.
   /// </summary>
   [JsonProperty("data")]
-  public int[] Data { get; private set; } = default!;
+  public int[] Data { get; init; } = default!;
 
   /// <summary>
   /// The ruleset this rank history is for.
   /// </summary>
   [JsonProperty("mode")]
-  public Ruleset Ruleset { get; private set; }
+  public Ruleset Ruleset { get; init; }
 }

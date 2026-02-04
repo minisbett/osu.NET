@@ -14,5 +14,5 @@ public class UserDiscussionPost : DiscussionPost
   /// The message content of this post.
   /// </summary>
   [JsonProperty("message")]
-  public string Message { get; private set; } = default!;
+  public string Message { get; init; } = default!;
 }

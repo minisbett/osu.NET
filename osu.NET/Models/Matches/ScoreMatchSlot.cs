@@ -14,17 +14,17 @@ public class ScoreMatchSlot
   /// Bool whether the user passed the beatmap.
   /// </summary>
   [JsonProperty("pass")]
-  public bool IsPassed { get; private set; }
+  public bool IsPassed { get; init; }
 
   /// <summary>
   /// The slot of the user that set the score in the match.
   /// </summary>
   [JsonProperty("slot")]
-  public int Slot { get; private set; }
+  public int Slot { get; init; }
 
   /// <summary>
   /// the index of the match team the user that set the score is in.
   /// </summary>
   [JsonProperty("team")]
-  public int Team { get; private set; }
+  public int Team { get; init; }
 }

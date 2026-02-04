@@ -14,13 +14,13 @@ public class DifficultyAttributes
   /// The maximum combo of the beatmap.
   /// </summary>
   [JsonProperty("max_combo")]
-  public int MaxCombo { get; private set; }
+  public int MaxCombo { get; init; }
 
   /// <summary>
   /// The difficulty rating of the beatmap.
   /// </summary>
   [JsonProperty("star_rating")]
-  public float DifficultyRating { get; private set; }
+  public float DifficultyRating { get; init; }
 
   #region osu!
 
@@ -28,43 +28,43 @@ public class DifficultyAttributes
   /// osu! ruleset only.
   /// </summary>
   [JsonProperty("aim_difficulty")]
-  public double AimDifficulty { get; private set; }
+  public double AimDifficulty { get; init; }
 
   /// <summary>
   /// osu! ruleset only.
   /// </summary>
   [JsonProperty("aim_difficult_slider_count")]
-  public double AimDifficultSliderCount { get; private set; }
+  public double AimDifficultSliderCount { get; init; }
 
   /// <summary>
   /// osu! ruleset only.
   /// </summary>
   [JsonProperty("speed_difficulty")]
-  public double SpeedDifficulty { get; private set; }
+  public double SpeedDifficulty { get; init; }
 
   /// <summary>
   /// osu! ruleset only.
   /// </summary>
   [JsonProperty("speed_note_count")]
-  public double SpeedNoteCount { get; private set; }
+  public double SpeedNoteCount { get; init; }
 
   /// <summary>
   /// osu! ruleset only.
   /// </summary>
   [JsonProperty("slider_factor")]
-  public double SliderFactor { get; private set; }
+  public double SliderFactor { get; init; }
 
   /// <summary>
   /// osu! ruleset only.
   /// </summary>
   [JsonProperty("aim_difficult_strain_count")]
-  public double AimDifficultStrainCount { get; private set; }
+  public double AimDifficultStrainCount { get; init; }
 
   /// <summary>
   /// osu! ruleset only.
   /// </summary>
   [JsonProperty("speed_difficult_strain_count")]
-  public double SpeedDifficultStrainCount { get; private set; }
+  public double SpeedDifficultStrainCount { get; init; }
 
   #endregion
 
@@ -74,7 +74,7 @@ public class DifficultyAttributes
   /// osu!taiko ruleset only.
   /// </summary>
   [JsonProperty("mono_stamina_factor")]
-  public double MonoStaminaFactor { get; private set; }
+  public double MonoStaminaFactor { get; init; }
 
   #endregion
 }

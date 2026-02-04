@@ -15,17 +15,17 @@ public class Event
   /// The datetime at which this event happened.
   /// </summary>
   [JsonProperty("created_at")]
-  public DateTimeOffset CreatedAt { get; private set; }
+  public DateTimeOffset CreatedAt { get; init; }
 
   /// <summary>
   /// The ID of this event.
   /// </summary>
   [JsonProperty("id")]
-  public int Id { get; private set; }
+  public int Id { get; init; }
 
   /// <summary>
   /// The type of this event.
   /// </summary>
   [JsonProperty("type")]
-  public EventType Type { get; private set; }
+  public EventType Type { get; init; }
 }

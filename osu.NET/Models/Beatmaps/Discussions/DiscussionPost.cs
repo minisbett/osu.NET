@@ -17,55 +17,55 @@ public class DiscussionPost
   /// The ID of the discussion this post belongs to.
   /// </summary>
   [JsonProperty("beatmapset_discussion_id")]
-  public int DiscussionId { get; private set; }
+  public int DiscussionId { get; init; }
 
   /// <summary>
   /// The datetime at which this post was created.
   /// </summary>
   [JsonProperty("created_at")]
-  public DateTimeOffset CreatedAt { get; private set; }
+  public DateTimeOffset CreatedAt { get; init; }
 
   /// <summary>
   /// The datetime at which this post was deleted. This will be null if the post has not been deleted.
   /// </summary>
   [JsonProperty("deleted_at")]
-  public DateTimeOffset? DeletedAt { get; private set; }
+  public DateTimeOffset? DeletedAt { get; init; }
 
   /// <summary>
   /// The ID of the user that deleted this post. This will be null if the post has not been deleted.
   /// </summary>
   [JsonProperty("deleted_by_id")]
-  public int? DeletedById { get; private set; }
+  public int? DeletedById { get; init; }
 
   /// <summary>
   /// The ID of this post.
   /// </summary>
   [JsonProperty("id")]
-  public int Id { get; private set; }
+  public int Id { get; init; }
 
   /// <summary>
   /// The ID of the user that last edited this post. This will be null if the post has not been edited.
   /// </summary>
   [JsonProperty("last_editor_id")]
-  public int? LastEditorId { get; private set; }
+  public int? LastEditorId { get; init; }
 
   /// <summary>
   /// The datetime at which this post was last updated.
   /// </summary>
   [JsonProperty("updated_at")]
-  public DateTimeOffset? UpdatedAt { get; private set; }
+  public DateTimeOffset? UpdatedAt { get; init; }
 
   /// <summary>
   /// The ID of the author of this post.
   /// </summary>
   [JsonProperty("user_id")]
-  public int UserId { get; private set; }
+  public int UserId { get; init; }
 
   /// <summary>
   /// Bool whether the message of this post is a system message.
   /// </summary>
   [JsonProperty("system")]
-  public bool IsSystemMessage { get; private set; }
+  public bool IsSystemMessage { get; init; }
 
   #endregion
 
@@ -75,7 +75,7 @@ public class DiscussionPost
   /// The discussion this post belongs to. This is an optional property and will be null if this post was accessed through a <see cref="Discussions.Discussion"/>.
   /// </summary>
   [JsonProperty("beatmap_discussion")]
-  public Discussion? Discussion { get; private set; }
+  public Discussion? Discussion { get; init; }
 
   #endregion
 }

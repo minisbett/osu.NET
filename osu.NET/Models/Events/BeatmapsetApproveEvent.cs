@@ -15,17 +15,17 @@ public class BeatmapsetApproveEvent : Event
   /// The approval state of the beatmapset.
   /// </summary>
   [JsonProperty("approval")]
-  public BeatmapsetEventApproval Approval { get; private set; } = default!;
+  public BeatmapsetEventApproval Approval { get; init; } = default!;
 
   /// <summary>
   /// The beatmapset associated with this event.
   /// </summary>
   [JsonProperty("beatmapset")]
-  public EventBeatmapset Beatmapset { get; private set; } = default!;
+  public EventBeatmapset Beatmapset { get; init; } = default!;
 
   /// <summary>
   /// The user who is the owner of this beatmapset.
   /// </summary>
   [JsonProperty("user")]
-  public EventUser User { get; private set; } = default!;
+  public EventUser User { get; init; } = default!;
 }

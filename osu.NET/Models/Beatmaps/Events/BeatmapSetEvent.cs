@@ -14,25 +14,25 @@ public class BeatmapSetEvent
   /// <summary>
   /// </summary>
   [JsonProperty("beatmapset")]
-  public BeatmapSet Set { get; private set; } = default!;
+  public BeatmapSet Set { get; init; } = default!;
 
   /// <summary>
   /// </summary>
   [JsonProperty("created_at")]
-  public DateTimeOffset CreatedAt { get; private set; }
+  public DateTimeOffset CreatedAt { get; init; }
 
   /// <summary>
   /// </summary>
   [JsonProperty("discussion")]
-  public Discussion Discussion { get; private set; } = null!;
+  public Discussion Discussion { get; init; } = null!;
 
   /// <summary>
   /// </summary>
   [JsonProperty("id")]
-  public int Id { get; private set; }
+  public int Id { get; init; }
 
   /// <summary>
   /// </summary>
   [JsonProperty("user_id")]
-  public int UserId { get; private set; }
+  public int UserId { get; init; }
 }

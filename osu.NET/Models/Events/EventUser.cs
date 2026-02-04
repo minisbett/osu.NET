@@ -14,17 +14,17 @@ public class EventUser
   /// The username of the user.
   /// </summary>
   [JsonProperty("username")]
-  public string Username { get; private set; } = default!;
+  public string Username { get; init; } = default!;
 
   /// <summary>
   /// The URL of the users' profile.
   /// </summary>
   [JsonProperty("url")]
-  public string Url { get; private set; } = default!;
+  public string Url { get; init; } = default!;
 
   /// <summary>
   /// The previous username of the user. This will be null if the related event is not a <see cref="UsernameChangeEvent"/>.
   /// </summary>
   [JsonProperty("previousUsername")]
-  public string? PreviousUsername { get; private set; }
+  public string? PreviousUsername { get; init; }
 }

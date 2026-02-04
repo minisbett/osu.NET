@@ -14,35 +14,35 @@ public class MatchScoreStatistics
   /// The amount of 300s hit in the score.
   /// </summary>
   [JsonProperty("count_300")]
-  public int Count300 { get; private set; }
+  public int Count300 { get; init; }
 
   /// <summary>
   /// The amount of 100s hit in the score.
   /// </summary>
   [JsonProperty("count_100")]
-  public int Count100 { get; private set; }
+  public int Count100 { get; init; }
 
   /// <summary>
   /// The amount of 50s hit in the score.
   /// </summary>
   [JsonProperty("count_50")]
-  public int Count50 { get; private set; }
+  public int Count50 { get; init; }
 
   /// <summary>
   /// The amount of gekis hit in the score.
   /// </summary>
   [JsonProperty("count_geki")]
-  public int CountGeki { get; private set; }
+  public int CountGeki { get; init; }
 
   /// <summary>
   /// The amount of katus hit in the score.
   /// </summary>
   [JsonProperty("count_katu")]
-  public int CountKatu { get; private set; }
+  public int CountKatu { get; init; }
 
   /// <summary>
   /// The amount of misses hit in the score.
   /// </summary>
   [JsonProperty("count_miss")]
-  public int CountMiss { get; private set; }
+  public int CountMiss { get; init; }
 }

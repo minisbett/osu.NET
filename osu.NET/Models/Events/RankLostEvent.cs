@@ -15,17 +15,17 @@ public class RankLostEvent : Event
   /// The ruleset this event takes place in.
   /// </summary>
   [JsonProperty("mode")]
-  public Ruleset Ruleset { get; private set; } = default!;
+  public Ruleset Ruleset { get; init; } = default!;
 
   /// <summary>
   /// The beatmap associated with the event.
   /// </summary>
   [JsonProperty("beatmap")]
-  public EventBeatmap Beatmap { get; private set; } = default!;
+  public EventBeatmap Beatmap { get; init; } = default!;
 
   /// <summary>
   /// The user who lost the first place.
   /// </summary>
   [JsonProperty("user")]
-  public EventUser User { get; private set; } = default!;
+  public EventUser User { get; init; } = default!;
 }

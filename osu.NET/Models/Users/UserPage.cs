@@ -14,11 +14,11 @@ public class UserPage
   /// The me! section of a users' profile page as a pre-rendered HTML string.
   /// </summary>
   [JsonProperty("html")]
-  public string Html { get; private set; } = default!;
+  public string Html { get; init; } = default!;
 
   /// <summary>
   /// The me! section of a users' profile page as a raw string.
   /// </summary>
   [JsonProperty("raw")]
-  public string Raw { get; private set; } = default!;
+  public string Raw { get; init; } = default!;
 }

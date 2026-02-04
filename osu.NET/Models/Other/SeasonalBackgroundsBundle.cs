@@ -14,11 +14,11 @@ public class SeasonalBackgroundsBundle
   /// The datetime at which the season with the current background ends.
   /// </summary>
   [JsonProperty("ends_at")]
-  public DateTimeOffset EndsAt { get; private set; } = default!;
+  public DateTimeOffset EndsAt { get; init; } = default!;
 
   /// <summary>
   /// The seasonal backgrounds.
   /// </summary>
   [JsonProperty("backgrounds")]
-  public SeasonalBackground[] Backgrounds { get; private set; } = default!;
+  public SeasonalBackground[] Backgrounds { get; init; } = default!;
 }

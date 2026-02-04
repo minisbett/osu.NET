@@ -15,11 +15,11 @@ public class MatchEventDetails
   /// The type of the match event.
   /// </summary>
   [JsonProperty("type")]
-  public MatchEventType Type { get; private set; }
+  public MatchEventType Type { get; init; }
 
   /// <summary>
   /// The text of the match event. This will be null if <see cref="Type"/> is not <see cref="MatchEventType.Other"/>.
   /// </summary>
   [JsonProperty("text")]
-  public string? Text { get; private set; }
+  public string? Text { get; init; }
 }

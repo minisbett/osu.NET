@@ -14,11 +14,11 @@ public class NewsNavigation
   /// The next (newer) news post. This will be null if there is no newer post.
   /// </summary>
   [JsonProperty("newer")]
-  public NewsPost? Next { get; private set; }
+  public NewsPost? Next { get; init; }
 
   /// <summary>
   /// The previous (older) news post. This will be null if there is no older post.
   /// </summary>
   [JsonProperty("older")]
-  public NewsPost? Previous { get; private set; }
+  public NewsPost? Previous { get; init; }
 }

@@ -14,18 +14,18 @@ public class NewsSidebar
   /// The year of the publish time of the first post in the bundle. If no posts are present, this will be the current year.
   /// </summary>
   [JsonProperty("current_year")]
-  public int CurrentYear { get; private set; }
+  public int CurrentYear { get; init; }
 
   /// <summary>
   /// The news posts published in <see cref="CurrentYear"/>.
   /// If the date of the API request is before April, posts from November to December of the previous year will also be included.
   /// </summary>
   [JsonProperty("news_posts")]
-  public NewsPost[] Posts { get; private set; } = default!;
+  public NewsPost[] Posts { get; init; } = default!;
 
   /// <summary>
   /// An array of all years with news posts.
   /// </summary>
   [JsonProperty("years")]
-  public int[] Years { get; private set; } = default!;
+  public int[] Years { get; init; } = default!;
 }

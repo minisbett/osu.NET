@@ -14,11 +14,11 @@ public class Hypes
   /// The amount of hypes the beatmapset currently has.
   /// </summary>
   [JsonProperty("current")]
-  public int Current { get; private set; }
+  public int Current { get; init; }
 
   /// <summary>
   /// The amount of hypes the beatmapset requires to be eligible for ranking.
   /// </summary>
   [JsonProperty("required")]
-  public int Required { get; private set; }
+  public int Required { get; init; }
 }

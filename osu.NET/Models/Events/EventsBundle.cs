@@ -14,11 +14,11 @@ public class EventsBundle
   /// The events.
   /// </summary>
   [JsonProperty("events")]
-  public Event[] Events { get; private set; } = default!;
+  public Event[] Events { get; init; } = default!;
 
   /// <summary>
   /// The cursor string for fetching further events.
   /// </summary>
   [JsonProperty("cursor_string")]
-  public string Cursor { get; private set; } = default!;
+  public string Cursor { get; init; } = default!;
 }

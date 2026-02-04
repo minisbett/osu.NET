@@ -14,23 +14,23 @@ public class Team
   /// The URL of the flag of this team. This will be null if no flag was set.
   /// </summary>
   [JsonProperty("flag_url")]
-  public string? FlagUrl { get; private set; }
+  public string? FlagUrl { get; init; }
 
   /// <summary>
   /// The ID of this team.
   /// </summary>
   [JsonProperty("id")]
-  public int Id { get; private set; }
+  public int Id { get; init; }
 
   /// <summary>
   /// The name of this team.
   /// </summary>
   [JsonProperty("name")]
-  public string Name { get; private set; } = default!;
+  public string Name { get; init; } = default!;
 
   /// <summary>
   /// The short name/tag of this team.
   /// </summary>
   [JsonProperty("short_name")]
-  public string ShortName { get; private set; } = default!;
+  public string ShortName { get; init; } = default!;
 }

@@ -15,77 +15,77 @@ public class ChangelogEntry
   /// The category of this changelog entry, describing the area of change.
   /// </summary>
   [JsonProperty("category")]
-  public string Category { get; private set; } = default!;
+  public string Category { get; init; } = default!;
 
   /// <summary>
   /// The datetime at which this entry was created. This may be null.
   /// </summary>
   [JsonProperty("created_at")]
-  public DateTimeOffset? CreatedAt { get; private set; }
+  public DateTimeOffset? CreatedAt { get; init; }
 
   /// <summary>
   /// The ID of the pull request inside the related GitHub repository that made the changes. This will be null if the change is not open-source.
   /// </summary>
   [JsonProperty("github_pull_request_id")]
-  public int? PullRequestId { get; private set; }
+  public int? PullRequestId { get; init; }
 
   /// <summary>
   /// The URL to the GitHub pull request that made the changes. This will be null if the change is not open-source.
   /// </summary>
   [JsonProperty("github_url")]
-  public string? PullRequestUrl { get; private set; }
+  public string? PullRequestUrl { get; init; }
 
   /// <summary>
   /// The ID of this changelog entry.
   /// </summary>
   [JsonProperty("id")]
-  public int? Id { get; private set; }
+  public int? Id { get; init; }
 
   /// <summary>
   /// Bool whether this entry introduces a major change.
   /// </summary>
   [JsonProperty("major")]
-  public bool IsMajor { get; private set; }
+  public bool IsMajor { get; init; }
 
   /// <summary>
   /// The name of the GitHub user/organization and repository that contains the changes (e.g. "ppy/osu"). This will be null if the change is not open-source.
   /// </summary>
   [JsonProperty("repository")]
-  public string? Repository { get; private set; }
+  public string? Repository { get; init; }
 
   /// <summary>
   /// The title of the changelog entry. This may be null.
   /// </summary>
   [JsonProperty("title")]
-  public string? Title { get; private set; }
+  public string? Title { get; init; }
 
   /// <summary>
   /// The type of change made (e.g. added, fixed). This may be null.
   /// </summary>
   [JsonProperty("type")]
-  public ChangelogEntryType Type { get; private set; }
+  public ChangelogEntryType Type { get; init; }
 
   /// <summary>
   /// DOCS: what is this? It seems to always be null
   /// </summary>
   [JsonProperty("url")]
-  public string? Url { get; private set; }
+  public string? Url { get; init; }
 
   /// <summary>
   /// The GitHub user responsible for the changes. This may be null.
   /// </summary>
   [JsonProperty("github_user")]
-  public GitHubUser? GitHubUser { get; private set; }
+  public GitHubUser? GitHubUser { get; init; }
 
   /// <summary>
   /// A message explaining the changes in this entry. This may be null.
   /// </summary>
   [JsonProperty("message")]
-  public string? Message { get; private set; }
+  public string? Message { get; init; }
 
   /// <summary>
   /// A message explaining the changes in this entry, including HTML formatting. This may be null.
   /// </summary>
   [JsonProperty("message_html")]
-  public string? MessageHtml { get; private set; }
+  public string? MessageHtml { get; init; }
 }

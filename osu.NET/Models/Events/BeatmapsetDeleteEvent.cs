@@ -14,5 +14,5 @@ public class BeatmapsetDeleteEvent : Event
   /// The beatmapset that was deleted.
   /// </summary>
   [JsonProperty("beatmapset")]
-  public EventBeatmapset Beatmapset { get; private set; } = default!;
+  public EventBeatmapset Beatmapset { get; init; } = default!;
 }

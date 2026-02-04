@@ -14,5 +14,5 @@ public class UsernameChangeEvent : Event
   /// The user who changed their username, including <see cref="EventUser.PreviousUsername"/>.
   /// </summary>
   [JsonProperty("user")]
-  public EventUser User { get; private set; } = default!;
+  public EventUser User { get; init; } = default!;
 }

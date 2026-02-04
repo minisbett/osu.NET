@@ -14,5 +14,5 @@ public class UserSupportGiftEvent : Event
   /// The user who was gifted the supporter tag.
   /// </summary>
   [JsonProperty("user")]
-  public EventUser User { get; private set; } = default!;
+  public EventUser User { get; init; } = default!;
 }

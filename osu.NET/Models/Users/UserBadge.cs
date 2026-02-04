@@ -14,29 +14,29 @@ public class UserBadge
   /// The datetime at which this badge was awarded to the user.
   /// </summary>
   [JsonProperty("awarded_at")]
-  public DateTimeOffset AwardedAt { get; private set; }
+  public DateTimeOffset AwardedAt { get; init; }
 
   /// <summary>
   /// The description of this badge. (e.g. "osu! World Cup 2023 Winner (United States)")
   /// </summary>
   [JsonProperty("description")]
-  public string Description { get; private set; } = default!;
+  public string Description { get; init; } = default!;
 
   /// <summary>
   /// The URL to the high resolution image of this badge.
   /// </summary>
   [JsonProperty("image@2x_url")]
-  public string Image2X { get; private set; } = default!;
+  public string Image2X { get; init; } = default!;
 
   /// <summary>
   /// The URL to the image of this badge.
   /// </summary>
   [JsonProperty("image_url")]
-  public string Image { get; private set; } = default!;
+  public string Image { get; init; } = default!;
 
   /// <summary>
   /// The URL to the tournament (or other kind of topic) this badge is related to.
   /// </summary>
   [JsonProperty("url")]
-  public string Url { get; private set; } = default!;
+  public string Url { get; init; } = default!;
 }

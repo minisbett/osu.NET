@@ -14,5 +14,5 @@ public class UserSupportAgainEvent : Event
   /// The user who supported osu!.
   /// </summary>
   [JsonProperty("user")]
-  public EventUser User { get; private set; } = default!;
+  public EventUser User { get; init; } = default!;
 }

@@ -14,12 +14,12 @@ namespace osu.NET.Models.Users
     /// The highest rank the user achieved.
     /// </summary>
     [JsonProperty("rank")]
-    public int Rank { get; private set; }
+    public int Rank { get; init; }
 
     /// <summary>
     /// The datetime at which the user achieved this highest rank.
     /// </summary>
     [JsonProperty("updated_at")]
-    public DateTimeOffset UpdatedAt { get; private set; }
+    public DateTimeOffset UpdatedAt { get; init; }
   }
 }

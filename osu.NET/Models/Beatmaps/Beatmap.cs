@@ -18,31 +18,31 @@ public class Beatmap
   /// The ID of the beatmapset this beatmap belongs to.
   /// </summary>
   [JsonProperty("beatmapset_id")]
-  public int SetId { get; private set; }
+  public int SetId { get; init; }
 
   /// <summary>
   /// The difficulty rating of this beatmap.
   /// </summary>
   [JsonProperty("difficulty_rating")]
-  public float DifficultyRating { get; private set; }
+  public float DifficultyRating { get; init; }
 
   /// <summary>
   /// The ID of this beatmap.
   /// </summary>
   [JsonProperty("id")]
-  public int Id { get; private set; }
+  public int Id { get; init; }
 
   /// <summary>
   /// The ruleset this beatmap was made for.
   /// </summary>
   [JsonProperty("mode")]
-  public Ruleset Ruleset { get; private set; }
+  public Ruleset Ruleset { get; init; }
 
   /// <summary>
   /// The ranked status of this beatmap.
   /// </summary>
   [JsonProperty("status")]
-  public RankedStatus Status { get; private set; }
+  public RankedStatus Status { get; init; }
 
   /// <summary>
   /// The total length of this beatmap, in seconds.
@@ -59,13 +59,13 @@ public class Beatmap
   /// The user ID of the creator of this beatmap.
   /// </summary>
   [JsonProperty("user_id")]
-  public int UserId { get; private set; }
+  public int UserId { get; init; }
 
   /// <summary>
   /// The difficulty name of this beatmap.
   /// </summary>
   [JsonProperty("version")]
-  public string Version { get; private set; } = default!;
+  public string Version { get; init; } = default!;
 
   #endregion
 
@@ -81,37 +81,37 @@ public class Beatmap
   /// The MD5 checksum of the .osu file of this beatmap. This is an optional property and may be null.
   /// </summary>
   [JsonProperty("checksum")]
-  public string? Checksum { get; private set; }
+  public string? Checksum { get; init; }
 
   /// <summary>
   /// The amount of times players have exited of failed the beatmap at a certain percentage. This is an optional property and may be null.
   /// </summary>
   [JsonProperty("failtimes")]
-  public Failtimes? Failtimes { get; private set; }
+  public Failtimes? Failtimes { get; init; }
 
   /// <summary>
   /// The maximum achievable combo on this beatmap. This is an optional property and may be null.
   /// </summary>
   [JsonProperty("max_combo")]
-  public int? MaxCombo { get; private set; }
+  public int? MaxCombo { get; init; }
 
   /// <summary>
   /// The owners of the beatmap. This is an optional property and may be null.
   /// </summary>
   [JsonProperty("owners")]
-  public BeatmapOwner[]? Owners { get; private set; }
+  public BeatmapOwner[]? Owners { get; init; }
 
   /// <summary>
   /// The top-voted tags of the beatmap. This is an optional property and may be null.
   /// </summary>
   [JsonProperty("top_tag_ids")]
-  public TopTag[]? TopTags { get; private set; }
+  public TopTag[]? TopTags { get; init; }
 
   /// <summary>
   /// The creator of this beatmap. This is an optional property and may be null.
   /// </summary>
   [JsonProperty("user")]
-  public User? Creator { get; private set; }
+  public User? Creator { get; init; }
 
   #endregion
 }

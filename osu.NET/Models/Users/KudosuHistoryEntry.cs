@@ -15,41 +15,41 @@ public class KudosuHistoryEntry
   /// The ID of the Kudosu exchange causing this entry.
   /// </summary>
   [JsonProperty("id")]
-  public int Id { get; private set; }
+  public int Id { get; init; }
 
   /// <summary>
   /// The action that resulted in this entry.
   /// </summary>
   [JsonProperty("action")]
-  public KudosuAction Action { get; private set; }
+  public KudosuAction Action { get; init; }
 
   /// <summary>
   /// The amount of kudosu involved in this entry.
   /// </summary>
   [JsonProperty("amount")]
-  public int Amount { get; private set; }
+  public int Amount { get; init; }
 
   /// <summary>
   /// The type of object that this entry origins from.
   /// </summary>
   [JsonProperty("model")]
-  public KudosuModel Model { get; private set; }
+  public KudosuModel Model { get; init; }
 
   /// <summary>
   /// The datetime at which this entry was created.
   /// </summary>
   [JsonProperty("created_at")]
-  public DateTimeOffset CreatedAt { get; private set; }
+  public DateTimeOffset CreatedAt { get; init; }
 
   /// <summary>
   /// The user that caused this entry. This may be null. (DOCS: why? maybe when revoking etc sure but apparently its null without that?)
   /// </summary>
   [JsonProperty("giver")]
-  public KudosuGiver? Giver { get; private set; }
+  public KudosuGiver? Giver { get; init; }
 
   /// <summary>
   /// The object that this entry origins from.
   /// </summary>
   [JsonProperty("post")]
-  public KudosuPost Post { get; private set; } = default!;
+  public KudosuPost Post { get; init; } = default!;
 }

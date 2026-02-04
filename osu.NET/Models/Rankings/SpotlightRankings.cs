@@ -16,17 +16,17 @@ public class SpotlightRankings
   /// The beatmapsets included in the spotlight.
   /// </summary>
   [JsonProperty("beatmapsets")]
-  public BeatmapSet[] BeatmapSets { get; private set; } = default!;
+  public BeatmapSet[] BeatmapSets { get; init; } = default!;
 
   /// <summary>
   /// The top 40 users, in order.
   /// </summary>
   [JsonProperty("ranking")]
-  public UserStatistics[] Users { get; private set; } = default!;
+  public UserStatistics[] Users { get; init; } = default!;
 
   /// <summary>
   /// The spotlight this object represents the ranking of.
   /// </summary>
   [JsonProperty("spotlight")]
-  public Spotlight Spotlight { get; private set; } = default!;
+  public Spotlight Spotlight { get; init; } = default!;
 }

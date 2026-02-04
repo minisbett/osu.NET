@@ -14,11 +14,11 @@ public class ScoresBundle
   /// The cursor string for fetching further scores.
   /// </summary>
   [JsonProperty("cursor_string")]
-  public string Cursor { get; private set; } = default!;
+  public string Cursor { get; init; } = default!;
 
   /// <summary>
   /// The scores.
   /// </summary>
   [JsonProperty("scores")]
-  public Score[] Scores { get; private set; } = default!;
+  public Score[] Scores { get; init; } = default!;
 }

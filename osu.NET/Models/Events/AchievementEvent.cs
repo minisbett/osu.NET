@@ -15,11 +15,11 @@ public class AchievementEvent : Event
   /// The achievement that was obtained.
   /// </summary>
   [JsonProperty("achievement")]
-  public Achievement Achievement { get; private set; } = default!;
+  public Achievement Achievement { get; init; } = default!;
 
   /// <summary>
   /// The user who obtained the achievement.
   /// </summary>
   [JsonProperty("user")]
-  public EventUser User { get; private set; } = default!;
+  public EventUser User { get; init; } = default!;
 }

@@ -15,60 +15,60 @@ public class UserGroup
   /// The hex colour of this group. This will be null if the group has no special colour.
   /// </summary>
   [JsonProperty("colour")]
-  public string? Colour { get; private set; }
+  public string? Colour { get; init; }
 
   /// <summary>
   /// The description of this group. This will be null if there is no description set.
   /// </summary>
   [JsonProperty("description")]
-  public GroupDescription? Description { get; private set; }
+  public GroupDescription? Description { get; init; }
 
   /// <summary>
   /// DOCS: what is this?
   /// </summary>
   [JsonProperty("has_listing")]
-  public bool HasListing { get; private set; }
+  public bool HasListing { get; init; }
 
   /// <summary>
   /// Bool whether this group is specific to certain rulesets. If <see langword="false"/>, <see cref="PlayModes"/> will be null.
   /// </summary>
   [JsonProperty("has_playmodes")]
-  public bool HasPlaymodes { get; private set; }
+  public bool HasPlaymodes { get; init; }
 
   /// <summary>
   /// The ID of this group.
   /// </summary>
   [JsonProperty("id")]
-  public int Id { get; private set; }
+  public int Id { get; init; }
 
   /// <summary>
   /// The string identifier of this group.
   /// </summary>
   [JsonProperty("identifier")]
-  public string Identifier { get; private set; } = default!;
+  public string Identifier { get; init; } = default!;
 
   /// <summary>
   /// Bool whether this group is a probationary group (e.g. probationary beatmap nominators).
   /// </summary>
   [JsonProperty("is_probationary")]
-  public bool IsProbationary { get; private set; }
+  public bool IsProbationary { get; init; }
 
   /// <summary>
   /// The name of this group.
   /// </summary>
   [JsonProperty("name")]
-  public string Name { get; private set; } = default!;
+  public string Name { get; init; } = default!;
 
   /// <summary>
   /// The short name of this group.
   /// </summary>
   [JsonProperty("short_name")]
-  public string ShortName { get; private set; } = default!;
+  public string ShortName { get; init; } = default!;
 
   /// <summary>
   /// The rulesets this group is specific to.
   /// This will be null if <see cref="HasPlaymodes"/> is <see langword="false"/>, and the group therefore counts independent of rulesets.
   /// </summary>
   [JsonProperty("playmodes")]
-  public Ruleset[]? PlayModes { get; private set; } = default!;
+  public Ruleset[]? PlayModes { get; init; } = default!;
 }

@@ -15,35 +15,35 @@ public class Spotlight
   /// The ID of the spotlight.
   /// </summary>
   [JsonProperty("id")]
-  public int Id { get; private set; }
+  public int Id { get; init; }
 
   /// <summary>
   /// Bool whether the spotlight is specific to a ruleset.
   /// </summary>
   [JsonProperty("mode_specific")]
-  public bool IsModeSpecific { get; private set; }
+  public bool IsModeSpecific { get; init; }
 
   /// <summary>
   /// The amount of participants in the spotlight. This will be null if not requesting a single spotlight.
   /// </summary>
   [JsonProperty("participant_count")]
-  public int? ParticipantAmount { get; private set; }
+  public int? ParticipantAmount { get; init; }
 
   /// <summary>
   /// The name of the spotlight.
   /// </summary>
   [JsonProperty("name")]
-  public string Name { get; private set; } = default!;
+  public string Name { get; init; } = default!;
 
   /// <summary>
   /// The datetime at which the spotlight starts.
   /// </summary>
   [JsonProperty("start_date")]
-  public DateTimeOffset StartDate { get; private set; }
+  public DateTimeOffset StartDate { get; init; }
 
   /// <summary>
   /// The type of the spotlight.
   /// </summary>
   [JsonProperty("type")]
-  public SpotlightType Type { get; private set; } = default!;
+  public SpotlightType Type { get; init; } = default!;
 }

@@ -14,11 +14,11 @@ public class MonthlyReplaysWatchedEntry
   /// The amount of replays watched this month.
   /// </summary>
   [JsonProperty("count")]
-  public int Count { get; private set; }
+  public int Count { get; init; }
 
   /// <summary>
   /// The datetime at which this month started.
   /// </summary>
   [JsonProperty("start_date")]
-  public DateTimeOffset StartDate { get; private set; }
+  public DateTimeOffset StartDate { get; init; }
 }

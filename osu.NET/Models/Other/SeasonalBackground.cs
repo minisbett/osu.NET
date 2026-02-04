@@ -15,11 +15,11 @@ public class SeasonalBackground
   /// The URL to the asset of this seasonal background.
   /// </summary>
   [JsonProperty("url")]
-  public string Url { get; set; } = default!;
+  public string Url { get; init; } = default!;
 
   /// <summary>
   /// The creator of this seasonal background.
   /// </summary>
   [JsonProperty("user")]
-  public User User { get; set; } = default!;
+  public User User { get; init; } = default!;
 }

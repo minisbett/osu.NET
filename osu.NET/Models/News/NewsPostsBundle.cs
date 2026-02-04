@@ -16,17 +16,17 @@ public class NewsPostsBundle
   /// The news posts.
   /// </summary>
   [JsonProperty("news_posts")]
-  public NewsPost[] Posts { get; private set; } = default!;
+  public NewsPost[] Posts { get; init; } = default!;
 
   /// <summary>
   /// The information for the sidebar displayed alongside the news posts on the website.
   /// </summary>
   [JsonProperty("news_sidebar")]
-  public NewsSidebar Sidebar { get; private set; } = default!;
+  public NewsSidebar Sidebar { get; init; } = default!;
 
   /// <summary>
   /// The cursor string for fetching further news posts.
   /// </summary>
   [JsonProperty("cursor_string")]
-  public string Cursor { get; private set; } = default!;
+  public string Cursor { get; init; } = default!;
 }

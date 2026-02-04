@@ -20,12 +20,12 @@ public class PollOption
   /// The text of this poll option.
   /// </summary>
   [JsonProperty("text")]
-  public PollText Text { get; private set; } = default!;
+  public PollText Text { get; init; } = default!;
 
   /// <summary>
   /// The amount of votes this poll option has.
   /// This will be null if the poll has not ended yet and <see cref="Poll.HideIncompleteResults"/> is true.
   /// </summary>
   [JsonProperty("vote_count")]
-  public int? VoteCount { get; private set; }
+  public int? VoteCount { get; init; }
 }

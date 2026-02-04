@@ -14,11 +14,11 @@ public class BeatmapSetsBundle
   /// The beatmapsets.
   /// </summary>
   [JsonProperty("beatmapsets")]
-  public BeatmapSetExtended[] Sets { get; private set; } = default!;
+  public BeatmapSetExtended[] Sets { get; init; } = default!;
 
   /// <summary>
   /// The cursor string for fetching further beatmapsets.
   /// </summary>
   [JsonProperty("cursor_string")]
-  public string Cursor { get; private set; } = default!;
+  public string Cursor { get; init; } = default!;
 }

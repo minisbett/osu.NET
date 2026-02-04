@@ -14,11 +14,11 @@ public class GroupDescription
   /// The description of the group, as a pre-rendered HTML string.
   /// </summary>
   [JsonProperty("html")]
-  public string Html { get; private set; } = default!;
+  public string Html { get; init; } = default!;
 
   /// <summary>
   /// The description of the group, as a markdown string.
   /// </summary>
   [JsonProperty("markdown")]
-  public string Markdown { get; private set; } = default!;
+  public string Markdown { get; init; } = default!;
 }

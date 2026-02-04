@@ -14,17 +14,17 @@ public class ForumBundle
   /// The forum.
   /// </summary>
   [JsonProperty("forum")]
-  public Forum Forum { get; private set; } = default!;
+  public Forum Forum { get; init; } = default!;
 
   /// <summary>
   /// The recent topics in the forum.
   /// </summary>
   [JsonProperty("topics")]
-  public ForumTopic[] RecentTopics { get; private set; } = default!;
+  public ForumTopic[] RecentTopics { get; init; } = default!;
 
   /// <summary>
   /// The pinned topics in the forum.
   /// </summary>
   [JsonProperty("pinned_topics")]
-  public ForumTopic[] PinnedTopics { get; private set; } = default!;
+  public ForumTopic[] PinnedTopics { get; init; } = default!;
 }

@@ -15,11 +15,11 @@ public class ChangelogListing
   /// The 21 most recent builds (including filters) builds of osu!-related software.
   /// </summary>
   [JsonProperty("builds")]
-  public Build[] Builds { get; private set; } = default!;
+  public Build[] Builds { get; init; } = default!;
 
   /// <summary>
   /// An array of all update streams of osu!-related software.
   /// </summary>
   [JsonProperty("streams")]
-  public UpdateStream[] Streams { get; private set; } = default!;
+  public UpdateStream[] Streams { get; init; } = default!;
 }

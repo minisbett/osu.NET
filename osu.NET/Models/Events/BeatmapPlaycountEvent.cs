@@ -14,11 +14,11 @@ public class BeatmapPlaycountEvent : Event
   /// The beatmap associated with the event.
   /// </summary>
   [JsonProperty("beatmap")]
-  public EventBeatmap Beatmap { get; private set; } = default!;
+  public EventBeatmap Beatmap { get; init; } = default!;
 
   /// <summary>
   /// The amount of times the beatmap has been played.
   /// </summary>
   [JsonProperty("count")]
-  public int Count { get; private set; }
+  public int Count { get; init; }
 }

@@ -14,11 +14,11 @@ public class BeatmapSetDescription
   /// The description of the beatmapset as BBcode. This may be null.
   /// </summary>
   [JsonProperty("bbcode")]
-  public string? BBCode { get; private set; }
+  public string? BBCode { get; init; }
 
   /// <summary>
   /// The description of the beatmapset as a pre-rendered HTML string. This may be null.
   /// </summary>
   [JsonProperty("description")]
-  public string? Description { get; private set; }
+  public string? Description { get; init; }
 }

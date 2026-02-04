@@ -14,47 +14,47 @@ public class BeatmapSetCovers
   /// The cover asset of the beatmapset.
   /// </summary>
   [JsonProperty("cover")]
-  public string Cover { get; private set; } = default!;
+  public string Cover { get; init; } = default!;
 
   /// <summary>
   /// The cover asset of the beatmapset, in high resolution.
   /// </summary>
   [JsonProperty("cover@2x")]
-  public string Cover2X { get; private set; } = default!;
+  public string Cover2X { get; init; } = default!;
 
   /// <summary>
   /// The card asset of the beatmapset.
   /// </summary>
   [JsonProperty("card")]
-  public string Card { get; private set; } = default!;
+  public string Card { get; init; } = default!;
 
   /// <summary>
   /// The card asset of the beatmapset, in high resolution.
   /// </summary>
   [JsonProperty("card@2x")]
-  public string Card2X { get; private set; } = default!;
+  public string Card2X { get; init; } = default!;
 
   /// <summary>
   /// The list asset of the beatmapset.
   /// </summary>
   [JsonProperty("list")]
-  public string List { get; private set; } = default!;
+  public string List { get; init; } = default!;
 
   /// <summary>
   /// The list asset of the beatmapset, in high resolution.
   /// </summary>
   [JsonProperty("list@2x")]
-  public string List2X { get; private set; } = default!;
+  public string List2X { get; init; } = default!;
 
   /// <summary>
   /// The slimcover asset of the beatmapset.
   /// </summary>
   [JsonProperty("slimcover")]
-  public string SlimCover { get; private set; } = default!;
+  public string SlimCover { get; init; } = default!;
 
   /// <summary>
   /// The slimcover asset of the beatmapset, in high resolution.
   /// </summary>
   [JsonProperty("slimcover@2x")]
-  public string SlimCover2X { get; private set; } = default!;
+  public string SlimCover2X { get; init; } = default!;
 }

@@ -15,71 +15,71 @@ public class MatchScore
   /// The accuracy of this score.
   /// </summary>
   [JsonProperty("accuracy")]
-  public float Accuracy { get; private set; }
+  public float Accuracy { get; init; }
 
   /// <summary>
   /// The datetime at which this score was submitted to the osu! servers.
   /// </summary>
   [JsonProperty("created_at")]
-  public DateTimeOffset CreatedAt { get; private set; }
+  public DateTimeOffset CreatedAt { get; init; }
 
   /// <summary>
   /// The maximum combo achieved in this score.
   /// </summary>
   [JsonProperty("max_combo")]
-  public int MaxCombo { get; private set; }
+  public int MaxCombo { get; init; }
 
   /// <summary>
   /// The ruleset this score was set in.
   /// </summary>
   [JsonProperty("mode")]
-  public Ruleset Ruleset { get; private set; }
+  public Ruleset Ruleset { get; init; }
 
   /// <summary>
   /// the mods used in this score.
   /// </summary>
   [JsonProperty("mods")]
-  public string[] Mods { get; private set; } = default!;
+  public string[] Mods { get; init; } = default!;
 
   /// <summary>
   /// Bool whether the user passed the beatmap of this score.
   /// </summary>
   [JsonProperty("passed")]
-  public bool IsPassed { get; private set; }
+  public bool IsPassed { get; init; }
 
   /// <summary>
   /// Bool whether this score has the maximum combo possible.
   /// </summary>
   [JsonProperty("perfect")]
-  public bool IsPerfect { get; private set; }
+  public bool IsPerfect { get; init; }
 
   /// <summary>
   /// The grade of this score.
   /// </summary>
   [JsonProperty("rank")]
-  public Grade Grade { get; private set; }
+  public Grade Grade { get; init; }
 
   /// <summary>
   /// The total score of this score.
   /// </summary>
   [JsonProperty("score")]
-  public int TotalScore { get; private set; }
+  public int TotalScore { get; init; }
 
   /// <summary>
   /// The hit statistics of this score.
   /// </summary>
   [JsonProperty("statistics")]
-  public MatchScoreStatistics Statistics { get; private set; } = default!;
+  public MatchScoreStatistics Statistics { get; init; } = default!;
 
   /// <summary>
   /// The ID of the user that submitted this score.
   /// </summary>
   [JsonProperty("user_id")]
-  public int UserId { get; private set; }
+  public int UserId { get; init; }
 
   /// <summary>
   /// The team and slot of the user that submitted this score in the match.
   /// </summary>
   [JsonProperty("slot")]
-  public ScoreMatchSlot Slot { get; private set; } = default!;
+  public ScoreMatchSlot Slot { get; init; } = default!;
 }

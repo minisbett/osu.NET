@@ -14,41 +14,41 @@ public class GitHubUser
   /// The display name of this GitHub user.
   /// </summary>
   [JsonProperty("display_name")]
-  public string DisplayName { get; private set; } = null!;
+  public string DisplayName { get; init; } = null!;
 
   /// <summary>
   /// The URL to this GitHub user account. This may be null.
   /// </summary>
   [JsonProperty("github_url")]
-  public string? GitHubUrl { get; private set; }
+  public string? GitHubUrl { get; init; }
 
   /// <summary>
   /// The name of this GitHub user. This may be null.
   /// </summary>
   [JsonProperty("github_username")]
-  public string? GitHubUsername { get; private set; }
+  public string? GitHubUsername { get; init; }
 
   /// <summary>
   /// The ID of this GitHub user object. This may be null.
   /// </summary>
   [JsonProperty("id")]
-  public int? Id { get; private set; }
+  public int? Id { get; init; }
 
   /// <summary>
   /// The osu! username of this GitHub user. This may be null.
   /// </summary>
   [JsonProperty("osu_username")]
-  public string? Username { get; private set; }
+  public string? Username { get; init; }
 
   /// <summary>
   /// The ID of the osu! account of this GitHub user. This may be null.
   /// </summary>
   [JsonProperty("user_id")]
-  public int? UserId { get; private set; }
+  public int? UserId { get; init; }
 
   /// <summary>
   /// The URL to the osu! account of this GitHub user. This may be null.
   /// </summary>
   [JsonProperty("user_url")]
-  public string? Url { get; private set; }
+  public string? Url { get; init; }
 }

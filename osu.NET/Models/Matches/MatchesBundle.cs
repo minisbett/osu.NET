@@ -16,11 +16,11 @@ public class MatchesBundle
   /// The cursor string for fetching further matches.
   /// </summary>
   [JsonProperty("cursor_string")]
-  public string Cursor { get; private set; } = default!;
+  public string Cursor { get; init; } = default!;
 
   /// <summary>
   /// The matches.
   /// </summary>
   [JsonProperty("matches")]
-  public Match[] Matches { get; private set; } = default!;
+  public Match[] Matches { get; init; } = default!;
 }

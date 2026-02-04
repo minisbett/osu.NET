@@ -14,5 +14,5 @@ public class SystemDiscussionPost : DiscussionPost
   /// The system message of this post.
   /// </summary>
   [JsonProperty("message")]
-  public SystemMessage Message { get; private set; } = default!;
+  public SystemMessage Message { get; init; } = default!;
 }

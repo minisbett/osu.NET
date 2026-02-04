@@ -14,11 +14,11 @@ public class Kudosu
   /// The amount of available kudosu.
   /// </summary>
   [JsonProperty("available")]
-  public int Available { get; private set; }
+  public int Available { get; init; }
 
   /// <summary>
   /// The amount of total kudosu.
   /// </summary>
   [JsonProperty("total")]
-  public int Total { get; private set; }
+  public int Total { get; init; }
 }

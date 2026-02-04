@@ -14,11 +14,11 @@ public class Mod
   /// The acronym of this mod.
   /// </summary>
   [JsonProperty("acronym")]
-  public string Acronym { get; private set; } = default!;
+  public string Acronym { get; init; } = default!;
 
   /// <summary>
   /// The settings of this mod.
   /// </summary>
   [JsonProperty("settings")]
-  public Dictionary<string, object> Settings { get; private set; } = [];
+  public Dictionary<string, object> Settings { get; init; } = [];
 }

@@ -15,29 +15,29 @@ public class StatisticsVariant
   /// The ruleset this variant is for. Currently, this is always osu!mania.
   /// </summary>
   [JsonProperty("mode")]
-  public Ruleset Ruleset { get; private set; }
+  public Ruleset Ruleset { get; init; }
 
   /// <summary>
   /// The variant type.
   /// </summary>
   [JsonProperty("variant")]
-  public VariantType Variant { get; private set; }
+  public VariantType Variant { get; init; }
 
   /// <summary>
   /// The country rank in this variant. This will be null if the user has no rank.
   /// </summary>
   [JsonProperty("country_rank")]
-  public int? CountryRank { get; private set; }
+  public int? CountryRank { get; init; }
 
   /// <summary>
   /// The global rank in this variant. This will be null if the user has no rank.
   /// </summary>
   [JsonProperty("global_rank")]
-  public int? GlobalRank { get; private set; }
+  public int? GlobalRank { get; init; }
 
   /// <summary>
   /// The PP in this variant.
   /// </summary>
   [JsonProperty("pp")]
-  public double PP { get; private set; }
+  public double PP { get; init; }
 }

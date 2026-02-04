@@ -14,17 +14,17 @@ public class DiscussionVotes
   /// The amount of downvotes the discussion has.
   /// </summary>
   [JsonProperty("down")]
-  public int Down { get; private set; }
+  public int Down { get; init; }
 
   /// <summary>
   /// The amount of upvotes the discussion has.
   /// </summary>
   [JsonProperty("up")]
-  public int Up { get; private set; }
+  public int Up { get; init; }
 
   /// <summary>
   /// The voters of the discussion.
   /// </summary>
   [JsonProperty("voters")]
-  public DiscussionVoters Voters { get; private set; } = default!;
+  public DiscussionVoters Voters { get; init; } = default!;
 }

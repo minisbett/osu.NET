@@ -14,11 +14,11 @@ public class KudosuGiver
   /// The profile URL of the user that caused the kudosu history entry.
   /// </summary>
   [JsonProperty("url")]
-  public string Url { get; private set; } = default!;
+  public string Url { get; init; } = default!;
 
   /// <summary>
   /// The name of the user that caused the kudosu history entry.
   /// </summary>
   [JsonProperty("username")]
-  public string Name { get; private set; } = default!;
+  public string Name { get; init; } = default!;
 }

@@ -14,11 +14,11 @@ public class KudosuPost
   /// The URL to the beatmap the kudosu history entry originates from. This will be null if the beatmap no longer exists.
   /// </summary>
   [JsonProperty("url")]
-  public string? Url { get; private set; }
+  public string? Url { get; init; }
 
   /// <summary>
   /// The title of the beatmap the kudosu history entry originates from. This will be <c>[deleted beatmap]</c> if the beatmap no longer exists.
   /// </summary>
   [JsonProperty("title")]
-  public string Title { get; private set; } = default!;
+  public string Title { get; init; } = default!;
 }

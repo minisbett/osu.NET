@@ -15,46 +15,46 @@ public class WikiPage
   /// The BCP 47 language codes of all locales this wiki page is available in.
   /// </summary>
   [JsonProperty("available_locales")]
-  public string[] AvailableLocales { get; private set; } = default!;
+  public string[] AvailableLocales { get; init; } = default!;
 
   /// <summary>
   /// The layout type of this wiki page.
   /// </summary>
   [JsonProperty("layout")]
-  public WikiPageLayout Layout { get; private set; } = default!;
+  public WikiPageLayout Layout { get; init; } = default!;
 
   /// <summary>
   /// The BCP 47 language code of the locale of this wiki page.
   /// </summary>
   [JsonProperty("locale")]
-  public string Locale { get; private set; } = default!;
+  public string Locale { get; init; } = default!;
 
   /// <summary>
   /// The Markdown content of this wiki page.
   /// </summary>
-  public string Markdown { get; private set; } = default!;
+  public string Markdown { get; init; } = default!;
 
   /// <summary>
   /// The path to this wiki page.
   /// </summary>
   [JsonProperty("path")]
-  public string Path { get; private set; } = default!;
+  public string Path { get; init; } = default!;
 
   /// <summary>
   /// The subtitle of this wiki page. This will be null if this wiki page has no subtitle.
   /// </summary>
   [JsonProperty("subtitle")]
-  public string? Subtitle { get; private set; } = default!;
+  public string? Subtitle { get; init; } = default!;
 
   /// <summary>
   /// The tags associated with this wiki page.
   /// </summary>
   [JsonProperty("tags")]
-  public string[] Tags { get; private set; } = default!;
+  public string[] Tags { get; init; } = default!;
 
   /// <summary>
   /// The title of this wiki page.
   /// </summary>
   [JsonProperty("title")]
-  public string Title { get; private set; } = default!;
+  public string Title { get; init; } = default!;
 }

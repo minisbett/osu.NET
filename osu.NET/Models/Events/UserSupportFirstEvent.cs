@@ -14,5 +14,5 @@ public class UserSupportFirstEvent : Event
   /// The user who supported osu! for the first time.
   /// </summary>
   [JsonProperty("user")]
-  public EventUser User { get; private set; } = default!;
+  public EventUser User { get; init; } = default!;
 }

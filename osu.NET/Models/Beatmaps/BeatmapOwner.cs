@@ -14,11 +14,11 @@ public class BeatmapOwner
   /// The ID of the user.
   /// </summary>
   [JsonProperty("id")]
-  public int Id { get; private set; }
+  public int Id { get; init; }
 
   /// <summary>
   /// The name of the user.
   /// </summary>
   [JsonProperty("username")]
-  public string Username { get; private set; } = default!;
+  public string Username { get; init; } = default!;
 }

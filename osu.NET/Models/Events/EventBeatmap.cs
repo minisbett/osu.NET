@@ -14,11 +14,11 @@ public class EventBeatmap
   /// The title of the beatmap.
   /// </summary>
   [JsonProperty("title")]
-  public string Title { get; private set; } = default!;
+  public string Title { get; init; } = default!;
 
   /// <summary>
   /// The URL of the beatmap.
   /// </summary>
   [JsonProperty("url")]
-  public string Url { get; private set; } = default!;
+  public string Url { get; init; } = default!;
 }

@@ -15,11 +15,11 @@ public class SystemMessage
   /// The type of the system message.
   /// </summary>
   [JsonProperty("message_type")]
-  public SystemMessageType Type { get; private set; }
+  public SystemMessageType Type { get; init; }
 
   /// <summary>
   /// The boolean value of the system message.
   /// </summary>
   [JsonProperty("value")]
-  public bool Value { get; private set; }
+  public bool Value { get; init; }
 }

@@ -14,11 +14,11 @@ public class BeatmapsetUpdateEvent : Event
   /// The beatmapset that was updated.
   /// </summary>
   [JsonProperty("beatmapset")]
-  public EventBeatmapset Beatmapset { get; private set; } = default!;
+  public EventBeatmapset Beatmapset { get; init; } = default!;
 
   /// <summary>
   /// The owner of the beatmapset.
   /// </summary>
   [JsonProperty("user")]
-  public EventUser User { get; private set; } = default!;
+  public EventUser User { get; init; } = default!;
 }

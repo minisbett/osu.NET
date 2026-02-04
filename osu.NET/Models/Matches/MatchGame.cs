@@ -16,59 +16,59 @@ public class MatchGame
   /// The ID of this match game.
   /// </summary>
   [JsonProperty("id")]
-  public int Id { get; private set; }
+  public int Id { get; init; }
 
   /// <summary>
   /// The beatmap played in this match game. This includes <see cref="Beatmaps.Beatmap.Set"/>.
   /// </summary>
   [JsonProperty("beatmap")]
-  public Beatmap Beatmap { get; private set; } = default!;
+  public Beatmap Beatmap { get; init; } = default!;
 
   /// <summary>
   /// The ID of the beatmap played in this match game.
   /// </summary>
   [JsonProperty("beatmap_id")]
-  public int BeatmapId { get; private set; }
+  public int BeatmapId { get; init; }
 
   /// <summary>
   /// The datetime at which this match game was started.
   /// </summary>
   [JsonProperty("start_time")]
-  public DateTimeOffset StartedAt { get; private set; }
+  public DateTimeOffset StartedAt { get; init; }
 
   /// <summary>
   /// The datetime at which this match game was ended. This will be null if the match game is still ongoing.
   /// </summary>
   [JsonProperty("end_time")]
-  public DateTimeOffset? EndedAt { get; private set; }
+  public DateTimeOffset? EndedAt { get; init; }
 
   /// <summary>
   /// The ruleset played in this match game.
   /// </summary>
   [JsonProperty("mode")]
-  public Ruleset Ruleset { get; private set; }
+  public Ruleset Ruleset { get; init; }
 
   /// <summary>
   /// The mods used in this match game.
   /// </summary>
   [JsonProperty("mods")]
-  public string[] Mods { get; private set; } = default!;
+  public string[] Mods { get; init; } = default!;
 
   /// <summary>
   /// The scores set by each player in this match game.
   /// </summary>
   [JsonProperty("scores")]
-  public MatchScore[] Scores { get; private set; } = default!;
+  public MatchScore[] Scores { get; init; } = default!;
 
   /// <summary>
   /// The scoring type used in this match game.
   /// </summary>
   [JsonProperty("scoring_type")]
-  public MatchScoringType ScoringType { get; private set; }
+  public MatchScoringType ScoringType { get; init; }
 
   /// <summary>
   /// The team type used in this match game.
   /// </summary>
   [JsonProperty("team_type")]
-  public MatchTeamType TeamType { get; private set; }
+  public MatchTeamType TeamType { get; init; }
 }

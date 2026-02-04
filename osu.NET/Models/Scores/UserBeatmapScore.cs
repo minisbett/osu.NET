@@ -14,11 +14,11 @@ public class UserBeatmapScore
   /// The position of the score on the beatmap leaderboards.
   /// </summary>
   [JsonProperty("position")]
-  public int Position { get; private set; }
+  public int Position { get; init; }
 
   /// <summary>
   /// The actual score represented by this <see cref="UserBeatmapScore"/> object.
   /// </summary>
   [JsonProperty("score")]
-  public Score Score { get; private set; } = default!;
+  public Score Score { get; init; } = default!;
 }

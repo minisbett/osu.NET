@@ -17,73 +17,73 @@ public class BeatmapSetExtended : BeatmapSet
   /// The beats per minute (BPM) of this beatmapset.
   /// </summary>
   [JsonProperty("bpm")]
-  public float BPM { get; private set; }
+  public float BPM { get; init; }
 
   /// <summary>
   /// Bool whether this beatmapset can be hyped.
   /// </summary>
   [JsonProperty("can_be_hyped")]
-  public bool CanBeHyped { get; private set; }
+  public bool CanBeHyped { get; init; }
 
   /// <summary>
   /// The datetime at which this beatmapset was deleted. This will be null if the beatmapset has not been deleted.
   /// </summary>
   [JsonProperty("deleted_at")]
-  public DateTimeOffset? DeletedAt { get; private set; }
+  public DateTimeOffset? DeletedAt { get; init; }
 
   /// <summary>
   /// Bool whether discussion on this beatmapset is locked.
   /// </summary>
   [JsonProperty("discussion_locked")]
-  public bool IsDiscussionLocked { get; private set; }
+  public bool IsDiscussionLocked { get; init; }
 
   /// <summary>
   /// Bool whether scores on this beatmapset are persistent (beatmapset is ranked, qualified, approved or loved).
   /// </summary>
   [JsonProperty("is_scoreable")]
-  public bool IsScoreable { get; private set; }
+  public bool IsScoreable { get; init; }
 
   /// <summary>
   /// The datetime at which this beatmapset was last updated.
   /// </summary>
   [JsonProperty("last_updated")]
-  public DateTimeOffset LastUpdated { get; private set; }
+  public DateTimeOffset LastUpdated { get; init; }
 
   /// <summary>
   /// The URL to the legency thread of this beatmapset. This will be null if the beatmapset has no legacy thread.
   /// </summary>
   [JsonProperty("legacy_thread_url")]
-  public string? LegacyThreadUrl { get; private set; }
+  public string? LegacyThreadUrl { get; init; }
 
   /// <summary>
   /// Info about the nomination progress of this beatmapset.
   /// </summary>
   [JsonProperty("nominations_summary")]
-  public NominationSummary NominationSummary { get; private set; } = default!;
+  public NominationSummary NominationSummary { get; init; } = default!;
 
   /// <summary>
   /// The datetime at which this beatmapset was ranked, qualified, approved or loved. This will be null if the beatmapset has none of these statuses.
   /// </summary>
   [JsonProperty("ranked_date")]
-  public DateTimeOffset? RankedDate { get; private set; }
+  public DateTimeOffset? RankedDate { get; init; }
 
   /// <summary>
   /// Bool whether this beatmapset has a storyboard.
   /// </summary>
   [JsonProperty("storyboard")]
-  public bool HasStoryboard { get; private set; }
+  public bool HasStoryboard { get; init; }
 
   /// <summary>
   /// The datetime at which this beatmapset was submitted to the osu! servers. This may be null.
   /// </summary>
   [JsonProperty("submitted_date")]
-  public DateTimeOffset? SubmittedDate { get; private set; }
+  public DateTimeOffset? SubmittedDate { get; init; }
 
   /// <summary>
   /// The tags of this beatmapset, used for indexing and searching.
   /// </summary>
   [JsonProperty("tags")]
-  public string Tags { get; private set; } = null!;
+  public string Tags { get; init; } = null!;
 
   #endregion
 

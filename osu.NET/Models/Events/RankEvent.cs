@@ -15,29 +15,29 @@ public class RankEvent : Event
   /// The rank achieved by the user.
   /// </summary>
   [JsonProperty("rank")]
-  public int Rank { get; private set; }
+  public int Rank { get; init; }
 
   /// <summary>
   /// The grade achieved by the user.
   /// </summary>
   [JsonProperty("scoreRank")]
-  public Grade ScoreRank { get; private set; } = default!;
+  public Grade ScoreRank { get; init; } = default!;
 
   /// <summary>
   /// The ruleset this event takes place in.
   /// </summary>
   [JsonProperty("mode")]
-  public Ruleset Ruleset { get; private set; } = default!;
+  public Ruleset Ruleset { get; init; } = default!;
 
   /// <summary>
   /// The beatmap associated with this event.
   /// </summary>
   [JsonProperty("beatmap")]
-  public EventBeatmap Beatmap { get; private set; } = default!;
+  public EventBeatmap Beatmap { get; init; } = default!;
 
   /// <summary>
   /// The user associated with this event.
   /// </summary>
   [JsonProperty("user")]
-  public EventUser User { get; private set; } = default!;
+  public EventUser User { get; init; } = default!;
 }
