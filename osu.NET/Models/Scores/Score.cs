@@ -159,7 +159,7 @@ public class Score
   /// If this is a legacy score, this is the total score estimated in ScoreV3 (osu!lazer), then back in ScoreV1 (osu!stable).
   /// </summary>
   [JsonProperty("classic_total_score")]
-  public int ClassicTotalScore { get; init; }
+  public long ClassicTotalScore { get; init; }
 
   /// <summary>
   /// Bool whether this score is preserved and not marked for deletion.
