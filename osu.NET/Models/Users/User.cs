@@ -32,10 +32,10 @@ public class User
     public string? DefaultGroup { get; init; }
 
     /// <summary>
-    /// The ID of this user.
+    /// The ID of this user. If the user was deleted, this value is 1 (BanchoBot).
     /// </summary>
-    [JsonProperty("id")]
-    public int Id { get; init; }
+    [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+    public int Id { get; init; } = 1; // https://github.com/ppy/osu/blob/master/osu.Game/Online/API/Requests/Responses/APIUser.cs#L25
 
     /// <summary>
     /// Bool whether this user has been active in the osu! in the past X months.
