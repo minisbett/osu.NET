@@ -10,15 +10,15 @@ namespace osu.NET.Models.Beatmaps;
 /// </summary>
 public class Genre
 {
-  /// <summary>
-  /// The ID of this genre. This may be null.
-  /// </summary>
-  [JsonProperty("id")]
-  public int? Id { get; internal set; }
+    /// <summary>
+    /// The ID of this genre. This may be null.
+    /// </summary>
+    [JsonProperty("id")]
+    public int? Id { get; internal set; }
 
-  /// <summary>
-  /// The name of this genre.
-  /// </summary>
-  [JsonProperty("name")]
-  public string Name { get; internal set; } = default!;
+    /// <summary>
+    /// The name of this genre.
+    /// </summary>
+    [JsonProperty("name")]
+    public string Name { get; internal set; } = default!;
 }

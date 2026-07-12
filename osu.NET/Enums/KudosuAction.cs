@@ -10,39 +10,33 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum KudosuAction
 {
-  /// <summary>
-  /// DOCS: what does this mean?
-  /// </summary>
-  [JsonApiName("give")]
-  Give,
+    /// <summary>
+    /// DOCS: what does this mean?
+    /// </summary>
+    [JsonApiName("give")] Give,
 
-  /// <summary>
-  /// DOCS: what does this mean?
-  /// </summary>
-  [JsonApiName("vote.give")]
-  VoteGive,
+    /// <summary>
+    /// DOCS: what does this mean?
+    /// </summary>
+    [JsonApiName("vote.give")] VoteGive,
 
-  /// <summary>
-  /// DOCS: what does this mean?
-  /// </summary>
-  [JsonApiName("reset")]
-  Reset,
+    /// <summary>
+    /// DOCS: what does this mean?
+    /// </summary>
+    [JsonApiName("reset")] Reset,
 
-  /// <summary>
-  /// DOCS: what does this mean?
-  /// </summary>
-  [JsonApiName("vote.reset")]
-  VoteReset,
+    /// <summary>
+    /// DOCS: what does this mean?
+    /// </summary>
+    [JsonApiName("vote.reset")] VoteReset,
 
-  /// <summary>
-  /// DOCS: what does this mean?
-  /// </summary>
-  [JsonApiName("revoke")]
-  Revoke,
+    /// <summary>
+    /// DOCS: what does this mean?
+    /// </summary>
+    [JsonApiName("revoke")] Revoke,
 
-  /// <summary>
-  /// DOCS: what does this mean?
-  /// </summary>
-  [JsonApiName("vote.revoke")]
-  VoteRevoke
+    /// <summary>
+    /// DOCS: what does this mean?
+    /// </summary>
+    [JsonApiName("vote.revoke")] VoteRevoke
 }

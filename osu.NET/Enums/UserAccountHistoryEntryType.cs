@@ -10,27 +10,23 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum UserAccountHistoryEntryType
 {
-  /// <summary>
-  /// The user account history entry represents a note.
-  /// </summary>
-  [JsonApiName("note")]
-  Note,
+    /// <summary>
+    /// The user account history entry represents a note.
+    /// </summary>
+    [JsonApiName("note")] Note,
 
-  /// <summary>
-  /// The user account history entry represents a restriction.
-  /// </summary>
-  [JsonApiName("restriction")]
-  Restriction,
+    /// <summary>
+    /// The user account history entry represents a restriction.
+    /// </summary>
+    [JsonApiName("restriction")] Restriction,
 
-  /// <summary>
-  /// The user account history entry represents a silence.
-  /// </summary>
-  [JsonApiName("silence")]
-  Silence,
+    /// <summary>
+    /// The user account history entry represents a silence.
+    /// </summary>
+    [JsonApiName("silence")] Silence,
 
-  /// <summary>
-  /// The user account history entry represents a tournament ban.
-  /// </summary>
-  [JsonApiName("tournament_ban")]
-  TournamentBan
+    /// <summary>
+    /// The user account history entry represents a tournament ban.
+    /// </summary>
+    [JsonApiName("tournament_ban")] TournamentBan
 }

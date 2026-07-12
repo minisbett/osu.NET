@@ -10,9 +10,9 @@ namespace osu.NET.Models.Beatmaps.Discussions;
 /// </summary>
 public class SystemDiscussionPost : DiscussionPost
 {
-  /// <summary>
-  /// The system message of this post.
-  /// </summary>
-  [JsonProperty("message")]
-  public SystemMessage Message { get; init; } = default!;
+    /// <summary>
+    /// The system message of this post.
+    /// </summary>
+    [JsonProperty("message")]
+    public SystemMessage Message { get; init; } = default!;
 }

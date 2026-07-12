@@ -10,15 +10,15 @@ namespace osu.NET.Models.Events;
 /// </summary>
 public class BeatmapPlaycountEvent : Event
 {
-  /// <summary>
-  /// The beatmap associated with the event.
-  /// </summary>
-  [JsonProperty("beatmap")]
-  public EventBeatmap Beatmap { get; init; } = default!;
+    /// <summary>
+    /// The beatmap associated with the event.
+    /// </summary>
+    [JsonProperty("beatmap")]
+    public EventBeatmap Beatmap { get; init; } = default!;
 
-  /// <summary>
-  /// The amount of times the beatmap has been played.
-  /// </summary>
-  [JsonProperty("count")]
-  public int Count { get; init; }
+    /// <summary>
+    /// The amount of times the beatmap has been played.
+    /// </summary>
+    [JsonProperty("count")]
+    public int Count { get; init; }
 }

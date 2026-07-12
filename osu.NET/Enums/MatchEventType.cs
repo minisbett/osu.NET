@@ -11,45 +11,38 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum MatchEventType
 {
-  /// <summary>
-  /// A player left the match.
-  /// </summary>
-  [JsonApiName("player-left")]
-  PlayerLeft,
+    /// <summary>
+    /// A player left the match.
+    /// </summary>
+    [JsonApiName("player-left")] PlayerLeft,
 
-  /// <summary>
-  /// A player joined the match.
-  /// </summary>
-  [JsonApiName("player-joined")]
-  PlayerJoined,
+    /// <summary>
+    /// A player joined the match.
+    /// </summary>
+    [JsonApiName("player-joined")] PlayerJoined,
 
-  /// <summary>
-  /// A player was kicked from the match.
-  /// </summary>
-  [JsonApiName("player-kicked")]
-  PlayerKicked,
+    /// <summary>
+    /// A player was kicked from the match.
+    /// </summary>
+    [JsonApiName("player-kicked")] PlayerKicked,
 
-  /// <summary>
-  /// The match was created.
-  /// </summary>
-  [JsonApiName("match-created")]
-  MatchCreated,
+    /// <summary>
+    /// The match was created.
+    /// </summary>
+    [JsonApiName("match-created")] MatchCreated,
 
-  /// <summary>
-  /// The match was disbanded.
-  /// </summary>
-  [JsonApiName("match-disbanded")]
-  MatchDisbanded,
+    /// <summary>
+    /// The match was disbanded.
+    /// </summary>
+    [JsonApiName("match-disbanded")] MatchDisbanded,
 
-  /// <summary>
-  /// The host of the match was changed.
-  /// </summary>
-  [JsonApiName("host-changed")]
-  HostChanged,
+    /// <summary>
+    /// The host of the match was changed.
+    /// </summary>
+    [JsonApiName("host-changed")] HostChanged,
 
-  /// <summary>
-  /// The match event has a custom message.
-  /// </summary>
-  [JsonApiName("other")]
-  Other
+    /// <summary>
+    /// The match event has a custom message.
+    /// </summary>
+    [JsonApiName("other")] Other
 }

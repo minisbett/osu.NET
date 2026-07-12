@@ -10,23 +10,23 @@ namespace osu.NET.Models.News;
 /// </summary>
 public class NewsPostsBundle
 {
-  // search.limit (clamped limit parameter) and search.sort (always "published_desc") have been omitted here as they are useless information.
+    // search.limit (clamped limit parameter) and search.sort (always "published_desc") have been omitted here as they are useless information.
 
-  /// <summary>
-  /// The news posts.
-  /// </summary>
-  [JsonProperty("news_posts")]
-  public NewsPost[] Posts { get; init; } = default!;
+    /// <summary>
+    /// The news posts.
+    /// </summary>
+    [JsonProperty("news_posts")]
+    public NewsPost[] Posts { get; init; } = default!;
 
-  /// <summary>
-  /// The information for the sidebar displayed alongside the news posts on the website.
-  /// </summary>
-  [JsonProperty("news_sidebar")]
-  public NewsSidebar Sidebar { get; init; } = default!;
+    /// <summary>
+    /// The information for the sidebar displayed alongside the news posts on the website.
+    /// </summary>
+    [JsonProperty("news_sidebar")]
+    public NewsSidebar Sidebar { get; init; } = default!;
 
-  /// <summary>
-  /// The cursor string for fetching further news posts.
-  /// </summary>
-  [JsonProperty("cursor_string")]
-  public string Cursor { get; init; } = default!;
+    /// <summary>
+    /// The cursor string for fetching further news posts.
+    /// </summary>
+    [JsonProperty("cursor_string")]
+    public string Cursor { get; init; } = default!;
 }

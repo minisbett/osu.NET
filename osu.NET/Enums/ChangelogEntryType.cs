@@ -10,21 +10,18 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum ChangelogEntryType
 {
-  /// <summary>
-  /// Indicates an addition.
-  /// </summary>
-  [JsonApiName("add")]
-  Add,
+    /// <summary>
+    /// Indicates an addition.
+    /// </summary>
+    [JsonApiName("add")] Add,
 
-  /// <summary>
-  /// Indicates a change that fixes a bug.
-  /// </summary>
-  [JsonApiName("fix")]
-  Fix,
+    /// <summary>
+    /// Indicates a change that fixes a bug.
+    /// </summary>
+    [JsonApiName("fix")] Fix,
 
-  /// <summary>
-  /// Indicates a miscellaneous change.
-  /// </summary>
-  [JsonApiName("misc")]
-  Miscellaneous,
+    /// <summary>
+    /// Indicates a miscellaneous change.
+    /// </summary>
+    [JsonApiName("misc")] Miscellaneous,
 }

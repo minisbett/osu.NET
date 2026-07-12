@@ -10,15 +10,15 @@ namespace osu.NET.Models.Beatmaps;
 /// </summary>
 public class Availability
 {
-  /// <summary>
-  /// Bool whether the beatmapset is available for download.
-  /// </summary>
-  [JsonProperty("download_disabled")]
-  public bool IsDownloadDisabled { get; init; }
+    /// <summary>
+    /// Bool whether the beatmapset is available for download.
+    /// </summary>
+    [JsonProperty("download_disabled")]
+    public bool IsDownloadDisabled { get; init; }
 
-  /// <summary>
-  /// More information about the availability of the beatmapset. This will be null if the beatmapset is available for download.
-  /// </summary>
-  [JsonProperty("more_information")]
-  public string? Information { get; init; }
+    /// <summary>
+    /// More information about the availability of the beatmapset. This will be null if the beatmapset is available for download.
+    /// </summary>
+    [JsonProperty("more_information")]
+    public string? Information { get; init; }
 }

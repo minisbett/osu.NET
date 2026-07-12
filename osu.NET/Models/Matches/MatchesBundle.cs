@@ -10,17 +10,17 @@ namespace osu.NET.Models.Matches;
 /// </summary>
 public class MatchesBundle
 {
-  // params.limit and params.sort (both mirroring the specified query parameters) have been omitted here as they are useless information.
+    // params.limit and params.sort (both mirroring the specified query parameters) have been omitted here as they are useless information.
 
-  /// <summary>
-  /// The cursor string for fetching further matches.
-  /// </summary>
-  [JsonProperty("cursor_string")]
-  public string Cursor { get; init; } = default!;
+    /// <summary>
+    /// The cursor string for fetching further matches.
+    /// </summary>
+    [JsonProperty("cursor_string")]
+    public string Cursor { get; init; } = default!;
 
-  /// <summary>
-  /// The matches.
-  /// </summary>
-  [JsonProperty("matches")]
-  public Match[] Matches { get; init; } = default!;
+    /// <summary>
+    /// The matches.
+    /// </summary>
+    [JsonProperty("matches")]
+    public Match[] Matches { get; init; } = default!;
 }

@@ -10,15 +10,15 @@ namespace osu.NET.Models.Beatmaps.Discussions;
 /// </summary>
 public class DiscussionVoters
 {
-  /// <summary>
-  /// The IDs of the users that downvoted the discussion.
-  /// </summary>
-  [JsonProperty("down")]
-  public int[] Down { get; init; } = default!;
+    /// <summary>
+    /// The IDs of the users that downvoted the discussion.
+    /// </summary>
+    [JsonProperty("down")]
+    public int[] Down { get; init; } = default!;
 
-  /// <summary>
-  /// The IDs of the users that upvoted the discussion.
-  /// </summary>
-  [JsonProperty("up")]
-  public int[] Up { get; init; } = default!;
+    /// <summary>
+    /// The IDs of the users that upvoted the discussion.
+    /// </summary>
+    [JsonProperty("up")]
+    public int[] Up { get; init; } = default!;
 }

@@ -10,15 +10,13 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum MatchSortType
 {
-  /// <summary>
-  /// Sorts the matches by ID in ascending order.
-  /// </summary>
-  [QueryApiName("id_asc")]
-  IdAscending,
+    /// <summary>
+    /// Sorts the matches by ID in ascending order.
+    /// </summary>
+    [QueryApiName("id_asc")] IdAscending,
 
-  /// <summary>
-  /// Sorts the matches by ID in descending order.
-  /// </summary>
-  [QueryApiName("id_desc")]
-  IdDescending,
+    /// <summary>
+    /// Sorts the matches by ID in descending order.
+    /// </summary>
+    [QueryApiName("id_desc")] IdDescending,
 }

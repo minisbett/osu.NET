@@ -10,21 +10,21 @@ namespace osu.NET.Models.Beatmaps.Discussions;
 /// </summary>
 public class DiscussionVotes
 {
-  /// <summary>
-  /// The amount of downvotes the discussion has.
-  /// </summary>
-  [JsonProperty("down")]
-  public int Down { get; init; }
+    /// <summary>
+    /// The amount of downvotes the discussion has.
+    /// </summary>
+    [JsonProperty("down")]
+    public int Down { get; init; }
 
-  /// <summary>
-  /// The amount of upvotes the discussion has.
-  /// </summary>
-  [JsonProperty("up")]
-  public int Up { get; init; }
+    /// <summary>
+    /// The amount of upvotes the discussion has.
+    /// </summary>
+    [JsonProperty("up")]
+    public int Up { get; init; }
 
-  /// <summary>
-  /// The voters of the discussion.
-  /// </summary>
-  [JsonProperty("voters")]
-  public DiscussionVoters Voters { get; init; } = default!;
+    /// <summary>
+    /// The voters of the discussion.
+    /// </summary>
+    [JsonProperty("voters")]
+    public DiscussionVoters Voters { get; init; } = default!;
 }

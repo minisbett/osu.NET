@@ -10,15 +10,15 @@ namespace osu.NET.Models.Beatmaps;
 /// </summary>
 public class BeatmapSetDescription
 {
-  /// <summary>
-  /// The description of the beatmapset as BBcode. This may be null.
-  /// </summary>
-  [JsonProperty("bbcode")]
-  public string? BBCode { get; init; }
+    /// <summary>
+    /// The description of the beatmapset as BBcode. This may be null.
+    /// </summary>
+    [JsonProperty("bbcode")]
+    public string? BBCode { get; init; }
 
-  /// <summary>
-  /// The description of the beatmapset as a pre-rendered HTML string. This may be null.
-  /// </summary>
-  [JsonProperty("description")]
-  public string? Description { get; init; }
+    /// <summary>
+    /// The description of the beatmapset as a pre-rendered HTML string. This may be null.
+    /// </summary>
+    [JsonProperty("description")]
+    public string? Description { get; init; }
 }

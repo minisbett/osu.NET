@@ -11,21 +11,21 @@ namespace osu.NET.Models.Events;
 /// </summary>
 public class Event
 {
-  /// <summary>
-  /// The datetime at which this event happened.
-  /// </summary>
-  [JsonProperty("created_at")]
-  public DateTimeOffset CreatedAt { get; init; }
+    /// <summary>
+    /// The datetime at which this event happened.
+    /// </summary>
+    [JsonProperty("created_at")]
+    public DateTimeOffset CreatedAt { get; init; }
 
-  /// <summary>
-  /// The ID of this event.
-  /// </summary>
-  [JsonProperty("id")]
-  public int Id { get; init; }
+    /// <summary>
+    /// The ID of this event.
+    /// </summary>
+    [JsonProperty("id")]
+    public int Id { get; init; }
 
-  /// <summary>
-  /// The type of this event.
-  /// </summary>
-  [JsonProperty("type")]
-  public EventType Type { get; init; }
+    /// <summary>
+    /// The type of this event.
+    /// </summary>
+    [JsonProperty("type")]
+    public EventType Type { get; init; }
 }

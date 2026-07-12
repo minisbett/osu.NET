@@ -10,21 +10,21 @@ namespace osu.NET.Models.Forums;
 /// </summary>
 public class ForumBundle
 {
-  /// <summary>
-  /// The forum.
-  /// </summary>
-  [JsonProperty("forum")]
-  public Forum Forum { get; init; } = default!;
+    /// <summary>
+    /// The forum.
+    /// </summary>
+    [JsonProperty("forum")]
+    public Forum Forum { get; init; } = default!;
 
-  /// <summary>
-  /// The recent topics in the forum.
-  /// </summary>
-  [JsonProperty("topics")]
-  public ForumTopic[] RecentTopics { get; init; } = default!;
+    /// <summary>
+    /// The recent topics in the forum.
+    /// </summary>
+    [JsonProperty("topics")]
+    public ForumTopic[] RecentTopics { get; init; } = default!;
 
-  /// <summary>
-  /// The pinned topics in the forum.
-  /// </summary>
-  [JsonProperty("pinned_topics")]
-  public ForumTopic[] PinnedTopics { get; init; } = default!;
+    /// <summary>
+    /// The pinned topics in the forum.
+    /// </summary>
+    [JsonProperty("pinned_topics")]
+    public ForumTopic[] PinnedTopics { get; init; } = default!;
 }

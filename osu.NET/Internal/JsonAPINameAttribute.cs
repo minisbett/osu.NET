@@ -8,8 +8,8 @@
 [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = true)]
 internal sealed class JsonApiNameAttribute(string name) : Attribute
 {
-  /// <summary>
-  /// The string representation.
-  /// </summary>
-  public string Name { get; } = name;
+    /// <summary>
+    /// The string representation.
+    /// </summary>
+    public string Name { get; } = name;
 }

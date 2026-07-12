@@ -13,45 +13,38 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum BeatmapType
 {
-  /// <summary>
-  /// The beatmap is in the favourited beatmaps section of the user.
-  /// </summary>
-  [QueryApiName("favourite")]
-  Favourite,
+    /// <summary>
+    /// The beatmap is in the favourited beatmaps section of the user.
+    /// </summary>
+    [QueryApiName("favourite")] Favourite,
 
-  /// <summary>
-  /// The beatmap is in the graveyarded section of the user.
-  /// </summary>
-  [QueryApiName("graveyard")]
-  Graveyard,
+    /// <summary>
+    /// The beatmap is in the graveyarded section of the user.
+    /// </summary>
+    [QueryApiName("graveyard")] Graveyard,
 
-  /// <summary>
-  /// The beatmap is in the guest difficulty section of the user.
-  /// </summary>
-  [QueryApiName("guest")]
-  Guest,
+    /// <summary>
+    /// The beatmap is in the guest difficulty section of the user.
+    /// </summary>
+    [QueryApiName("guest")] Guest,
 
-  /// <summary>
-  /// The beatmap is in the loved beatmaps section of the user.
-  /// </summary>
-  [QueryApiName("loved")]
-  Loved,
+    /// <summary>
+    /// The beatmap is in the loved beatmaps section of the user.
+    /// </summary>
+    [QueryApiName("loved")] Loved,
 
-  /// <summary>
-  /// The beatmap is in the nominated beatmap section of the user.
-  /// </summary>
-  [QueryApiName("nominated")]
-  Nominated,
+    /// <summary>
+    /// The beatmap is in the nominated beatmap section of the user.
+    /// </summary>
+    [QueryApiName("nominated")] Nominated,
 
-  /// <summary>
-  /// The beatmap is in the pending beatmaps section of the user.
-  /// </summary>
-  [QueryApiName("pending")]
-  Pending,
+    /// <summary>
+    /// The beatmap is in the pending beatmaps section of the user.
+    /// </summary>
+    [QueryApiName("pending")] Pending,
 
-  /// <summary>
-  /// The beatmap is in the ranked beatmaps section of the user.
-  /// </summary>
-  [QueryApiName("ranked")]
-  Ranked
+    /// <summary>
+    /// The beatmap is in the ranked beatmaps section of the user.
+    /// </summary>
+    [QueryApiName("ranked")] Ranked
 }

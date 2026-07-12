@@ -11,27 +11,23 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum MatchScoringType
 {
-  /// <summary>
-  /// The accuray is used to determine the value of a score.
-  /// </summary>
-  [JsonApiName("accuracy")]
-  Accuracy,
+    /// <summary>
+    /// The accuray is used to determine the value of a score.
+    /// </summary>
+    [JsonApiName("accuracy")] Accuracy,
 
-  /// <summary>
-  /// The combo is used to determine the value of a score.
-  /// </summary>
-  [JsonApiName("combo")]
-  Combo,
+    /// <summary>
+    /// The combo is used to determine the value of a score.
+    /// </summary>
+    [JsonApiName("combo")] Combo,
 
-  /// <summary>
-  /// The total score is used to determine the value of a score.
-  /// </summary>
-  [JsonApiName("score")]
-  Score,
+    /// <summary>
+    /// The total score is used to determine the value of a score.
+    /// </summary>
+    [JsonApiName("score")] Score,
 
-  /// <summary>
-  /// The total score V2 is used to determine the value of a score.
-  /// </summary>
-  [JsonApiName("scorev2")]
-  ScoreV2
+    /// <summary>
+    /// The total score V2 is used to determine the value of a score.
+    /// </summary>
+    [JsonApiName("scorev2")] ScoreV2
 }

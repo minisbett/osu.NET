@@ -11,15 +11,15 @@ namespace osu.NET.Models.Changelogs;
 /// </summary>
 public class ChangelogListing
 {
-  /// <summary>
-  /// The 21 most recent builds (including filters) builds of osu!-related software.
-  /// </summary>
-  [JsonProperty("builds")]
-  public Build[] Builds { get; init; } = default!;
+    /// <summary>
+    /// The 21 most recent builds (including filters) builds of osu!-related software.
+    /// </summary>
+    [JsonProperty("builds")]
+    public Build[] Builds { get; init; } = default!;
 
-  /// <summary>
-  /// An array of all update streams of osu!-related software.
-  /// </summary>
-  [JsonProperty("streams")]
-  public UpdateStream[] Streams { get; init; } = default!;
+    /// <summary>
+    /// An array of all update streams of osu!-related software.
+    /// </summary>
+    [JsonProperty("streams")]
+    public UpdateStream[] Streams { get; init; } = default!;
 }

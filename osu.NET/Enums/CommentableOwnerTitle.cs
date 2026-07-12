@@ -10,11 +10,10 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum CommentableOwnerTitle
 {
-  // This intentionally only contains one value, as it is only used as this value or null.
+    // This intentionally only contains one value, as it is only used as this value or null.
 
-  /// <summary>
-  /// Indicates that the owner of the commentable object is its' mapper.
-  /// </summary>
-  [JsonApiName("MAPPER")]
-  Mapper
+    /// <summary>
+    /// Indicates that the owner of the commentable object is its' mapper.
+    /// </summary>
+    [JsonApiName("MAPPER")] Mapper
 }

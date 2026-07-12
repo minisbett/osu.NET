@@ -10,21 +10,21 @@ namespace osu.NET.Models.Events;
 /// </summary>
 public class EventUser
 {
-  /// <summary>
-  /// The username of the user.
-  /// </summary>
-  [JsonProperty("username")]
-  public string Username { get; init; } = default!;
+    /// <summary>
+    /// The username of the user.
+    /// </summary>
+    [JsonProperty("username")]
+    public string Username { get; init; } = default!;
 
-  /// <summary>
-  /// The URL of the users' profile.
-  /// </summary>
-  [JsonProperty("url")]
-  public string Url { get; init; } = default!;
+    /// <summary>
+    /// The URL of the users' profile.
+    /// </summary>
+    [JsonProperty("url")]
+    public string Url { get; init; } = default!;
 
-  /// <summary>
-  /// The previous username of the user. This will be null if the related event is not a <see cref="UsernameChangeEvent"/>.
-  /// </summary>
-  [JsonProperty("previousUsername")]
-  public string? PreviousUsername { get; init; }
+    /// <summary>
+    /// The previous username of the user. This will be null if the related event is not a <see cref="UsernameChangeEvent"/>.
+    /// </summary>
+    [JsonProperty("previousUsername")]
+    public string? PreviousUsername { get; init; }
 }

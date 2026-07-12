@@ -11,15 +11,15 @@ namespace osu.NET.Models.Events;
 /// </summary>
 public class AchievementEvent : Event
 {
-  /// <summary>
-  /// The achievement that was obtained.
-  /// </summary>
-  [JsonProperty("achievement")]
-  public Achievement Achievement { get; init; } = default!;
+    /// <summary>
+    /// The achievement that was obtained.
+    /// </summary>
+    [JsonProperty("achievement")]
+    public Achievement Achievement { get; init; } = default!;
 
-  /// <summary>
-  /// The user who obtained the achievement.
-  /// </summary>
-  [JsonProperty("user")]
-  public EventUser User { get; init; } = default!;
+    /// <summary>
+    /// The user who obtained the achievement.
+    /// </summary>
+    [JsonProperty("user")]
+    public EventUser User { get; init; } = default!;
 }

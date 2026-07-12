@@ -10,15 +10,15 @@ namespace osu.NET.Models.Other;
 /// </summary>
 public class SeasonalBackgroundsBundle
 {
-  /// <summary>
-  /// The datetime at which the season with the current background ends.
-  /// </summary>
-  [JsonProperty("ends_at")]
-  public DateTimeOffset EndsAt { get; init; } = default!;
+    /// <summary>
+    /// The datetime at which the season with the current background ends.
+    /// </summary>
+    [JsonProperty("ends_at")]
+    public DateTimeOffset EndsAt { get; init; } = default!;
 
-  /// <summary>
-  /// The seasonal backgrounds.
-  /// </summary>
-  [JsonProperty("backgrounds")]
-  public SeasonalBackground[] Backgrounds { get; init; } = default!;
+    /// <summary>
+    /// The seasonal backgrounds.
+    /// </summary>
+    [JsonProperty("backgrounds")]
+    public SeasonalBackground[] Backgrounds { get; init; } = default!;
 }

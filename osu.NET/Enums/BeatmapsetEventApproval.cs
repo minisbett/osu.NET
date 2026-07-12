@@ -11,27 +11,23 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum BeatmapsetEventApproval
 {
-  /// <summary>
-  /// The beatmapset was ranked.
-  /// </summary>
-  [JsonApiName("ranked")]
-  Ranked,
+    /// <summary>
+    /// The beatmapset was ranked.
+    /// </summary>
+    [JsonApiName("ranked")] Ranked,
 
-  /// <summary>
-  /// The beatmapset was approved.
-  /// </summary>
-  [JsonApiName("approved")]
-  Approved,
+    /// <summary>
+    /// The beatmapset was approved.
+    /// </summary>
+    [JsonApiName("approved")] Approved,
 
-  /// <summary>
-  /// The beatmapset was qualified.
-  /// </summary>
-  [JsonApiName("qualified")]
-  Qualified,
+    /// <summary>
+    /// The beatmapset was qualified.
+    /// </summary>
+    [JsonApiName("qualified")] Qualified,
 
-  /// <summary>
-  /// The beatmapset was loved.
-  /// </summary>
-  [JsonApiName("loved")]
-  Loved
+    /// <summary>
+    /// The beatmapset was loved.
+    /// </summary>
+    [JsonApiName("loved")] Loved
 }

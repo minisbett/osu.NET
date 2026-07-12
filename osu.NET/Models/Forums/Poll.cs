@@ -10,57 +10,57 @@ namespace osu.NET.Models.Forums;
 /// </summary>
 public class Poll
 {
-  /// <summary>
-  /// Bool whether changing your vote is allowed in this poll.
-  /// </summary>
-  [JsonProperty("allow_vote_change")]
-  public bool AllowVoteChange { get; init; }
+    /// <summary>
+    /// Bool whether changing your vote is allowed in this poll.
+    /// </summary>
+    [JsonProperty("allow_vote_change")]
+    public bool AllowVoteChange { get; init; }
 
-  /// <summary>
-  /// The datetime at which this poll ended. This will be null if this poll has not ended yet.
-  /// </summary>
-  [JsonProperty("ended_at")]
-  public DateTimeOffset? EndedAt { get; init; }
+    /// <summary>
+    /// The datetime at which this poll ended. This will be null if this poll has not ended yet.
+    /// </summary>
+    [JsonProperty("ended_at")]
+    public DateTimeOffset? EndedAt { get; init; }
 
-  /// <summary>
-  /// Bool whether the results of this poll are hidden until this poll ends.
-  /// </summary>
-  [JsonProperty("hide_incomplete_results")]
-  public bool HideIncompleteResults { get; init; }
+    /// <summary>
+    /// Bool whether the results of this poll are hidden until this poll ends.
+    /// </summary>
+    [JsonProperty("hide_incomplete_results")]
+    public bool HideIncompleteResults { get; init; }
 
-  /// <summary>
-  /// The datetime at which the poll was last voted on. This will be null if the poll has not been voted on.
-  /// </summary>
-  [JsonProperty("last_vote_at")]
-  public DateTimeOffset? LastVoteAt { get; init; }
+    /// <summary>
+    /// The datetime at which the poll was last voted on. This will be null if the poll has not been voted on.
+    /// </summary>
+    [JsonProperty("last_vote_at")]
+    public DateTimeOffset? LastVoteAt { get; init; }
 
-  /// <summary>
-  /// The amount of votes a single user can cast in this poll.
-  /// </summary>
-  [JsonProperty("max_votes")]
-  public int MaxVotes { get; init; }
+    /// <summary>
+    /// The amount of votes a single user can cast in this poll.
+    /// </summary>
+    [JsonProperty("max_votes")]
+    public int MaxVotes { get; init; }
 
-  /// <summary>
-  /// The vote options for this poll.
-  /// </summary>
-  [JsonProperty("options")]
-  public PollOption[] Options { get; init; } = default!;
+    /// <summary>
+    /// The vote options for this poll.
+    /// </summary>
+    [JsonProperty("options")]
+    public PollOption[] Options { get; init; } = default!;
 
-  /// <summary>
-  /// The datetime at which this poll started.
-  /// </summary>
-  [JsonProperty("started_at")]
-  public DateTimeOffset StartedAt { get; init; }
+    /// <summary>
+    /// The datetime at which this poll started.
+    /// </summary>
+    [JsonProperty("started_at")]
+    public DateTimeOffset StartedAt { get; init; }
 
-  /// <summary>
-  /// The title of this poll.
-  /// </summary>
-  [JsonProperty("title")]
-  public PollText Title { get; init; } = default!;
+    /// <summary>
+    /// The title of this poll.
+    /// </summary>
+    [JsonProperty("title")]
+    public PollText Title { get; init; } = default!;
 
-  /// <summary>
-  /// The total amount of votes this poll has received.
-  /// </summary>
-  [JsonProperty("total_vote_count")]
-  public int TotalVotes { get; init; }
+    /// <summary>
+    /// The total amount of votes this poll has received.
+    /// </summary>
+    [JsonProperty("total_vote_count")]
+    public int TotalVotes { get; init; }
 }

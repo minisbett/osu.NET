@@ -10,15 +10,15 @@ namespace osu.NET.Models.Users;
 /// </summary>
 public class MonthlyReplaysWatchedEntry
 {
-  /// <summary>
-  /// The amount of replays watched this month.
-  /// </summary>
-  [JsonProperty("count")]
-  public int Count { get; init; }
+    /// <summary>
+    /// The amount of replays watched this month.
+    /// </summary>
+    [JsonProperty("count")]
+    public int Count { get; init; }
 
-  /// <summary>
-  /// The datetime at which this month started.
-  /// </summary>
-  [JsonProperty("start_date")]
-  public DateTimeOffset StartDate { get; init; }
+    /// <summary>
+    /// The datetime at which this month started.
+    /// </summary>
+    [JsonProperty("start_date")]
+    public DateTimeOffset StartDate { get; init; }
 }

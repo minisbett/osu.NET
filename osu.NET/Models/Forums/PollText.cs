@@ -10,15 +10,15 @@ namespace osu.NET.Models.Forums;
 /// </summary>
 public class PollText
 {
-  /// <summary>
-  /// The text in BBcode format.
-  /// </summary>
-  [JsonProperty("bbcode")]
-  public string BBCode { get; init; } = default!;
+    /// <summary>
+    /// The text in BBcode format.
+    /// </summary>
+    [JsonProperty("bbcode")]
+    public string BBCode { get; init; } = default!;
 
-  /// <summary>
-  /// The text as a pre-rendered HTML string.
-  /// </summary>
-  [JsonProperty("html")]
-  public string Html { get; init; } = default!;
+    /// <summary>
+    /// The text as a pre-rendered HTML string.
+    /// </summary>
+    [JsonProperty("html")]
+    public string Html { get; init; } = default!;
 }

@@ -11,15 +11,15 @@ namespace osu.NET.Models.Users;
 /// </summary>
 public class RankHistory
 {
-  /// <summary>
-  /// The rank of the past 90 days.
-  /// </summary>
-  [JsonProperty("data")]
-  public int[] Data { get; init; } = default!;
+    /// <summary>
+    /// The rank of the past 90 days.
+    /// </summary>
+    [JsonProperty("data")]
+    public int[] Data { get; init; } = default!;
 
-  /// <summary>
-  /// The ruleset this rank history is for.
-  /// </summary>
-  [JsonProperty("mode")]
-  public Ruleset Ruleset { get; init; }
+    /// <summary>
+    /// The ruleset this rank history is for.
+    /// </summary>
+    [JsonProperty("mode")]
+    public Ruleset Ruleset { get; init; }
 }

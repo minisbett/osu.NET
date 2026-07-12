@@ -11,27 +11,27 @@ namespace osu.NET.Models.Beatmaps;
 /// </summary>
 public class Nomination
 {
-  /// <summary>
-  /// The ID of the beatmapset that this nomination is for.
-  /// </summary>
-  [JsonProperty("beatmapset_id")]
-  public int BeatmapSetId { get; init; }
+    /// <summary>
+    /// The ID of the beatmapset that this nomination is for.
+    /// </summary>
+    [JsonProperty("beatmapset_id")]
+    public int BeatmapSetId { get; init; }
 
-  /// <summary>
-  /// Bool whether this nomination has been reset/withdrawn.
-  /// </summary>
-  [JsonProperty("reset")]
-  public bool IsReset { get; init; }
+    /// <summary>
+    /// Bool whether this nomination has been reset/withdrawn.
+    /// </summary>
+    [JsonProperty("reset")]
+    public bool IsReset { get; init; }
 
-  /// <summary>
-  /// The rulesets in which this nomination is valid.
-  /// </summary>
-  [JsonProperty("rulesets")]
-  public Ruleset[] Rulesets { get; init; } = default!;
+    /// <summary>
+    /// The rulesets in which this nomination is valid.
+    /// </summary>
+    [JsonProperty("rulesets")]
+    public Ruleset[] Rulesets { get; init; } = default!;
 
-  /// <summary>
-  /// The ID of the user that performed this nomination.
-  /// </summary>
-  [JsonProperty("user_id")]
-  public int UserId { get; init; }
+    /// <summary>
+    /// The ID of the user that performed this nomination.
+    /// </summary>
+    [JsonProperty("user_id")]
+    public int UserId { get; init; }
 }

@@ -10,15 +10,15 @@ namespace osu.NET.Models.Beatmaps;
 /// </summary>
 public class TopTag
 {
-  /// <summary>
-  /// The ID of the tag.
-  /// </summary>
-  [JsonProperty("tag_id")]
-  public int TagId { get; init; }
+    /// <summary>
+    /// The ID of the tag.
+    /// </summary>
+    [JsonProperty("tag_id")]
+    public int TagId { get; init; }
 
-  /// <summary>
-  /// The amount of times the tag was voted.
-  /// </summary>
-  [JsonProperty("count")]
-  public int Count { get; init; }
+    /// <summary>
+    /// The amount of times the tag was voted.
+    /// </summary>
+    [JsonProperty("count")]
+    public int Count { get; init; }
 }

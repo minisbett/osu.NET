@@ -11,33 +11,33 @@ namespace osu.NET.Models.Users;
 /// </summary>
 public class StatisticsVariant
 {
-  /// <summary>
-  /// The ruleset this variant is for. Currently, this is always osu!mania.
-  /// </summary>
-  [JsonProperty("mode")]
-  public Ruleset Ruleset { get; init; }
+    /// <summary>
+    /// The ruleset this variant is for. Currently, this is always osu!mania.
+    /// </summary>
+    [JsonProperty("mode")]
+    public Ruleset Ruleset { get; init; }
 
-  /// <summary>
-  /// The variant type.
-  /// </summary>
-  [JsonProperty("variant")]
-  public VariantType Variant { get; init; }
+    /// <summary>
+    /// The variant type.
+    /// </summary>
+    [JsonProperty("variant")]
+    public VariantType Variant { get; init; }
 
-  /// <summary>
-  /// The country rank in this variant. This will be null if the user has no rank.
-  /// </summary>
-  [JsonProperty("country_rank")]
-  public int? CountryRank { get; init; }
+    /// <summary>
+    /// The country rank in this variant. This will be null if the user has no rank.
+    /// </summary>
+    [JsonProperty("country_rank")]
+    public int? CountryRank { get; init; }
 
-  /// <summary>
-  /// The global rank in this variant. This will be null if the user has no rank.
-  /// </summary>
-  [JsonProperty("global_rank")]
-  public int? GlobalRank { get; init; }
+    /// <summary>
+    /// The global rank in this variant. This will be null if the user has no rank.
+    /// </summary>
+    [JsonProperty("global_rank")]
+    public int? GlobalRank { get; init; }
 
-  /// <summary>
-  /// The PP in this variant.
-  /// </summary>
-  [JsonProperty("pp")]
-  public double PP { get; init; }
+    /// <summary>
+    /// The PP in this variant.
+    /// </summary>
+    [JsonProperty("pp")]
+    public double PP { get; init; }
 }

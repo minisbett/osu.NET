@@ -10,22 +10,22 @@ namespace osu.NET.Models.Forums;
 /// </summary>
 public class PollOption
 {
-  /// <summary>
-  /// The ID of this poll option.
-  /// </summary>
-  [JsonProperty("id")]
-  public int Id { get; internal set; }
+    /// <summary>
+    /// The ID of this poll option.
+    /// </summary>
+    [JsonProperty("id")]
+    public int Id { get; internal set; }
 
-  /// <summary>
-  /// The text of this poll option.
-  /// </summary>
-  [JsonProperty("text")]
-  public PollText Text { get; init; } = default!;
+    /// <summary>
+    /// The text of this poll option.
+    /// </summary>
+    [JsonProperty("text")]
+    public PollText Text { get; init; } = default!;
 
-  /// <summary>
-  /// The amount of votes this poll option has.
-  /// This will be null if the poll has not ended yet and <see cref="Poll.HideIncompleteResults"/> is true.
-  /// </summary>
-  [JsonProperty("vote_count")]
-  public int? VoteCount { get; init; }
+    /// <summary>
+    /// The amount of votes this poll option has.
+    /// This will be null if the poll has not ended yet and <see cref="Poll.HideIncompleteResults"/> is true.
+    /// </summary>
+    [JsonProperty("vote_count")]
+    public int? VoteCount { get; init; }
 }

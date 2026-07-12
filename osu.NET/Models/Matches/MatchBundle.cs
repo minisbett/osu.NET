@@ -11,33 +11,33 @@ namespace osu.NET.Models.Matches;
 /// </summary>
 public class MatchBundle
 {
-  /// <summary>
-  /// The match.
-  /// </summary>
-  [JsonProperty("match")]
-  public Match Match { get; init; } = default!;
+    /// <summary>
+    /// The match.
+    /// </summary>
+    [JsonProperty("match")]
+    public Match Match { get; init; } = default!;
 
-  /// <summary>
-  /// The events in the match.
-  /// </summary>
-  [JsonProperty("events")]
-  public MatchEvent[] Events { get; init; } = default!;
+    /// <summary>
+    /// The events in the match.
+    /// </summary>
+    [JsonProperty("events")]
+    public MatchEvent[] Events { get; init; } = default!;
 
-  /// <summary>
-  /// The users related to the match.
-  /// </summary>
-  [JsonProperty("users")]
-  public User[] Users { get; init; } = default!;
+    /// <summary>
+    /// The users related to the match.
+    /// </summary>
+    [JsonProperty("users")]
+    public User[] Users { get; init; } = default!;
 
-  /// <summary>
-  /// The ID of the first event in the match.
-  /// </summary>
-  [JsonProperty("first_event_id")]
-  public long FirstEventId { get; init; }
+    /// <summary>
+    /// The ID of the first event in the match.
+    /// </summary>
+    [JsonProperty("first_event_id")]
+    public long FirstEventId { get; init; }
 
-  /// <summary>
-  /// The ID of the latest event in the match.
-  /// </summary>
-  [JsonProperty("latest_event_id")]
-  public long LatestEventId { get; init; }
+    /// <summary>
+    /// The ID of the latest event in the match.
+    /// </summary>
+    [JsonProperty("latest_event_id")]
+    public long LatestEventId { get; init; }
 }

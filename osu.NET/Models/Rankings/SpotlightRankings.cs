@@ -12,21 +12,21 @@ namespace osu.NET.Models.Rankings;
 /// </summary>
 public class SpotlightRankings
 {
-  /// <summary>
-  /// The beatmapsets included in the spotlight.
-  /// </summary>
-  [JsonProperty("beatmapsets")]
-  public BeatmapSet[] BeatmapSets { get; init; } = default!;
+    /// <summary>
+    /// The beatmapsets included in the spotlight.
+    /// </summary>
+    [JsonProperty("beatmapsets")]
+    public BeatmapSet[] BeatmapSets { get; init; } = default!;
 
-  /// <summary>
-  /// The top 40 users, in order.
-  /// </summary>
-  [JsonProperty("ranking")]
-  public UserStatistics[] Users { get; init; } = default!;
+    /// <summary>
+    /// The top 40 users, in order.
+    /// </summary>
+    [JsonProperty("ranking")]
+    public UserStatistics[] Users { get; init; } = default!;
 
-  /// <summary>
-  /// The spotlight this object represents the ranking of.
-  /// </summary>
-  [JsonProperty("spotlight")]
-  public Spotlight Spotlight { get; init; } = default!;
+    /// <summary>
+    /// The spotlight this object represents the ranking of.
+    /// </summary>
+    [JsonProperty("spotlight")]
+    public Spotlight Spotlight { get; init; } = default!;
 }

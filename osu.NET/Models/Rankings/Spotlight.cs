@@ -11,39 +11,39 @@ namespace osu.NET.Models.Rankings;
 /// </summary>
 public class Spotlight
 {
-  /// <summary>
-  /// The ID of the spotlight.
-  /// </summary>
-  [JsonProperty("id")]
-  public int Id { get; init; }
+    /// <summary>
+    /// The ID of the spotlight.
+    /// </summary>
+    [JsonProperty("id")]
+    public int Id { get; init; }
 
-  /// <summary>
-  /// Bool whether the spotlight is specific to a ruleset.
-  /// </summary>
-  [JsonProperty("mode_specific")]
-  public bool IsModeSpecific { get; init; }
+    /// <summary>
+    /// Bool whether the spotlight is specific to a ruleset.
+    /// </summary>
+    [JsonProperty("mode_specific")]
+    public bool IsModeSpecific { get; init; }
 
-  /// <summary>
-  /// The amount of participants in the spotlight. This will be null if not requesting a single spotlight.
-  /// </summary>
-  [JsonProperty("participant_count")]
-  public int? ParticipantAmount { get; init; }
+    /// <summary>
+    /// The amount of participants in the spotlight. This will be null if not requesting a single spotlight.
+    /// </summary>
+    [JsonProperty("participant_count")]
+    public int? ParticipantAmount { get; init; }
 
-  /// <summary>
-  /// The name of the spotlight.
-  /// </summary>
-  [JsonProperty("name")]
-  public string Name { get; init; } = default!;
+    /// <summary>
+    /// The name of the spotlight.
+    /// </summary>
+    [JsonProperty("name")]
+    public string Name { get; init; } = default!;
 
-  /// <summary>
-  /// The datetime at which the spotlight starts.
-  /// </summary>
-  [JsonProperty("start_date")]
-  public DateTimeOffset StartDate { get; init; }
+    /// <summary>
+    /// The datetime at which the spotlight starts.
+    /// </summary>
+    [JsonProperty("start_date")]
+    public DateTimeOffset StartDate { get; init; }
 
-  /// <summary>
-  /// The type of the spotlight.
-  /// </summary>
-  [JsonProperty("type")]
-  public SpotlightType Type { get; init; } = default!;
+    /// <summary>
+    /// The type of the spotlight.
+    /// </summary>
+    [JsonProperty("type")]
+    public SpotlightType Type { get; init; } = default!;
 }

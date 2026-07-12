@@ -10,15 +10,15 @@ namespace osu.NET.Models.Events;
 /// </summary>
 public class EventsBundle
 {
-  /// <summary>
-  /// The events.
-  /// </summary>
-  [JsonProperty("events")]
-  public Event[] Events { get; init; } = default!;
+    /// <summary>
+    /// The events.
+    /// </summary>
+    [JsonProperty("events")]
+    public Event[] Events { get; init; } = default!;
 
-  /// <summary>
-  /// The cursor string for fetching further events.
-  /// </summary>
-  [JsonProperty("cursor_string")]
-  public string Cursor { get; init; } = default!;
+    /// <summary>
+    /// The cursor string for fetching further events.
+    /// </summary>
+    [JsonProperty("cursor_string")]
+    public string Cursor { get; init; } = default!;
 }

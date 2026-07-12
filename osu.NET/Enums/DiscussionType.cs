@@ -10,39 +10,33 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum DiscussionType
 {
-  /// <summary>
-  /// Represents a hype on the beatmapset.
-  /// </summary>
-  [JsonApiName("hype")]
-  Hype,
+    /// <summary>
+    /// Represents a hype on the beatmapset.
+    /// </summary>
+    [JsonApiName("hype")] Hype,
 
-  /// <summary>
-  /// Represents a note by the creator or a beatmap nominator.
-  /// </summary>
-  [JsonApiName("note")]
-  MapperNote,
+    /// <summary>
+    /// Represents a note by the creator or a beatmap nominator.
+    /// </summary>
+    [JsonApiName("note")] MapperNote,
 
-  /// <summary>
-  /// Represents a praise for the beatmap(set).
-  /// </summary>
-  [JsonApiName("praise")]
-  Praise,
+    /// <summary>
+    /// Represents a praise for the beatmap(set).
+    /// </summary>
+    [JsonApiName("praise")] Praise,
 
-  /// <summary>
-  /// Represents a problem that was found on the beatmap(set).
-  /// </summary>
-  [JsonApiName("problem")]
-  Problem,
+    /// <summary>
+    /// Represents a problem that was found on the beatmap(set).
+    /// </summary>
+    [JsonApiName("problem")] Problem,
 
-  /// <summary>
-  /// Represents a review for the beatmap(set).
-  /// </summary>
-  [JsonApiName("review")]
-  Review,
+    /// <summary>
+    /// Represents a review for the beatmap(set).
+    /// </summary>
+    [JsonApiName("review")] Review,
 
-  /// <summary>
-  /// Represents a suggestion for the beatmap(set).
-  /// </summary>
-  [JsonApiName("suggestion")]
-  Suggestion
+    /// <summary>
+    /// Represents a suggestion for the beatmap(set).
+    /// </summary>
+    [JsonApiName("suggestion")] Suggestion
 }

@@ -10,9 +10,8 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum SystemMessageType
 {
-  /// <summary>
-  /// The system message indicates the resolval/un-resolval of a discussion post.
-  /// </summary>
-  [JsonApiName("resolved")]
-  Resolved
+    /// <summary>
+    /// The system message indicates the resolval/un-resolval of a discussion post.
+    /// </summary>
+    [JsonApiName("resolved")] Resolved
 }

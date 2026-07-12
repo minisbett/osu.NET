@@ -10,15 +10,15 @@ namespace osu.NET.Models.Scores;
 /// </summary>
 public class PPWeight
 {
-  /// <summary>
-  /// The amount of weighted PP the score contributes.
-  /// </summary>
-  [JsonProperty("pp")]
-  public float PP { get; init; }
+    /// <summary>
+    /// The amount of weighted PP the score contributes.
+    /// </summary>
+    [JsonProperty("pp")]
+    public float PP { get; init; }
 
-  /// <summary>
-  /// The weight percentage.
-  /// </summary>
-  [JsonProperty("percentage")]
-  public float Percentage { get; init; }
+    /// <summary>
+    /// The weight percentage.
+    /// </summary>
+    [JsonProperty("percentage")]
+    public float Percentage { get; init; }
 }

@@ -10,9 +10,9 @@ namespace osu.NET.Models.Events;
 /// </summary>
 public class UserSupportGiftEvent : Event
 {
-  /// <summary>
-  /// The user who was gifted the supporter tag.
-  /// </summary>
-  [JsonProperty("user")]
-  public EventUser User { get; init; } = default!;
+    /// <summary>
+    /// The user who was gifted the supporter tag.
+    /// </summary>
+    [JsonProperty("user")]
+    public EventUser User { get; init; } = default!;
 }

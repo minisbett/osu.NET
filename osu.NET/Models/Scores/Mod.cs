@@ -10,15 +10,15 @@ namespace osu.NET.Models.Scores;
 /// </summary>
 public class Mod
 {
-  /// <summary>
-  /// The acronym of this mod.
-  /// </summary>
-  [JsonProperty("acronym")]
-  public string Acronym { get; init; } = default!;
+    /// <summary>
+    /// The acronym of this mod.
+    /// </summary>
+    [JsonProperty("acronym")]
+    public string Acronym { get; init; } = default!;
 
-  /// <summary>
-  /// The settings of this mod.
-  /// </summary>
-  [JsonProperty("settings")]
-  public Dictionary<string, object> Settings { get; init; } = [];
+    /// <summary>
+    /// The settings of this mod.
+    /// </summary>
+    [JsonProperty("settings")]
+    public Dictionary<string, object> Settings { get; init; } = [];
 }

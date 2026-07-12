@@ -10,21 +10,21 @@ namespace osu.NET.Models.Users;
 /// </summary>
 public class Country
 {
-  /// <summary>
-  /// The BCP 47 language tag of this country.
-  /// </summary>
-  [JsonProperty("code")]
-  public string Code { get; init; } = default!;
+    /// <summary>
+    /// The BCP 47 language tag of this country.
+    /// </summary>
+    [JsonProperty("code")]
+    public string Code { get; init; } = default!;
 
-  /// <summary>
-  /// DOCS: what is this?
-  /// </summary>
-  [JsonProperty("display")]
-  public int? Display { get; init; }
+    /// <summary>
+    /// DOCS: what is this?
+    /// </summary>
+    [JsonProperty("display")]
+    public int? Display { get; init; }
 
-  /// <summary>
-  /// The name of this country.
-  /// </summary>
-  [JsonProperty("name")]
-  public string Name { get; init; } = default!;
+    /// <summary>
+    /// The name of this country.
+    /// </summary>
+    [JsonProperty("name")]
+    public string Name { get; init; } = default!;
 }

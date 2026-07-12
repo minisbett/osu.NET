@@ -10,9 +10,9 @@ namespace osu.NET.Models.Events;
 /// </summary>
 public class UserSupportFirstEvent : Event
 {
-  /// <summary>
-  /// The user who supported osu! for the first time.
-  /// </summary>
-  [JsonProperty("user")]
-  public EventUser User { get; init; } = default!;
+    /// <summary>
+    /// The user who supported osu! for the first time.
+    /// </summary>
+    [JsonProperty("user")]
+    public EventUser User { get; init; } = default!;
 }

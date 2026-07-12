@@ -13,40 +13,40 @@ namespace osu.NET.Models.Changelogs;
 /// </summary>
 public class UpdateStream
 {
-  /// <summary>
-  /// The display name for this update stream (e.g. "Beta").
-  /// </summary>
-  [JsonProperty("display_name")]
-  public string DisplayName { get; init; } = default!;
+    /// <summary>
+    /// The display name for this update stream (e.g. "Beta").
+    /// </summary>
+    [JsonProperty("display_name")]
+    public string DisplayName { get; init; } = default!;
 
-  /// <summary>
-  /// The ID of this update stream.
-  /// </summary>
-  [JsonProperty("id")]
-  public int Id { get; init; }
+    /// <summary>
+    /// The ID of this update stream.
+    /// </summary>
+    [JsonProperty("id")]
+    public int Id { get; init; }
 
-  /// <summary>
-  /// Bool whether the update stream is considered featured, and thus highlighted in UI representations.
-  /// </summary>
-  [JsonProperty("is_featured")]
-  public bool IsFeatured { get; init; }
+    /// <summary>
+    /// Bool whether the update stream is considered featured, and thus highlighted in UI representations.
+    /// </summary>
+    [JsonProperty("is_featured")]
+    public bool IsFeatured { get; init; }
 
-  /// <summary>
-  /// The name of this update stream.
-  /// </summary>
-  [JsonProperty("name")]
-  public UpdateStreamName Name { get; init; } = default!;
+    /// <summary>
+    /// The name of this update stream.
+    /// </summary>
+    [JsonProperty("name")]
+    public UpdateStreamName Name { get; init; } = default!;
 
-  /// <summary>
-  /// The latest build for this update stream. This will be null if this <see cref="UpdateStream"/> object is accessed via <see cref="Build.UpdateStream"/>.
-  /// </summary>
-  [JsonProperty("latest_build")]
-  public Build? LatestBuild { get; init; }
+    /// <summary>
+    /// The latest build for this update stream. This will be null if this <see cref="UpdateStream"/> object is accessed via <see cref="Build.UpdateStream"/>.
+    /// </summary>
+    [JsonProperty("latest_build")]
+    public Build? LatestBuild { get; init; }
 
-  /// <summary>
-  /// The amount of currently online users using this update stream.
-  /// This will be null if this <see cref="UpdateStream"/> object is accessed via <see cref="Build.UpdateStream"/>.
-  /// </summary>
-  [JsonProperty("user_count")]
-  public int? UserCount { get; init; }
+    /// <summary>
+    /// The amount of currently online users using this update stream.
+    /// This will be null if this <see cref="UpdateStream"/> object is accessed via <see cref="Build.UpdateStream"/>.
+    /// </summary>
+    [JsonProperty("user_count")]
+    public int? UserCount { get; init; }
 }

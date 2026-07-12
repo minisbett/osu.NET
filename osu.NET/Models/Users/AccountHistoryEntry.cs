@@ -11,51 +11,51 @@ namespace osu.NET.Models.Users;
 /// </summary>
 public class AccountHistoryEntry
 {
-  /// <summary>
-  /// The user whichs account history this entry belongs to. This may be null.
-  /// </summary>
-  [JsonProperty("actor")]
-  public User? User { get; init; }
+    /// <summary>
+    /// The user whichs account history this entry belongs to. This may be null.
+    /// </summary>
+    [JsonProperty("actor")]
+    public User? User { get; init; }
 
-  /// <summary>
-  /// The description about the action of this history entry.
-  /// </summary>
-  [JsonProperty("description")]
-  public string Description { get; init; } = default!;
+    /// <summary>
+    /// The description about the action of this history entry.
+    /// </summary>
+    [JsonProperty("description")]
+    public string Description { get; init; } = default!;
 
-  /// <summary>
-  /// The ID of this history entry.
-  /// </summary>
-  [JsonProperty("id")]
-  public int Id { get; init; }
+    /// <summary>
+    /// The ID of this history entry.
+    /// </summary>
+    [JsonProperty("id")]
+    public int Id { get; init; }
 
-  /// <summary>
-  /// The length of the action taken in this history entry.
-  /// </summary>
-  [JsonProperty("length")]
-  public int Length { get; init; }
+    /// <summary>
+    /// The length of the action taken in this history entry.
+    /// </summary>
+    [JsonProperty("length")]
+    public int Length { get; init; }
 
-  /// <summary>
-  /// Bool whether the action taken in this history entry is permanent.
-  /// </summary>
-  [JsonProperty("permanent")]
-  public bool IsPermanent { get; init; }
+    /// <summary>
+    /// Bool whether the action taken in this history entry is permanent.
+    /// </summary>
+    [JsonProperty("permanent")]
+    public bool IsPermanent { get; init; }
 
-  /// <summary>
-  /// A URL to supporting information about this history entry. This may be null.
-  /// </summary>
-  [JsonProperty("supporting_url")]
-  public string? SupportingUrl { get; init; }
+    /// <summary>
+    /// A URL to supporting information about this history entry. This may be null.
+    /// </summary>
+    [JsonProperty("supporting_url")]
+    public string? SupportingUrl { get; init; }
 
-  /// <summary>
-  /// The datetime at which this history entry was created.
-  /// </summary>
-  [JsonProperty("timestamp")]
-  public DateTimeOffset? Timestamp { get; init; }
+    /// <summary>
+    /// The datetime at which this history entry was created.
+    /// </summary>
+    [JsonProperty("timestamp")]
+    public DateTimeOffset? Timestamp { get; init; }
 
-  /// <summary>
-  /// The type of this history entry.
-  /// </summary>
-  [JsonProperty("type")]
-  public UserAccountHistoryEntryType Type { get; init; }
+    /// <summary>
+    /// The type of this history entry.
+    /// </summary>
+    [JsonProperty("type")]
+    public UserAccountHistoryEntryType Type { get; init; }
 }

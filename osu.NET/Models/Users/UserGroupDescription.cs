@@ -10,15 +10,15 @@ namespace osu.NET.Models.Users;
 /// </summary>
 public class GroupDescription
 {
-  /// <summary>
-  /// The description of the group, as a pre-rendered HTML string.
-  /// </summary>
-  [JsonProperty("html")]
-  public string Html { get; init; } = default!;
+    /// <summary>
+    /// The description of the group, as a pre-rendered HTML string.
+    /// </summary>
+    [JsonProperty("html")]
+    public string Html { get; init; } = default!;
 
-  /// <summary>
-  /// The description of the group, as a markdown string.
-  /// </summary>
-  [JsonProperty("markdown")]
-  public string Markdown { get; init; } = default!;
+    /// <summary>
+    /// The description of the group, as a markdown string.
+    /// </summary>
+    [JsonProperty("markdown")]
+    public string Markdown { get; init; } = default!;
 }

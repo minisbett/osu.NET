@@ -10,27 +10,27 @@ namespace osu.NET.Models.Users;
 /// </summary>
 public class ProfileBanner
 {
-  /// <summary>
-  /// The ID of the banner.
-  /// </summary>
-  [JsonProperty("id")]
-  public int Id { get; init; }
+    /// <summary>
+    /// The ID of the banner.
+    /// </summary>
+    [JsonProperty("id")]
+    public int Id { get; init; }
 
-  /// <summary>
-  /// The ID of the tournament this banner is for.
-  /// </summary>
-  [JsonProperty("tournament_id")]
-  public int TournamentId { get; init; }
+    /// <summary>
+    /// The ID of the tournament this banner is for.
+    /// </summary>
+    [JsonProperty("tournament_id")]
+    public int TournamentId { get; init; }
 
-  /// <summary>
-  /// The URL for the image of this banner. This may be null.
-  /// </summary>
-  [JsonProperty("image")]
-  public string? Image { get; init; }
+    /// <summary>
+    /// The URL for the image of this banner. This may be null.
+    /// </summary>
+    [JsonProperty("image")]
+    public string? Image { get; init; }
 
-  /// <summary>
-  /// The URL for the high resolution image of this banner. This may be null.
-  /// </summary>
-  [JsonProperty("image@2x")]
-  public string? Image2X { get; init; }
+    /// <summary>
+    /// The URL for the high resolution image of this banner. This may be null.
+    /// </summary>
+    [JsonProperty("image@2x")]
+    public string? Image2X { get; init; }
 }

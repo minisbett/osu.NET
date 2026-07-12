@@ -10,59 +10,49 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum Grade
 {
-  /// <summary>
-  /// 100% accuracy, Hidden and/or Flashlight mod.
-  /// </summary>
-  [JsonApiName("xh")]
-  [JsonApiName("ssh")]
-  XH,
+    /// <summary>
+    /// 100% accuracy, Hidden and/or Flashlight mod.
+    /// </summary>
+    [JsonApiName("xh")] [JsonApiName("ssh")]
+    XH,
 
-  /// <summary>
-  /// 100% accuracy, any mod.
-  /// </summary>
-  [JsonApiName("x")]
-  [JsonApiName("ss")]
-  X,
+    /// <summary>
+    /// 100% accuracy, any mod.
+    /// </summary>
+    [JsonApiName("x")] [JsonApiName("ss")] X,
 
-  /// <summary>
-  /// S-rank accuracy, Hidden and/or Flashlight mod.
-  /// </summary>
-  [JsonApiName("sh")]
-  SH,
+    /// <summary>
+    /// S-rank accuracy, Hidden and/or Flashlight mod.
+    /// </summary>
+    [JsonApiName("sh")] SH,
 
-  /// <summary>
-  /// S-rank accuracy, any mod.
-  /// </summary>
-  [JsonApiName("s")]
-  S,
+    /// <summary>
+    /// S-rank accuracy, any mod.
+    /// </summary>
+    [JsonApiName("s")] S,
 
-  /// <summary>
-  /// A-rank accuracy, any mod.
-  /// </summary>
-  [JsonApiName("a")]
-  A,
+    /// <summary>
+    /// A-rank accuracy, any mod.
+    /// </summary>
+    [JsonApiName("a")] A,
 
-  /// <summary>
-  /// B-rank accuracy, any mod.
-  /// </summary>
-  [JsonApiName("b")]
-  B,
+    /// <summary>
+    /// B-rank accuracy, any mod.
+    /// </summary>
+    [JsonApiName("b")] B,
 
-  /// <summary>
-  /// C-rank accuracy, any mod.
-  /// </summary>
-  [JsonApiName("c")]
-  C,
+    /// <summary>
+    /// C-rank accuracy, any mod.
+    /// </summary>
+    [JsonApiName("c")] C,
 
-  /// <summary>
-  /// D-rank accuracy, any mod.
-  /// </summary>
-  [JsonApiName("d")]
-  D,
+    /// <summary>
+    /// D-rank accuracy, any mod.
+    /// </summary>
+    [JsonApiName("d")] D,
 
-  /// <summary>
-  /// Failed score.
-  /// </summary>
-  [JsonApiName("F")]
-  F
+    /// <summary>
+    /// Failed score.
+    /// </summary>
+    [JsonApiName("F")] F
 }

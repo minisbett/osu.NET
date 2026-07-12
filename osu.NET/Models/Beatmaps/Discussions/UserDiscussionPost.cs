@@ -10,9 +10,9 @@ namespace osu.NET.Models.Beatmaps.Discussions;
 /// </summary>
 public class UserDiscussionPost : DiscussionPost
 {
-  /// <summary>
-  /// The message content of this post.
-  /// </summary>
-  [JsonProperty("message")]
-  public string Message { get; init; } = default!;
+    /// <summary>
+    /// The message content of this post.
+    /// </summary>
+    [JsonProperty("message")]
+    public string Message { get; init; } = default!;
 }

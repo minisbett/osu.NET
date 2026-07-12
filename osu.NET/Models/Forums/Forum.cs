@@ -10,27 +10,27 @@ namespace osu.NET.Models.Forums;
 /// </summary>
 public class Forum
 {
-  /// <summary>
-  /// The ID of this forum.
-  /// </summary>
-  [JsonProperty("id")]
-  public int Id { get; init; }
+    /// <summary>
+    /// The ID of this forum.
+    /// </summary>
+    [JsonProperty("id")]
+    public int Id { get; init; }
 
-  /// <summary>
-  /// The name of this forum.
-  /// </summary>
-  [JsonProperty("name")]
-  public string Name { get; init; } = default!;
+    /// <summary>
+    /// The name of this forum.
+    /// </summary>
+    [JsonProperty("name")]
+    public string Name { get; init; } = default!;
 
-  /// <summary>
-  /// The description of this forum.
-  /// </summary>
-  [JsonProperty("description")]
-  public string Description { get; init; } = default!;
+    /// <summary>
+    /// The description of this forum.
+    /// </summary>
+    [JsonProperty("description")]
+    public string Description { get; init; } = default!;
 
-  /// <summary>
-  /// The sub-forums of this forum, up to 2 layers deep. This will be null if this instance is on the 2nd layer of the requested forum.
-  /// </summary>
-  [JsonProperty("subforums")]
-  public Forum[]? SubForums { get; init; }
+    /// <summary>
+    /// The sub-forums of this forum, up to 2 layers deep. This will be null if this instance is on the 2nd layer of the requested forum.
+    /// </summary>
+    [JsonProperty("subforums")]
+    public Forum[]? SubForums { get; init; }
 }

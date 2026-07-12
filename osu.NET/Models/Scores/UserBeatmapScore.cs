@@ -10,15 +10,15 @@ namespace osu.NET.Models.Scores;
 /// </summary>
 public class UserBeatmapScore
 {
-  /// <summary>
-  /// The position of the score on the beatmap leaderboards.
-  /// </summary>
-  [JsonProperty("position")]
-  public int Position { get; init; }
+    /// <summary>
+    /// The position of the score on the beatmap leaderboards.
+    /// </summary>
+    [JsonProperty("position")]
+    public int Position { get; init; }
 
-  /// <summary>
-  /// The actual score represented by this <see cref="UserBeatmapScore"/> object.
-  /// </summary>
-  [JsonProperty("score")]
-  public Score Score { get; init; } = default!;
+    /// <summary>
+    /// The actual score represented by this <see cref="UserBeatmapScore"/> object.
+    /// </summary>
+    [JsonProperty("score")]
+    public Score Score { get; init; } = default!;
 }

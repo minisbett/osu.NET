@@ -10,21 +10,18 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum CommentSortType
 {
-  /// <summary>
-  /// Sorts the comments by creation date, with the newest comments first.
-  /// </summary>
-  [QueryApiName("new")]
-  New,
+    /// <summary>
+    /// Sorts the comments by creation date, with the newest comments first.
+    /// </summary>
+    [QueryApiName("new")] New,
 
-  /// <summary>
-  /// Sorts the comments by creation date, with the oldest comments first.
-  /// </summary>
-  [QueryApiName("old")]
-  Old,
+    /// <summary>
+    /// Sorts the comments by creation date, with the oldest comments first.
+    /// </summary>
+    [QueryApiName("old")] Old,
 
-  /// <summary>
-  /// Sorts the comments by the number of upvotes, with the most upvoted comment first.
-  /// </summary>
-  [QueryApiName("top")]
-  Top
+    /// <summary>
+    /// Sorts the comments by the number of upvotes, with the most upvoted comment first.
+    /// </summary>
+    [QueryApiName("top")] Top
 }

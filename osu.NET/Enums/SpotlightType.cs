@@ -10,28 +10,24 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum SpotlightType
 {
-  /// <summary>
-  /// Represents a monthly (seasonal) spotlight.
-  /// </summary>
-  [JsonApiName("monthly")]
-  Monthly,
+    /// <summary>
+    /// Represents a monthly (seasonal) spotlight.
+    /// </summary>
+    [JsonApiName("monthly")] Monthly,
 
-  /// <summary>
-  /// Represents a spotlight evolving around a theme.
-  /// </summary>
-  [JsonApiName("theme")]
-  [JsonApiName("spotlight")] // It appears that in the beginning, spotlights that evolved around a theme were defined as type "spotlight" instead
-  Theme,
+    /// <summary>
+    /// Represents a spotlight evolving around a theme.
+    /// </summary>
+    [JsonApiName("theme")] [JsonApiName("spotlight")] // It appears that in the beginning, spotlights that evolved around a theme were defined as type "spotlight" instead
+    Theme,
 
-  /// <summary>
-  /// Represents a special spotlight.
-  /// </summary>
-  [JsonApiName("special")]
-  Special,
+    /// <summary>
+    /// Represents a special spotlight.
+    /// </summary>
+    [JsonApiName("special")] Special,
 
-  /// <summary>
-  /// Represents a spotlight compiling a 'best-of'.
-  /// </summary>
-  [JsonApiName("bestof")]
-  BestOf
+    /// <summary>
+    /// Represents a spotlight compiling a 'best-of'.
+    /// </summary>
+    [JsonApiName("bestof")] BestOf
 }

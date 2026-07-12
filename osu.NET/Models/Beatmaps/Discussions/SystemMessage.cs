@@ -11,15 +11,15 @@ namespace osu.NET.Models.Beatmaps.Discussions;
 /// </summary>
 public class SystemMessage
 {
-  /// <summary>
-  /// The type of the system message.
-  /// </summary>
-  [JsonProperty("message_type")]
-  public SystemMessageType Type { get; init; }
+    /// <summary>
+    /// The type of the system message.
+    /// </summary>
+    [JsonProperty("message_type")]
+    public SystemMessageType Type { get; init; }
 
-  /// <summary>
-  /// The boolean value of the system message.
-  /// </summary>
-  [JsonProperty("value")]
-  public bool Value { get; init; }
+    /// <summary>
+    /// The boolean value of the system message.
+    /// </summary>
+    [JsonProperty("value")]
+    public bool Value { get; init; }
 }

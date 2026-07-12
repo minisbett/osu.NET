@@ -10,21 +10,18 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum ForumTopicType
 {
-  /// <summary>
-  /// The forum topic is a normal topic.
-  /// </summary>
-  [JsonApiName("normal")]
-  Normal,
+    /// <summary>
+    /// The forum topic is a normal topic.
+    /// </summary>
+    [JsonApiName("normal")] Normal,
 
-  /// <summary>
-  /// The forum topic is stickied to the top of the forum.
-  /// </summary>
-  [JsonApiName("sticky")]
-  Sticky,
+    /// <summary>
+    /// The forum topic is stickied to the top of the forum.
+    /// </summary>
+    [JsonApiName("sticky")] Sticky,
 
-  /// <summary>
-  /// The forum topic is an announcement.
-  /// </summary>
-  [JsonApiName("announcement")]
-  Announcement,
+    /// <summary>
+    /// The forum topic is an announcement.
+    /// </summary>
+    [JsonApiName("announcement")] Announcement,
 }

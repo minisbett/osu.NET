@@ -10,27 +10,23 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum UserScoreType
 {
-  /// <summary>
-  /// The recent scores of the user.
-  /// </summary>
-  [QueryApiName("recent")]
-  Recent,
+    /// <summary>
+    /// The recent scores of the user.
+    /// </summary>
+    [QueryApiName("recent")] Recent,
 
-  /// <summary>
-  /// The best scores of the user.
-  /// </summary>
-  [QueryApiName("best")]
-  Best,
+    /// <summary>
+    /// The best scores of the user.
+    /// </summary>
+    [QueryApiName("best")] Best,
 
-  /// <summary>
-  /// The first place scores of the user.
-  /// </summary>
-  [QueryApiName("firsts")]
-  First,
+    /// <summary>
+    /// The first place scores of the user.
+    /// </summary>
+    [QueryApiName("firsts")] First,
 
-  /// <summary>
-  /// The pinned scores of the user.
-  /// </summary>
-  [QueryApiName("pinned")]
-  Pinned
+    /// <summary>
+    /// The pinned scores of the user.
+    /// </summary>
+    [QueryApiName("pinned")] Pinned
 }

@@ -11,16 +11,16 @@ namespace osu.NET.Models.Beatmaps;
 /// </summary>
 public class RequiredNominationsMeta
 {
-  /// <summary>
-  /// The amount of nominations requrired for the main ruleset of a beatmapset.
-  /// </summary>
-  [JsonProperty("main_ruleset")]
-  public int MainRuleset { get; init; }
+    /// <summary>
+    /// The amount of nominations requrired for the main ruleset of a beatmapset.
+    /// </summary>
+    [JsonProperty("main_ruleset")]
+    public int MainRuleset { get; init; }
 
 
-  /// <summary>
-  /// The amount of nominations requrired for a non-main ruleset of a beatmapset.
-  /// </summary>
-  [JsonProperty("non_main_ruleset")]
-  public int NonMainRuleset { get; init; }
+    /// <summary>
+    /// The amount of nominations requrired for a non-main ruleset of a beatmapset.
+    /// </summary>
+    [JsonProperty("non_main_ruleset")]
+    public int NonMainRuleset { get; init; }
 }

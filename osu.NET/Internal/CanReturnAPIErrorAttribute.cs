@@ -1,6 +1,6 @@
 ﻿namespace osu.NET.Internal;
 
-#pragma warning disable CS9113 
+#pragma warning disable CS9113
 
 /// <summary>
 /// Specifies that the method can return the specified <see cref="ApiErrorType"/>s.

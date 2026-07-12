@@ -10,51 +10,43 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum ProfileSection
 {
-  /// <summary>
-  /// The section listing the users' beatmaps.
-  /// </summary>
-  [JsonApiName("beatmaps")]
-  Beatmaps,
+    /// <summary>
+    /// The section listing the users' beatmaps.
+    /// </summary>
+    [JsonApiName("beatmaps")] Beatmaps,
 
-  /// <summary>
-  /// The section listing the users' historical data.
-  /// </summary>
-  [JsonApiName("historical")]
-  Historical,
+    /// <summary>
+    /// The section listing the users' historical data.
+    /// </summary>
+    [JsonApiName("historical")] Historical,
 
-  /// <summary>
-  /// The section listing the users' kudosu information.
-  /// </summary>
-  [JsonApiName("kudosu")]
-  Kudosu,
+    /// <summary>
+    /// The section listing the users' kudosu information.
+    /// </summary>
+    [JsonApiName("kudosu")] Kudosu,
 
-  /// <summary>
-  /// The me! section of the users' profile.
-  /// </summary>
-  [JsonApiName("me")]
-  Me,
+    /// <summary>
+    /// The me! section of the users' profile.
+    /// </summary>
+    [JsonApiName("me")] Me,
 
-  /// <summary>
-  /// The section listing the users' medals.
-  /// </summary>
-  [JsonApiName("medals")]
-  Medals,
+    /// <summary>
+    /// The section listing the users' medals.
+    /// </summary>
+    [JsonApiName("medals")] Medals,
 
-  /// <summary>
-  /// The section listing the users' recent activity.
-  /// </summary>
-  [JsonApiName("recent_activity")]
-  RecentActivity,
+    /// <summary>
+    /// The section listing the users' recent activity.
+    /// </summary>
+    [JsonApiName("recent_activity")] RecentActivity,
 
-  /// <summary>
-  /// The section listing the users' top scores.
-  /// </summary>
-  [JsonApiName("top_ranks")]
-  TopRanks,
+    /// <summary>
+    /// The section listing the users' top scores.
+    /// </summary>
+    [JsonApiName("top_ranks")] TopRanks,
 
-  /// <summary>
-  /// The section listing the users' account standing.
-  /// </summary>
-  [JsonApiName("account_standing")]
-  AccountStanding
+    /// <summary>
+    /// The section listing the users' account standing.
+    /// </summary>
+    [JsonApiName("account_standing")] AccountStanding
 }

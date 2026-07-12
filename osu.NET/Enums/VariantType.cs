@@ -10,15 +10,13 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum VariantType
 {
-  /// <summary>
-  /// The 4-key variant.
-  /// </summary>
-  [JsonApiName("4k")]
-  Key4,
+    /// <summary>
+    /// The 4-key variant.
+    /// </summary>
+    [JsonApiName("4k")] Key4,
 
-  /// <summary>
-  /// The 7-key variant.
-  /// </summary>
-  [JsonApiName("7k")]
-  Key7
+    /// <summary>
+    /// The 7-key variant.
+    /// </summary>
+    [JsonApiName("7k")] Key7
 }

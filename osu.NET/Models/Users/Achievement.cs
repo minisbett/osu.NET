@@ -10,15 +10,15 @@ namespace osu.NET.Models.Users;
 /// </summary>
 public class Achievement
 {
-  /// <summary>
-  /// The datetime at which this achievement was achieved.
-  /// </summary>
-  [JsonProperty("achieved_at")]
-  public DateTimeOffset AchievedAt { get; init; }
+    /// <summary>
+    /// The datetime at which this achievement was achieved.
+    /// </summary>
+    [JsonProperty("achieved_at")]
+    public DateTimeOffset AchievedAt { get; init; }
 
-  /// <summary>
-  /// The ID of this achievement.
-  /// </summary>
-  [JsonProperty("achievement_id")]
-  public int Id { get; init; }
+    /// <summary>
+    /// The ID of this achievement.
+    /// </summary>
+    [JsonProperty("achievement_id")]
+    public int Id { get; init; }
 }

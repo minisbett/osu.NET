@@ -11,15 +11,15 @@ namespace osu.NET.Models.Other;
 /// </summary>
 public class SeasonalBackground
 {
-  /// <summary>
-  /// The URL to the asset of this seasonal background.
-  /// </summary>
-  [JsonProperty("url")]
-  public string Url { get; init; } = default!;
+    /// <summary>
+    /// The URL to the asset of this seasonal background.
+    /// </summary>
+    [JsonProperty("url")]
+    public string Url { get; init; } = default!;
 
-  /// <summary>
-  /// The creator of this seasonal background.
-  /// </summary>
-  [JsonProperty("user")]
-  public User User { get; init; } = default!;
+    /// <summary>
+    /// The creator of this seasonal background.
+    /// </summary>
+    [JsonProperty("user")]
+    public User User { get; init; } = default!;
 }

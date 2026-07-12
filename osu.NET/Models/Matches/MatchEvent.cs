@@ -10,33 +10,33 @@ namespace osu.NET.Models.Matches;
 /// </summary>
 public class MatchEvent
 {
-  /// <summary>
-  /// The ID of this event.
-  /// </summary>
-  [JsonProperty("id")]
-  public long Id { get; init; }
+    /// <summary>
+    /// The ID of this event.
+    /// </summary>
+    [JsonProperty("id")]
+    public long Id { get; init; }
 
-  /// <summary>
-  /// the detials about this event (type and message).
-  /// </summary>
-  [JsonProperty("detail")]
-  public MatchEventDetails Details { get; init; } = default!;
+    /// <summary>
+    /// the detials about this event (type and message).
+    /// </summary>
+    [JsonProperty("detail")]
+    public MatchEventDetails Details { get; init; } = default!;
 
-  /// <summary>
-  /// The datetime at which this event occurred.
-  /// </summary>
-  [JsonProperty("timestamp")]
-  public DateTimeOffset Timestamp { get; init; }
+    /// <summary>
+    /// The datetime at which this event occurred.
+    /// </summary>
+    [JsonProperty("timestamp")]
+    public DateTimeOffset Timestamp { get; init; }
 
-  /// <summary>
-  /// The ID of the user this event is related to. This will be null if this event is not related to a user.
-  /// </summary>
-  [JsonProperty("user_id")]
-  public int? UserId { get; init; }
+    /// <summary>
+    /// The ID of the user this event is related to. This will be null if this event is not related to a user.
+    /// </summary>
+    [JsonProperty("user_id")]
+    public int? UserId { get; init; }
 
-  /// <summary>
-  /// The match game associated with this event. This will be null if this event is not related to a match game.
-  /// </summary>
-  [JsonProperty("game")]
-  public MatchGame? Game { get; init; }
+    /// <summary>
+    /// The match game associated with this event. This will be null if this event is not related to a match game.
+    /// </summary>
+    [JsonProperty("game")]
+    public MatchGame? Game { get; init; }
 }

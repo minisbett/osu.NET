@@ -10,15 +10,15 @@ namespace osu.NET.Models.Users;
 /// </summary>
 public class KudosuGiver
 {
-  /// <summary>
-  /// The profile URL of the user that caused the kudosu history entry.
-  /// </summary>
-  [JsonProperty("url")]
-  public string Url { get; init; } = default!;
+    /// <summary>
+    /// The profile URL of the user that caused the kudosu history entry.
+    /// </summary>
+    [JsonProperty("url")]
+    public string Url { get; init; } = default!;
 
-  /// <summary>
-  /// The name of the user that caused the kudosu history entry.
-  /// </summary>
-  [JsonProperty("username")]
-  public string Name { get; init; } = default!;
+    /// <summary>
+    /// The name of the user that caused the kudosu history entry.
+    /// </summary>
+    [JsonProperty("username")]
+    public string Name { get; init; } = default!;
 }

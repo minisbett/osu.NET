@@ -10,15 +10,15 @@ namespace osu.NET.Models.Users;
 /// </summary>
 public class UserPage
 {
-  /// <summary>
-  /// The me! section of a users' profile page as a pre-rendered HTML string.
-  /// </summary>
-  [JsonProperty("html")]
-  public string Html { get; init; } = default!;
+    /// <summary>
+    /// The me! section of a users' profile page as a pre-rendered HTML string.
+    /// </summary>
+    [JsonProperty("html")]
+    public string Html { get; init; } = default!;
 
-  /// <summary>
-  /// The me! section of a users' profile page as a raw string.
-  /// </summary>
-  [JsonProperty("raw")]
-  public string Raw { get; init; } = default!;
+    /// <summary>
+    /// The me! section of a users' profile page as a raw string.
+    /// </summary>
+    [JsonProperty("raw")]
+    public string Raw { get; init; } = default!;
 }

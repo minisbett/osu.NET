@@ -7,8 +7,8 @@
 [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
 internal sealed class QueryApiNameAttribute(string name) : Attribute
 {
-  /// <summary>
-  /// The string representation.
-  /// </summary>
-  public string Name { get; } = name;
+    /// <summary>
+    /// The string representation.
+    /// </summary>
+    public string Name { get; } = name;
 }

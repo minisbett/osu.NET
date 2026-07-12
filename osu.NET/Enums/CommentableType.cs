@@ -10,21 +10,18 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum CommentableType
 {
-  /// <summary>
-  /// Indicates that the comment is attached to a beatmapset.
-  /// </summary>
-  [JsonApiName("beatmapset")]
-  BeatmapSet,
+    /// <summary>
+    /// Indicates that the comment is attached to a beatmapset.
+    /// </summary>
+    [JsonApiName("beatmapset")] BeatmapSet,
 
-  /// <summary>
-  /// Indicates that the comment is attached to a news post.
-  /// </summary>
-  [JsonApiName("news_post")]
-  NewsPost,
+    /// <summary>
+    /// Indicates that the comment is attached to a news post.
+    /// </summary>
+    [JsonApiName("news_post")] NewsPost,
 
-  /// <summary>
-  /// Indicates that the comment is attached to a build from the changelog.
-  /// </summary>
-  [JsonApiName("build")]
-  Build
+    /// <summary>
+    /// Indicates that the comment is attached to a build from the changelog.
+    /// </summary>
+    [JsonApiName("build")] Build
 }

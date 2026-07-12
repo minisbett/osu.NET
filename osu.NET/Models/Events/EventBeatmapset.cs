@@ -10,15 +10,15 @@ namespace osu.NET.Models.Events;
 /// </summary>
 public class EventBeatmapset
 {
-  /// <summary>
-  /// The title of the beatmapset.
-  /// </summary>
-  [JsonProperty("title")]
-  public string Title { get; init; } = default!;
+    /// <summary>
+    /// The title of the beatmapset.
+    /// </summary>
+    [JsonProperty("title")]
+    public string Title { get; init; } = default!;
 
-  /// <summary>
-  /// The URL of the beatmapset.
-  /// </summary>
-  [JsonProperty("url")]
-  public string Url { get; init; } = default!;
+    /// <summary>
+    /// The URL of the beatmapset.
+    /// </summary>
+    [JsonProperty("url")]
+    public string Url { get; init; } = default!;
 }

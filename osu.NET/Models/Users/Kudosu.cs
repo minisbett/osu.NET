@@ -10,15 +10,15 @@ namespace osu.NET.Models.Users;
 /// </summary>
 public class Kudosu
 {
-  /// <summary>
-  /// The amount of available kudosu.
-  /// </summary>
-  [JsonProperty("available")]
-  public int Available { get; init; }
+    /// <summary>
+    /// The amount of available kudosu.
+    /// </summary>
+    [JsonProperty("available")]
+    public int Available { get; init; }
 
-  /// <summary>
-  /// The amount of total kudosu.
-  /// </summary>
-  [JsonProperty("total")]
-  public int Total { get; init; }
+    /// <summary>
+    /// The amount of total kudosu.
+    /// </summary>
+    [JsonProperty("total")]
+    public int Total { get; init; }
 }

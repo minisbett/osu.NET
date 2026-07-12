@@ -7,42 +7,42 @@ namespace osu.NET.Internal;
 /// </summary>
 internal static class ApiUtils
 {
-  /// <summary>
-  /// Returns the query string representation of the enum value.
-  /// </summary>
-  /// <typeparam name="T">The enum type.</typeparam>
-  /// <param name="value">The enum value.</param>
-  /// <returns>The query API name.</returns>
-  public static string GetQueryName<T>(this T value) where T : Enum
-  {
-    FieldInfo field = value.GetType().GetField(value.ToString())!;
-    QueryApiNameAttribute? name = field.GetCustomAttribute<QueryApiNameAttribute>();
-
-    return name?.Name ?? throw new Exception($"The enum field '{value}' does not have a query name declared.");
-  }
-
-  /// <summary>
-  /// Returns the enum value of the specified enum type with the specified JSON name.
-  /// </summary>
-  /// <param name="enumType">The enum type.</param>
-  /// <param name="name">The JSON name of the enum value.</param>
-  /// <param name="enumValue">The enum value.</param>
-  /// <returns>Bool whether getting the enum value was successful.</returns>
-  public static bool TryGetJsonNameMapping(Type enumType, string name, out Enum? enumValue)
-  {
-    foreach (Enum value in Enum.GetValues(enumType))
+    /// <summary>
+    /// Returns the query string representation of the enum value.
+    /// </summary>
+    /// <typeparam name="T">The enum type.</typeparam>
+    /// <param name="value">The enum value.</param>
+    /// <returns>The query API name.</returns>
+    public static string GetQueryName<T>(this T value) where T : Enum
     {
-      FieldInfo field = value.GetType().GetField(value.ToString())!;
-      JsonApiNameAttribute[] names = field.GetCustomAttributes<JsonApiNameAttribute>().ToArray();
+        FieldInfo field = value.GetType().GetField(value.ToString())!;
+        QueryApiNameAttribute? name = field.GetCustomAttribute<QueryApiNameAttribute>();
 
-      if (names.Any(x => x.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase)))
-      {
-        enumValue = value;
-        return true;
-      }
+        return name?.Name ?? throw new Exception($"The enum field '{value}' does not have a query name declared.");
     }
 
-    enumValue = null;
-    return false;
-  }
+    /// <summary>
+    /// Returns the enum value of the specified enum type with the specified JSON name.
+    /// </summary>
+    /// <param name="enumType">The enum type.</param>
+    /// <param name="name">The JSON name of the enum value.</param>
+    /// <param name="enumValue">The enum value.</param>
+    /// <returns>Bool whether getting the enum value was successful.</returns>
+    public static bool TryGetJsonNameMapping(Type enumType, string name, out Enum? enumValue)
+    {
+        foreach (Enum value in Enum.GetValues(enumType))
+        {
+            FieldInfo field = value.GetType().GetField(value.ToString())!;
+            JsonApiNameAttribute[] names = field.GetCustomAttributes<JsonApiNameAttribute>().ToArray();
+
+            if (names.Any(x => x.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase)))
+            {
+                enumValue = value;
+                return true;
+            }
+        }
+
+        enumValue = null;
+        return false;
+    }
 }

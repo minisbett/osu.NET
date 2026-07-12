@@ -10,15 +10,15 @@ namespace osu.NET.Models.News;
 /// </summary>
 public class NewsNavigation
 {
-  /// <summary>
-  /// The next (newer) news post. This will be null if there is no newer post.
-  /// </summary>
-  [JsonProperty("newer")]
-  public NewsPost? Next { get; init; }
+    /// <summary>
+    /// The next (newer) news post. This will be null if there is no newer post.
+    /// </summary>
+    [JsonProperty("newer")]
+    public NewsPost? Next { get; init; }
 
-  /// <summary>
-  /// The previous (older) news post. This will be null if there is no older post.
-  /// </summary>
-  [JsonProperty("older")]
-  public NewsPost? Previous { get; init; }
+    /// <summary>
+    /// The previous (older) news post. This will be null if there is no older post.
+    /// </summary>
+    [JsonProperty("older")]
+    public NewsPost? Previous { get; init; }
 }

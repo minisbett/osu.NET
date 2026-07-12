@@ -10,31 +10,27 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum Ruleset : int
 {
-  /// <summary>
-  /// The standard ruleset.
-  /// </summary>
-  [QueryApiName("osu")]
-  [JsonApiName("osu")]
-  Osu = 0,
+    /// <summary>
+    /// The standard ruleset.
+    /// </summary>
+    [QueryApiName("osu")] [JsonApiName("osu")]
+    Osu = 0,
 
-  /// <summary>
-  /// The taiko ruleset.
-  /// </summary>
-  [QueryApiName("taiko")]
-  [JsonApiName("taiko")]
-  Taiko = 1,
+    /// <summary>
+    /// The taiko ruleset.
+    /// </summary>
+    [QueryApiName("taiko")] [JsonApiName("taiko")]
+    Taiko = 1,
 
-  /// <summary>
-  /// The catch the beat ruleset.
-  /// </summary>
-  [QueryApiName("fruits")]
-  [JsonApiName("fruits")]
-  Catch = 2,
+    /// <summary>
+    /// The catch the beat ruleset.
+    /// </summary>
+    [QueryApiName("fruits")] [JsonApiName("fruits")]
+    Catch = 2,
 
-  /// <summary>
-  /// The mania ruleset.
-  /// </summary>
-  [QueryApiName("mania")]
-  [JsonApiName("mania")]
-  Mania = 3
+    /// <summary>
+    /// The mania ruleset.
+    /// </summary>
+    [QueryApiName("mania")] [JsonApiName("mania")]
+    Mania = 3
 }

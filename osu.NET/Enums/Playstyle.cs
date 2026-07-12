@@ -10,27 +10,23 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum Playstyle
 {
-  /// <summary>
-  /// The user plays with a mouse.
-  /// </summary>
-  [JsonApiName("mouse")]
-  Mouse,
+    /// <summary>
+    /// The user plays with a mouse.
+    /// </summary>
+    [JsonApiName("mouse")] Mouse,
 
-  /// <summary>
-  /// The user plays with a keyboard.
-  /// </summary>
-  [JsonApiName("keyboard")]
-  Keyboard,
+    /// <summary>
+    /// The user plays with a keyboard.
+    /// </summary>
+    [JsonApiName("keyboard")] Keyboard,
 
-  /// <summary>
-  /// The user plays with a graphics tablet.
-  /// </summary>
-  [JsonApiName("tablet")]
-  Tablet,
+    /// <summary>
+    /// The user plays with a graphics tablet.
+    /// </summary>
+    [JsonApiName("tablet")] Tablet,
 
-  /// <summary>
-  /// The user plays with a touch screen.
-  /// </summary>
-  [JsonApiName("touch")]
-  Touch
+    /// <summary>
+    /// The user plays with a touch screen.
+    /// </summary>
+    [JsonApiName("touch")] Touch
 }

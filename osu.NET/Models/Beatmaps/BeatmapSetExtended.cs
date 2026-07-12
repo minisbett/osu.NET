@@ -11,99 +11,99 @@ namespace osu.NET.Models.Beatmaps;
 /// </summary>
 public class BeatmapSetExtended : BeatmapSet
 {
-  #region Default Attributes
+    #region Default Attributes
 
-  /// <summary>
-  /// The beats per minute (BPM) of this beatmapset.
-  /// </summary>
-  [JsonProperty("bpm")]
-  public float BPM { get; init; }
+    /// <summary>
+    /// The beats per minute (BPM) of this beatmapset.
+    /// </summary>
+    [JsonProperty("bpm")]
+    public float BPM { get; init; }
 
-  /// <summary>
-  /// Bool whether this beatmapset can be hyped.
-  /// </summary>
-  [JsonProperty("can_be_hyped")]
-  public bool CanBeHyped { get; init; }
+    /// <summary>
+    /// Bool whether this beatmapset can be hyped.
+    /// </summary>
+    [JsonProperty("can_be_hyped")]
+    public bool CanBeHyped { get; init; }
 
-  /// <summary>
-  /// The datetime at which this beatmapset was deleted. This will be null if the beatmapset has not been deleted.
-  /// </summary>
-  [JsonProperty("deleted_at")]
-  public DateTimeOffset? DeletedAt { get; init; }
+    /// <summary>
+    /// The datetime at which this beatmapset was deleted. This will be null if the beatmapset has not been deleted.
+    /// </summary>
+    [JsonProperty("deleted_at")]
+    public DateTimeOffset? DeletedAt { get; init; }
 
-  /// <summary>
-  /// Bool whether discussion on this beatmapset is locked.
-  /// </summary>
-  [JsonProperty("discussion_locked")]
-  public bool IsDiscussionLocked { get; init; }
+    /// <summary>
+    /// Bool whether discussion on this beatmapset is locked.
+    /// </summary>
+    [JsonProperty("discussion_locked")]
+    public bool IsDiscussionLocked { get; init; }
 
-  /// <summary>
-  /// Bool whether scores on this beatmapset are persistent (beatmapset is ranked, qualified, approved or loved).
-  /// </summary>
-  [JsonProperty("is_scoreable")]
-  public bool IsScoreable { get; init; }
+    /// <summary>
+    /// Bool whether scores on this beatmapset are persistent (beatmapset is ranked, qualified, approved or loved).
+    /// </summary>
+    [JsonProperty("is_scoreable")]
+    public bool IsScoreable { get; init; }
 
-  /// <summary>
-  /// The datetime at which this beatmapset was last updated.
-  /// </summary>
-  [JsonProperty("last_updated")]
-  public DateTimeOffset LastUpdated { get; init; }
+    /// <summary>
+    /// The datetime at which this beatmapset was last updated.
+    /// </summary>
+    [JsonProperty("last_updated")]
+    public DateTimeOffset LastUpdated { get; init; }
 
-  /// <summary>
-  /// The URL to the legency thread of this beatmapset. This will be null if the beatmapset has no legacy thread.
-  /// </summary>
-  [JsonProperty("legacy_thread_url")]
-  public string? LegacyThreadUrl { get; init; }
+    /// <summary>
+    /// The URL to the legency thread of this beatmapset. This will be null if the beatmapset has no legacy thread.
+    /// </summary>
+    [JsonProperty("legacy_thread_url")]
+    public string? LegacyThreadUrl { get; init; }
 
-  /// <summary>
-  /// Info about the nomination progress of this beatmapset.
-  /// </summary>
-  [JsonProperty("nominations_summary")]
-  public NominationSummary NominationSummary { get; init; } = default!;
+    /// <summary>
+    /// Info about the nomination progress of this beatmapset.
+    /// </summary>
+    [JsonProperty("nominations_summary")]
+    public NominationSummary NominationSummary { get; init; } = default!;
 
-  /// <summary>
-  /// The datetime at which this beatmapset was ranked, qualified, approved or loved. This will be null if the beatmapset has none of these statuses.
-  /// </summary>
-  [JsonProperty("ranked_date")]
-  public DateTimeOffset? RankedDate { get; init; }
+    /// <summary>
+    /// The datetime at which this beatmapset was ranked, qualified, approved or loved. This will be null if the beatmapset has none of these statuses.
+    /// </summary>
+    [JsonProperty("ranked_date")]
+    public DateTimeOffset? RankedDate { get; init; }
 
-  /// <summary>
-  /// Bool whether this beatmapset has a storyboard.
-  /// </summary>
-  [JsonProperty("storyboard")]
-  public bool HasStoryboard { get; init; }
+    /// <summary>
+    /// Bool whether this beatmapset has a storyboard.
+    /// </summary>
+    [JsonProperty("storyboard")]
+    public bool HasStoryboard { get; init; }
 
-  /// <summary>
-  /// The datetime at which this beatmapset was submitted to the osu! servers. This may be null.
-  /// </summary>
-  [JsonProperty("submitted_date")]
-  public DateTimeOffset? SubmittedDate { get; init; }
+    /// <summary>
+    /// The datetime at which this beatmapset was submitted to the osu! servers. This may be null.
+    /// </summary>
+    [JsonProperty("submitted_date")]
+    public DateTimeOffset? SubmittedDate { get; init; }
 
-  /// <summary>
-  /// The tags of this beatmapset, used for indexing and searching.
-  /// </summary>
-  [JsonProperty("tags")]
-  public string Tags { get; init; } = null!;
+    /// <summary>
+    /// The tags of this beatmapset, used for indexing and searching.
+    /// </summary>
+    [JsonProperty("tags")]
+    public string Tags { get; init; } = null!;
 
-  #endregion
+    #endregion
 
-  #region Optional Attributes
+    #region Optional Attributes
 
-  private BeatmapExtended[]? _beatmaps;
+    private BeatmapExtended[]? _beatmaps;
 
-  /// <summary>
-  /// The beatmaps belonging to this beatmapset. This is an optional property and may be null.
-  /// </summary>
-  [JsonProperty("beatmaps")]
-  public new BeatmapExtended[]? Beatmaps
-  {
-    get => _beatmaps;
-    private set
+    /// <summary>
+    /// The beatmaps belonging to this beatmapset. This is an optional property and may be null.
+    /// </summary>
+    [JsonProperty("beatmaps")]
+    public new BeatmapExtended[]? Beatmaps
     {
-      _beatmaps = value;
-      base.Beatmaps = value;
+        get => _beatmaps;
+        private set
+        {
+            _beatmaps = value;
+            base.Beatmaps = value;
+        }
     }
-  }
 
-  #endregion
+    #endregion
 }

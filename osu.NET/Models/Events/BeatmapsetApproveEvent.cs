@@ -11,21 +11,21 @@ namespace osu.NET.Models.Events;
 /// </summary>
 public class BeatmapsetApproveEvent : Event
 {
-  /// <summary>
-  /// The approval state of the beatmapset.
-  /// </summary>
-  [JsonProperty("approval")]
-  public BeatmapsetEventApproval Approval { get; init; } = default!;
+    /// <summary>
+    /// The approval state of the beatmapset.
+    /// </summary>
+    [JsonProperty("approval")]
+    public BeatmapsetEventApproval Approval { get; init; } = default!;
 
-  /// <summary>
-  /// The beatmapset associated with this event.
-  /// </summary>
-  [JsonProperty("beatmapset")]
-  public EventBeatmapset Beatmapset { get; init; } = default!;
+    /// <summary>
+    /// The beatmapset associated with this event.
+    /// </summary>
+    [JsonProperty("beatmapset")]
+    public EventBeatmapset Beatmapset { get; init; } = default!;
 
-  /// <summary>
-  /// The user who is the owner of this beatmapset.
-  /// </summary>
-  [JsonProperty("user")]
-  public EventUser User { get; init; } = default!;
+    /// <summary>
+    /// The user who is the owner of this beatmapset.
+    /// </summary>
+    [JsonProperty("user")]
+    public EventUser User { get; init; } = default!;
 }

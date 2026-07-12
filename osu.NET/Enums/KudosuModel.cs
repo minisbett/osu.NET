@@ -10,15 +10,13 @@ namespace osu.NET.Enums;
 /// </summary>
 public enum KudosuModel
 {
-  /// <summary>
-  /// The kudosu history entry comes from a forum post. This only applies to older beatmap discussions, which were forum posts.
-  /// </summary>
-  [JsonApiName("forum_post")]
-  ForumPost,
+    /// <summary>
+    /// The kudosu history entry comes from a forum post. This only applies to older beatmap discussions, which were forum posts.
+    /// </summary>
+    [JsonApiName("forum_post")] ForumPost,
 
-  /// <summary>
-  /// The kudosu history entry comes from a beatmap discussion (not a legacy forum post).
-  /// </summary>
-  [JsonApiName("beatmap_discussion")]
-  BeatmapDiscussion
+    /// <summary>
+    /// The kudosu history entry comes from a beatmap discussion (not a legacy forum post).
+    /// </summary>
+    [JsonApiName("beatmap_discussion")] BeatmapDiscussion
 }

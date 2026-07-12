@@ -10,15 +10,15 @@ namespace osu.NET.Models.Events;
 /// </summary>
 public class BeatmapsetUpdateEvent : Event
 {
-  /// <summary>
-  /// The beatmapset that was updated.
-  /// </summary>
-  [JsonProperty("beatmapset")]
-  public EventBeatmapset Beatmapset { get; init; } = default!;
+    /// <summary>
+    /// The beatmapset that was updated.
+    /// </summary>
+    [JsonProperty("beatmapset")]
+    public EventBeatmapset Beatmapset { get; init; } = default!;
 
-  /// <summary>
-  /// The owner of the beatmapset.
-  /// </summary>
-  [JsonProperty("user")]
-  public EventUser User { get; init; } = default!;
+    /// <summary>
+    /// The owner of the beatmapset.
+    /// </summary>
+    [JsonProperty("user")]
+    public EventUser User { get; init; } = default!;
 }

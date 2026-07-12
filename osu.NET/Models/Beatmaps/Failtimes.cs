@@ -10,15 +10,15 @@ namespace osu.NET.Models.Beatmaps;
 /// </summary>
 public class Failtimes
 {
-  /// <summary>
-  /// The amount of times players have exited the beatmap at a certain percentage.
-  /// </summary>
-  [JsonProperty("exit")]
-  public int[] Exits { get; init; } = default!;
+    /// <summary>
+    /// The amount of times players have exited the beatmap at a certain percentage.
+    /// </summary>
+    [JsonProperty("exit")]
+    public int[] Exits { get; init; } = default!;
 
-  /// <summary>
-  /// The amount of times players have failed the beatmap at a certain percentage.
-  /// </summary>
-  [JsonProperty("fail")]
-  public int[] Fails { get; init; } = default!;
+    /// <summary>
+    /// The amount of times players have failed the beatmap at a certain percentage.
+    /// </summary>
+    [JsonProperty("fail")]
+    public int[] Fails { get; init; } = default!;
 }

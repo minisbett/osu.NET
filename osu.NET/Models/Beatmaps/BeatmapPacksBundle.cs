@@ -10,15 +10,15 @@ namespace osu.NET.Models.Beatmaps;
 /// </summary>
 public class BeatmapPacksBundle
 {
-  /// <summary>
-  /// The beatmap packs.
-  /// </summary>
-  [JsonProperty("beatmap_packs")]
-  public BeatmapPack[] Packs { get; init; } = default!;
+    /// <summary>
+    /// The beatmap packs.
+    /// </summary>
+    [JsonProperty("beatmap_packs")]
+    public BeatmapPack[] Packs { get; init; } = default!;
 
-  /// <summary>
-  /// The cursor string for fetching further beatmap packs.
-  /// </summary>
-  [JsonProperty("cursor_string")]
-  public string Cursor { get; init; } = default!;
+    /// <summary>
+    /// The cursor string for fetching further beatmap packs.
+    /// </summary>
+    [JsonProperty("cursor_string")]
+    public string Cursor { get; init; } = default!;
 }

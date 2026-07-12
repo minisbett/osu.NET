@@ -10,15 +10,15 @@ namespace osu.NET.Models.Beatmaps;
 /// </summary>
 public class BeatmapOwner
 {
-  /// <summary>
-  /// The ID of the user.
-  /// </summary>
-  [JsonProperty("id")]
-  public int Id { get; init; }
+    /// <summary>
+    /// The ID of the user.
+    /// </summary>
+    [JsonProperty("id")]
+    public int Id { get; init; }
 
-  /// <summary>
-  /// The name of the user.
-  /// </summary>
-  [JsonProperty("username")]
-  public string Username { get; init; } = default!;
+    /// <summary>
+    /// The name of the user.
+    /// </summary>
+    [JsonProperty("username")]
+    public string Username { get; init; } = default!;
 }

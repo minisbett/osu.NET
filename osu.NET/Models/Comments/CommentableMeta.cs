@@ -11,33 +11,33 @@ namespace osu.NET.Models.Comments;
 /// </summary>
 public class CommentableMeta
 {
-  /// <summary>
-  /// The ID of the commentable object (e.g. beatmapset ID). This will be null if the commentable object was deleted.
-  /// </summary>
-  public int? Id { get; init; }
+    /// <summary>
+    /// The ID of the commentable object (e.g. beatmapset ID). This will be null if the commentable object was deleted.
+    /// </summary>
+    public int? Id { get; init; }
 
-  /// <summary>
-  /// The ID of the user that owns the commentable object (eg. beatmapset owner).
-  /// This will be null if the commentable object has no owner or has been deleted.
-  /// </summary>
-  [JsonProperty("owner_id")]
-  public int? OwnerId { get; init; }
+    /// <summary>
+    /// The ID of the user that owns the commentable object (eg. beatmapset owner).
+    /// This will be null if the commentable object has no owner or has been deleted.
+    /// </summary>
+    [JsonProperty("owner_id")]
+    public int? OwnerId { get; init; }
 
-  /// <summary>
-  /// The type of relation between the commentable object and its' owner. This will be null if the commentable object has no owner or has been deleted.
-  /// </summary>
-  [JsonProperty("owner_title")]
-  public CommentableOwnerTitle? OwnerTitle { get; init; }
+    /// <summary>
+    /// The type of relation between the commentable object and its' owner. This will be null if the commentable object has no owner or has been deleted.
+    /// </summary>
+    [JsonProperty("owner_title")]
+    public CommentableOwnerTitle? OwnerTitle { get; init; }
 
-  /// <summary>
-  /// The display title for the commentable object (e.g. the title of the beatmapset). If the commentable object was deleted, this will be "Deleted Item".
-  /// </summary>
-  [JsonProperty("title")]
-  public string Title { get; init; } = default!;
+    /// <summary>
+    /// The display title for the commentable object (e.g. the title of the beatmapset). If the commentable object was deleted, this will be "Deleted Item".
+    /// </summary>
+    [JsonProperty("title")]
+    public string Title { get; init; } = default!;
 
-  /// <summary>
-  /// The URL to the commentable object. This will be null if the commentable object was deleted.
-  /// </summary>
-  [JsonProperty("url")]
-  public string? Url { get; init; } = default!;
+    /// <summary>
+    /// The URL to the commentable object. This will be null if the commentable object was deleted.
+    /// </summary>
+    [JsonProperty("url")]
+    public string? Url { get; init; } = default!;
 }

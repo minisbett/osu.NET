@@ -11,27 +11,27 @@ namespace osu.NET.Models.Users;
 /// </summary>
 public class BeatmapPlaycount
 {
-  /// <summary>
-  /// The ID of the beatmap.
-  /// </summary>
-  [JsonProperty("beatmap_id")]
-  public int BeatmapId { get; init; }
+    /// <summary>
+    /// The ID of the beatmap.
+    /// </summary>
+    [JsonProperty("beatmap_id")]
+    public int BeatmapId { get; init; }
 
-  /// <summary>
-  /// The beatmap. This will be null if the beatmap has been deleted.
-  /// </summary>
-  [JsonProperty("beatmap")]
-  public Beatmap? Beatmap { get; init; }
+    /// <summary>
+    /// The beatmap. This will be null if the beatmap has been deleted.
+    /// </summary>
+    [JsonProperty("beatmap")]
+    public Beatmap? Beatmap { get; init; }
 
-  /// <summary>
-  /// The beatmapset. This may be null if the beatmapset has been deleted.
-  /// </summary>
-  [JsonProperty("beatmapset")]
-  public BeatmapSet? BeatmapSet { get; init; }
+    /// <summary>
+    /// The beatmapset. This may be null if the beatmapset has been deleted.
+    /// </summary>
+    [JsonProperty("beatmapset")]
+    public BeatmapSet? BeatmapSet { get; init; }
 
-  /// <summary>
-  /// The amount of times the user played the beatmap.
-  /// </summary>
-  [JsonProperty("count")]
-  public int Count { get; init; }
+    /// <summary>
+    /// The amount of times the user played the beatmap.
+    /// </summary>
+    [JsonProperty("count")]
+    public int Count { get; init; }
 }
