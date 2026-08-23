@@ -18,11 +18,11 @@ This wrapper <ins>currently only supports public scope endpoints</ins>.<br/>
 </div>
 
 ### ✨ Features
-✔️ **Extensive API documentation** - Detailed documentations, beyond the official API docs  
-✔️ **Seamless Integration** - Designed with .NET Generic Host in mind  
-✔️ **Easy Error Handling** - Result pattern for API responses with error-handling assistance  
-✔️ **Flexible Authentication Flow** – Easy-to-use authorization infrastructure  
-✔️ **Actively Maintained** - Contributions welcome!  
+- **Extensive documentation** - Detailed documentations, beyond the official osu! api v2 docs  
+- **Seamless Integration** - Designed with the .NET Generic Host in mind  
+- **Easy Error Handling** - Result pattern for API responses with error-handling assistance  
+- **Flexible Authentication Flow** - Easy-to-use authorization infrastructure  
+- **Actively Maintained** - Any issues or PRs are welcome!
 
 ### 📦 Installation  
 osu.NET is available via NuGet:
