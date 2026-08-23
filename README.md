@@ -18,7 +18,7 @@ This wrapper <ins>currently only supports public scope endpoints</ins>.<br/>
 </div>
 
 ### ✨ Features
-- **Extensive documentation** - Detailed documentations, beyond the official osu! api v2 docs  
+- **Extensive documentation** - beyond the official osu! api v2 docs  
 - **Seamless Integration** - Designed with the .NET Generic Host in mind  
 - **Easy Error Handling** - Result pattern for API responses with error-handling assistance  
 - **Flexible Authentication Flow** - Easy-to-use authorization infrastructure  
