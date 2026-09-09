@@ -3,7 +3,7 @@
 namespace osu.NET.Enums;
 
 /// <summary>
-/// An enum containing the rank statuses a beatmapset can have.
+/// An enum containing the rank statuses a beatmap can have.
 /// <br/><br/>
 /// API docs: <a href="https://osu.ppy.sh/docs/index.html#beatmapset-rank-status"/><br/>
 /// Source: <a href="https://github.com/ppy/osu-web/blob/master/resources/js/interfaces/beatmapset-json.ts"/>
@@ -13,35 +13,35 @@ public enum RankedStatus
     /// <summary>
     /// The beatmap is in the graveyard.
     /// </summary>
-    [JsonApiName("graveyard")] Graveyard = -2,
+    [JsonApiName("graveyard")] [QueryApiName("graveyard")] Graveyard = -2,
 
     /// <summary>
     /// The beatmap is a work in progress.
     /// </summary>
-    [JsonApiName("wip")] WIP = -1,
+    [JsonApiName("wip")] [QueryApiName("wip")] WIP = -1,
 
     /// <summary>
     /// The beatmap is pending a rank status evaluation.
     /// </summary>
-    [JsonApiName("pending")] Pending = 0,
+    [JsonApiName("pending")] [QueryApiName("pending")] Pending = 0,
 
     /// <summary>
     /// The beatmap is ranked.
     /// </summary>
-    [JsonApiName("ranked")] Ranked = 1,
+    [JsonApiName("ranked")] [QueryApiName("ranked")] Ranked = 1,
 
     /// <summary>
-    /// The beatmap is approved.
+    /// The beatmap is approved. This status is not available to be used in <see cref="OsuApiClient.SearchBeatmapSetsAsync"/>.
     /// </summary>
-    [JsonApiName("approved")] Approved = 2,
+    [JsonApiName("approved")] [QueryApiName("approved")] Approved = 2,
 
     /// <summary>
     /// The beatmap is qualified.
     /// </summary>
-    [JsonApiName("qualified")] Qualified = 3,
+    [JsonApiName("qualified")] [QueryApiName("qualified")] Qualified = 3,
 
     /// <summary>
     /// The beatmap is loved.
     /// </summary>
-    [JsonApiName("loved")] Loved = 4
+    [JsonApiName("loved")] [QueryApiName("loved")] Loved = 4
 }

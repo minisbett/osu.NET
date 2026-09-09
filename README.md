@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-LGPLv3-seagreen?style=flat-square)](https://www.gnu.org/licenses/lgpl-3.0)
 [![NuGet](https://img.shields.io/nuget/v/osu.NET?color=blue&style=flat-square)](https://www.nuget.org/packages/osu.NET)
 [![NuGet](https://img.shields.io/nuget/dt/osu.NET?color=peru&style=flat-square)](https://www.nuget.org/packages/osu.NET)
-[![API Coverage](https://img.shields.io/badge/API%20Coverage-81%25-olivedrab?style=flat-square)](#api-coverage)
+[![API Coverage](https://img.shields.io/badge/API%20Coverage-75%25-olivedrab?style=flat-square)](#api-coverage)
 
 A modern and well documented API wrapper for the osu! API v2.<br/>
 This wrapper <ins>currently only supports public scope endpoints</ins>.<br/>
@@ -18,11 +18,11 @@ This wrapper <ins>currently only supports public scope endpoints</ins>.<br/>
 </div>
 
 ### ✨ Features
-- **Extensive documentation** - beyond the official osu! api v2 docs  
-- **Seamless Integration** - Designed with the .NET Generic Host in mind  
-- **Easy Error Handling** - Result pattern for API responses with error-handling assistance  
-- **Flexible Authentication Flow** - Easy-to-use authorization infrastructure  
-- **Actively Maintained** - Any issues or PRs are welcome!
+- An extensive xmldoc-documentation, beyond what the osu! api documentation provides  
+- Integrates nicely as a service into the .NET hosting life-cycle   
+- Utilizes a result pattern for error-handling in API responses
+- An easy-to-use authorization infrastructure, allowing you to make your own token providers  
+- Actively maintained, contributions and issues are always welcome!
 
 ### 📦 Installation  
 osu.NET is available via NuGet:
@@ -89,7 +89,7 @@ OsuClientAccessTokenProvider provider = OsuClientAccessTokenProvider
 OsuApiClient client = new(provider, null /* ILogger, set to null for stand-alone usage*/);
 ```
 > [!IMPORTANT]
-> Since the logging is based on the `Microsoft.Extensions.Logging.ILogger<T>`, a part of the .NET Generic Host, the logger needs to be set to null.
+> Since the logging is based on the `Microsoft.Extensions.Logging.ILogger<T>`, a part of the .NET Hosting platform, the logger needs to be set to null.
 
 ## ⚠️ Error Handling
 
@@ -120,24 +120,15 @@ result.Match(
 > [!TIP]
 > osu.NET provides a roslyn code analyzer for assisting with result-matching. If you match a result with the exact syntax above, matching the error directly with a `error.Type switch {...}`, the code analyzer will warn you if you have an unhandled `ApiErrorType` possibly returned by the API endpoint called.
 >
-> This feature is experimental and the warning can be disabled via `#pragma warning disable OSU001`, or as suggested by your IDE.
-
+> This feature is experimental and currently not shipped with osu.NET. The warning can be disabled via `#pragma warning disable OSU001`, or as suggested by your IDE.
 
 ## 🌱 Contribute
 
-This library is continuously maintained, and contributions are always welcome. Whether it's improving documentation, adding new features, or updating existing code, every contribution helps keep the project up-to-date and easy-to-use.
+The osu! api changes frequently, and as such fixes may be required for the library to work as intended.
 
-**📝 Improve Documentation**  
-Some parts of the documentation are still missing. If you encounter some, and you can provide information about it, any contributions filling the gaps are much appreciated!
+Any contributions, whether it's PRs updating API models, adding new endpoints or query parameter, or issues reporting outdated information are always welcome! I (the repository owner) will try my best to update the library as fast as possible, to ensure everything works flawlessly for everyone.
 
-**🔧 Add or Update API Endpoints**  
-Not all endpoints the API provides are implemented. If you require a missing endpoint, feel free to propose it using a [GitHub issue](https://github.com/minisbett/osu.NET/issues) or implement it via a [pull request](https://github.com/minisbett/osu.NET/pulls). Similarily, feel free to contribute if you notice an outdated endpoint, as the osu! API evolves over time.
-
-**🆙 Update API Models**  
-If any API models are outdated due to changes in the osu! API, feel free to report it via a [GitHub issue](https://github.com/minisbett/osu.NET/issues) or update them via a [pull request](https://github.com/minisbett/osu.NET/pulls).
-
-**🗣️ Report Issues**  
-If something isn't working as expected, open an issue with a detailed description so the problem can be addressed promptly.
+If you have any questions, you can also reach out to me via Discord: `minisbett`
 
 ## 📜 API Coverage
 
@@ -165,7 +156,7 @@ Below is a list of all planned and implemented osu! API endpoints. If you'd like
 - ❌ `/beatmapsets/discussions`
 
 #### Beatmap Sets 📦
-- ❌ `/beatmapsets/search`🔎
+- ✅ `/beatmapsets/search`🔎
 - ✅ `/beatmapsets/lookup`
 - ✅ `/beatmapsets/{beatmapset}`
 - ❌ `/beatmapsets/events`🔎
@@ -196,13 +187,15 @@ Below is a list of all planned and implemented osu! API endpoints. If you'd like
 - ✅ `/matches/{match}`
 
 #### Multiplayer 🌍
-- ❌ `/rooms/{room}/playlist/{playlist}/scores`
+- ❌ `/rooms`
 - ❌ `/rooms/{room}`🔎
+- ❌ `/rooms/{room}/events`🔎
+- ❌ `/rooms/{room}/leaderboard`🔎
+- ❌ `/rooms/{room}/playlist/{playlist}/scores`
 
 #### News 📰
 - ✅ `/news`
 - ✅ `/news/{news}`
-- ✅ `/news/{news}?id`
 
 #### Rankings 🏆
 - ✅ `/rankings/kudosu`
@@ -215,17 +208,22 @@ Below is a list of all planned and implemented osu! API endpoints. If you'd like
 - ✅ `/scores/{score}`🔎
 - ✅ `/scores/{score}/download`🔎
 
+### Teams 🫂
+- ❌ `/teams/{team}/{ruleset?}`
+
 #### Users 👤
+- ✅ `/users`
+- ✅ `/users/lookup`🔎
 - ✅ `/users/{user}/kudosu`
+- ✅ `/users/{user}/recent_activity`
+- ❌ `/users/{user}/beatmaps-passed`
+- ✅ `/users/{user}/{mode?}`
 - ✅ `/users/{user}/scores/{type}`
 - ✅ `/users/{user}/beatmapsets/{type}`
-- ✅ `/users/{user}/recent_activity`
-- ✅ `/users/{user}/{mode?}`
-- ✅ `/users?id[]`
-- ✅ `/users/lookup`🔎
 
 #### Wiki 📖
 - ✅ `/wiki/{locale}/{path}`
+- ❌ `/suggestions/wiki`🔎
 
 #### Other ⭐
 
