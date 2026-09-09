@@ -84,7 +84,7 @@ public class ApiResult<T> where T : class
         if (IsFailure)
             error(Error);
         else if (Value is null && errorIfValueNull)
-            error(new ApiError(ApiErrorType.Null, null));
+            error(new(ApiErrorType.Null, null));
 
         success(Value);
     }
@@ -100,7 +100,7 @@ public class ApiResult<T> where T : class
         if (IsFailure)
             error(Error)();
         else if (Value is null && errorIfValueNull)
-            error(new ApiError(ApiErrorType.Null, null))();
+            error(new(ApiErrorType.Null, null))();
 
         success(Value);
     }
@@ -115,8 +115,8 @@ public class ApiResult<T> where T : class
     {
         if (IsFailure)
             return error(Error);
-        else if (Value is null && errorIfValueNull)
-            return error(new ApiError(ApiErrorType.Null, null));
+        if (Value is null && errorIfValueNull)
+            return error(new(ApiErrorType.Null, null));
 
         return success(Value);
     }
@@ -131,10 +131,22 @@ public class ApiResult<T> where T : class
     {
         if (IsFailure)
             return error(Error)();
-        else if (Value is null && errorIfValueNull)
-            return error(new ApiError(ApiErrorType.Null, null))();
+        if (Value is null && errorIfValueNull)
+            return error(new(ApiErrorType.Null, null))();
         return success(Value);
     }
+    
+    /// <summary>
+    /// Returns the value of this API result if successful, or throws an <see cref="OsuApiException"/> if the request was not successful.
+    /// </summary>
+    /// <returns>The value of this API result.</returns>
+    public T GetValueOrThrow() => IsSuccess ? Value : throw new OsuApiException(Error.ToString());
+
+    /// <summary>
+    /// Returns the value of this API result if successful, or throws an <see cref="OsuApiException"/> if the request was not successful.
+    /// </summary>
+    /// <returns>The value of this API result.</returns>
+    public T GetValueOrThrow<TException>() where TException : Exception, new() => IsSuccess ? Value : throw new TException();
 
     /// <summary>
     /// Implicitly converts an <see cref="ApiError"/> into a failed <see cref="ApiResult{T}"/>.
