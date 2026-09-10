@@ -73,7 +73,7 @@ public partial class OsuApiClient
     /// <returns>The bundle with beatmapsets.</returns>
     [CanReturnApiError()]
     public async Task<ApiResult<BeatmapSetsSearchBundle>> SearchBeatmapSetsAsync(string? query = null, SearchSortType? sortType = null,
-        Ruleset? ruleset = null, RankedStatus? status = null, bool includeNsfw = false, bool includeConverts = false, bool onlySpotlighted = false,
+        Ruleset? ruleset = null, SearchRankedStatus? status = null, bool includeNsfw = false, bool includeConverts = false, bool onlySpotlighted = false,
         bool onlyFeaturedArtists = false, bool onlyHasVideo = false, bool onlyHasStoryboard = false, int? genreId = null, int? languageId = null,
         int? page = null, string? cursor = null, CancellationToken? cancellationToken = null)
     {
