@@ -96,4 +96,10 @@ public class ScoreStatistics
     /// </summary>
     [JsonProperty("legacy_combo_increase")]
     public int? LegacyComboIncrease { get; init; }
+
+    /// <summary>
+    /// The Slider Tail Hit judgements of the score. This will be null if the score does not have any Slider Tail Hit judgements.
+    /// </summary>
+    [JsonProperty("slider_tail_hit")]
+    public int? SliderTailHit { get; init; }
 }
