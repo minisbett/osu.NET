@@ -67,10 +67,10 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, I
             logger?.LogInformation("URL: {Url}\r\nDuration: {Time:N0}ms\r\nStatus: {Status}", request.RequestUri, watch.ElapsedMilliseconds, status);
         }
 
-        // If the API does not respond with OK (request successful), NotFound/UnprocessableEntity (something not found) or Forbidden (missing permissions),
+        // If the API does not respond with OK (request successful), No Content (request successful, no reponse data), NotFound/UnprocessableEntity (something not found) or Forbidden (missing permissions),
         // the request is likely malformed or the osu! API encountered an internal server error. This ensures that any APIResult<T>
         // retrieved by the end user possibly contains an error caused via their own input, and not some API wrapper or osu!-sided issue.
-        if (response.StatusCode is not (HttpStatusCode.OK or HttpStatusCode.NotFound or HttpStatusCode.UnprocessableEntity or HttpStatusCode.Forbidden))
+        if (response.StatusCode is not (HttpStatusCode.OK or HttpStatusCode.NoContent or HttpStatusCode.NotFound or HttpStatusCode.UnprocessableEntity or HttpStatusCode.Forbidden))
             throw new OsuApiException($"API responded with an unexpected status code: {response.StatusCode}.");
 
         return response;
@@ -90,6 +90,10 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, I
         try
         {
             string json = await response.Content.ReadAsStringAsync(cancellationToken);
+
+            if (response.StatusCode == HttpStatusCode.NoContent && string.IsNullOrWhiteSpace(json))
+                json = "{}";
+
             JToken token = JToken.Parse(json);
             JObject? obj = token as JObject;
 
@@ -113,6 +117,28 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, I
     }
 
     /// <summary>
+    /// Sends an HTTP request to the specified URL and parses the JSON in the response into the specified type.
+    /// </summary>
+    /// <typeparam name="T">The type to parse the JSON response into.</typeparam>
+    /// <param name="httpMethod">The HTTP method to use.</param>
+    /// <param name="url">The request URL.</param>
+    /// <param name="cancellationToken">The cancellation token for aborting the request.</param>
+    /// <param name="parameters">Optional. The query parameters of the URL. Parameters with a null value will be ignored.</param>
+    /// <param name="jsonSelector">Optional. A JSON selector for parsing nested objects instead of the root JSON.</param>
+    /// <param name="httpContent">The body content used for the request.</param>
+    /// <returns>The parsed API result.</returns>
+    private async Task<ApiResult<T>> SendHttpAsync<T>(HttpMethod httpMethod, string url, CancellationToken? cancellationToken,
+        (string, object?)[]? parameters = null,
+        Func<JObject, JToken?>? jsonSelector = null, HttpContent? httpContent = null) where T : class
+    {
+        url = BuildRequestUrl(url, parameters ?? []);
+        cancellationToken ??= CancellationToken.None;
+
+        HttpResponseMessage response = await SendAsync(new(httpMethod, url) { Content = httpContent }, cancellationToken.Value);
+        return await ParseAsync<T>(response, jsonSelector, cancellationToken.Value);
+    }
+
+    /// <summary>
     /// Sends a GET request to the specified URL and parses the JSON in the response into the specified type.
     /// </summary>
     /// <typeparam name="T">The type to parse the JSON response into.</typeparam>
@@ -120,16 +146,11 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, I
     /// <param name="cancellationToken">The cancellation token for aborting the request.</param>
     /// <param name="parameters">Optional. The query parameters of the URL. Parameters with a null value will be ignored.</param>
     /// <param name="jsonSelector">Optional. A JSON selector for parsing nested objects instead of the root JSON.</param>
+    /// <param name="httpContent">The body content used for the request.</param>
     /// <returns>The parsed API result.</returns>
     protected async Task<ApiResult<T>> GetAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
-        Func<JObject, JToken?>? jsonSelector = null) where T : class
-    {
-        url = BuildRequestUrl(url, parameters ?? []);
-        cancellationToken ??= CancellationToken.None;
-
-        HttpResponseMessage response = await SendAsync(new(HttpMethod.Get, url), cancellationToken.Value);
-        return await ParseAsync<T>(response, jsonSelector, cancellationToken.Value);
-    }
+        Func<JObject, JToken?>? jsonSelector = null, HttpContent? httpContent = null) where T : class
+        => await SendHttpAsync<T>(HttpMethod.Get, url, cancellationToken, parameters, jsonSelector, httpContent);
 
     /// <summary>
     /// Sends a POST request to the specified URL and parses the JSON in the response into the specified type.
@@ -143,13 +164,49 @@ public partial class OsuApiClient(IOsuAccessTokenProvider accessTokenProvider, I
     /// <returns>The parsed API result.</returns>
     protected async Task<ApiResult<T>> PostAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
         Func<JObject, JToken?>? jsonSelector = null, HttpContent? httpContent = null) where T : class
-    {
-        url = BuildRequestUrl(url, parameters ?? []);
-        cancellationToken ??= CancellationToken.None;
+        => await SendHttpAsync<T>(HttpMethod.Post, url, cancellationToken, parameters, jsonSelector, httpContent);
 
-        HttpResponseMessage response = await SendAsync(new(HttpMethod.Post, url) { Content = httpContent }, cancellationToken.Value);
-        return await ParseAsync<T>(response, jsonSelector, cancellationToken.Value);
-    }
+    /// <summary>
+    /// Sends a PATCH request to the specified URL and parses the JSON in the response into the specified type.
+    /// </summary>
+    /// <typeparam name="T">The type to parse the JSON response into.</typeparam>
+    /// <param name="url">The request URL.</param>
+    /// <param name="cancellationToken">The cancellation token for aborting the request.</param>
+    /// <param name="parameters">Optional. The query parameters of the URL. Parameters with a null value will be ignored.</param>
+    /// <param name="jsonSelector">Optional. A JSON selector for parsing nested objects instead of the root JSON.</param>
+    /// <param name="httpContent">The body content used for the request.</param>
+    /// <returns>The parsed API result.</returns>
+    protected async Task<ApiResult<T>> PatchAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
+        Func<JObject, JToken?>? jsonSelector = null, HttpContent? httpContent = null) where T : class
+        => await SendHttpAsync<T>(HttpMethod.Patch, url, cancellationToken, parameters, jsonSelector, httpContent);
+
+    /// <summary>
+    /// Sends a PUT request to the specified URL and parses the JSON in the response into the specified type.
+    /// </summary>
+    /// <typeparam name="T">The type to parse the JSON response into.</typeparam>
+    /// <param name="url">The request URL.</param>
+    /// <param name="cancellationToken">The cancellation token for aborting the request.</param>
+    /// <param name="parameters">Optional. The query parameters of the URL. Parameters with a null value will be ignored.</param>
+    /// <param name="jsonSelector">Optional. A JSON selector for parsing nested objects instead of the root JSON.</param>
+    /// <param name="httpContent">The body content used for the request.</param>
+    /// <returns>The parsed API result.</returns>
+    protected async Task<ApiResult<T>> PutAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
+        Func<JObject, JToken?>? jsonSelector = null, HttpContent? httpContent = null) where T : class
+        => await SendHttpAsync<T>(HttpMethod.Put, url, cancellationToken, parameters, jsonSelector, httpContent);
+
+    /// <summary>
+    /// Sends a DELETE request to the specified URL and parses the JSON in the response into the specified type.
+    /// </summary>
+    /// <typeparam name="T">The type to parse the JSON response into.</typeparam>
+    /// <param name="url">The request URL.</param>
+    /// <param name="cancellationToken">The cancellation token for aborting the request.</param>
+    /// <param name="parameters">Optional. The query parameters of the URL. Parameters with a null value will be ignored.</param>
+    /// <param name="jsonSelector">Optional. A JSON selector for parsing nested objects instead of the root JSON.</param>
+    /// <param name="httpContent">The body content used for the request.</param>
+    /// <returns>The parsed API result.</returns>
+    protected async Task<ApiResult<T>> DeleteAsync<T>(string url, CancellationToken? cancellationToken, (string, object?)[]? parameters = null,
+        Func<JObject, JToken?>? jsonSelector = null, HttpContent? httpContent = null) where T : class
+        => await SendHttpAsync<T>(HttpMethod.Delete, url, cancellationToken, parameters, jsonSelector, httpContent);
 
     /// <summary>
     /// Returns the request URL based on the specified base URL and query parameters, excluding those parameters with a null value.
